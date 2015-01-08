@@ -18,7 +18,7 @@ const float G = 32; //(ft/s)
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
-    int s, d;
+    float s, d;
     //Prompt User
     cout<<"This program calculates the distance an object \n";
     cout<<"would fall in a vacuum given a specific time. \n";
