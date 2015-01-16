@@ -19,7 +19,7 @@ int main(int argc, char** argv) {
     //Execute Loop
     while (count_down > 0){
         cout<<"Test";
-        count_down = count_down - 1;
+        count_down --;
     }
     return 0;
 }
