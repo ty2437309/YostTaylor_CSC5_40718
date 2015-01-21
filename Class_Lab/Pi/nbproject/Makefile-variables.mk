@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Debug=chap2_homework_menu
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/chap2_homework_menu
+CND_ARTIFACT_NAME_Debug=pi
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/pi
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Debug=chap2homeworkmenu.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/chap2homeworkmenu.tar
+CND_PACKAGE_NAME_Debug=pi.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/pi.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
-CND_ARTIFACT_NAME_Release=chap2_homework_menu
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/chap2_homework_menu
+CND_ARTIFACT_NAME_Release=pi
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/pi
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
-CND_PACKAGE_NAME_Release=chap2homeworkmenu.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/chap2homeworkmenu.tar
+CND_PACKAGE_NAME_Release=pi.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/pi.tar
 #
 # include compiler specific variables
 #
