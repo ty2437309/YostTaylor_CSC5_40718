@@ -9,19 +9,19 @@ CND_DISTDIR=dist
 # Debug configuration
 CND_PLATFORM_Debug=Cygwin_4.x_1-Windows
 CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x_1-Windows
-CND_ARTIFACT_NAME_Debug=whileloop
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x_1-Windows/whileloop
+CND_ARTIFACT_NAME_Debug=chap4_homework_menu
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x_1-Windows/chap4_homework_menu
 CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x_1-Windows/package
-CND_PACKAGE_NAME_Debug=whileloop.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x_1-Windows/package/whileloop.tar
+CND_PACKAGE_NAME_Debug=chap4homeworkmenu.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x_1-Windows/package/chap4homeworkmenu.tar
 # Release configuration
 CND_PLATFORM_Release=Cygwin_4.x_1-Windows
 CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x_1-Windows
-CND_ARTIFACT_NAME_Release=whileloop
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x_1-Windows/whileloop
+CND_ARTIFACT_NAME_Release=chap4_homework_menu
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x_1-Windows/chap4_homework_menu
 CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x_1-Windows/package
-CND_PACKAGE_NAME_Release=whileloop.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x_1-Windows/package/whileloop.tar
+CND_PACKAGE_NAME_Release=chap4homeworkmenu.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x_1-Windows/package/chap4homeworkmenu.tar
 #
 # include compiler specific variables
 #
