@@ -20,15 +20,19 @@ using namespace std;
 
 int main(int argc, char** argv) {
     //Declare Variables
-    int t_1, t_2, t_3, t_4, t_5, t_6, t_7, t_8, t_9, t_10;
+    int t_1=1, t_2=2, t_3=3, t_4=4, t_5=5;
+    int t_6=6, t_7=7, t_8=8, t_9=9, t_10=10;
+    char s_1, s_2, s_3, s_4;
     char a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, a_10;
     char b_1, b_2, b_3, b_4, b_5, b_6, b_7, b_8, b_9, b_10;
     char c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8, c_9, c_10;
     char d_1, d_2, d_3, d_4, d_5, d_6, d_7, d_8, d_9, d_10;
     char e_1, e_2, e_3, e_4, e_5, e_6, e_7, e_8, e_9, e_10;
-    char e_11, e_12, e_13, e_14, e_15, e_16, e_17, e_18, e_19, e_20;
     char f_1, f_2, f_3, f_4, f_5, f_6, f_7, f_8, f_9, f_10;
+    char e_11, e_12, e_13, e_14, e_15, e_16, e_17, e_18, e_19, e_20;
     char f_11, f_12, f_13, f_14, f_15, f_16, f_17, f_18, f_19, f_20;
+    //Attempt Turn Change
+    
     cout<<"        // Mastermind // "<<endl;
     cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
     cout<<"  "<<t_1<<"   | "<<a_1<<"| "<<b_1<<"| "<<c_1<<"| "<<d_1<<"|"<<e_1<<" | "<<f_1<<"|"<<endl;
@@ -52,7 +56,7 @@ int main(int argc, char** argv) {
     cout<<"  "<<t_10<<"   | "<<a_10<<"| "<<b_10<<"| "<<c_10<<"| "<<d_10<<"|"<<e_19<<" | "<<f_19<<"|"<<endl;
     cout<<"      |__|__|__|__|"<<e_20<<" | "<<f_20<<"|"<<endl;
     cout<<"      |    Solution:    |"<<endl;
-    cout<<"      | R  O  B  B      |"<<endl;
+    cout<<"      | "<<s_1<<"  "<<s_2<<"  "<<s_3<<"  "<<s_4<<"      |"<<endl;
     cout<<"      ~~~~~~~~~~~~~~~~~~~"<<endl;
     //Exit Stage Right!!
     return 0;
