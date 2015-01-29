@@ -15,7 +15,7 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-
+turn_1(char);
 //Execution Begins Here!
 
 int main(int argc, char** argv) {
@@ -31,7 +31,30 @@ int main(int argc, char** argv) {
     char f_1, f_2, f_3, f_4, f_5, f_6, f_7, f_8, f_9, f_10;
     char e_11, e_12, e_13, e_14, e_15, e_16, e_17, e_18, e_19, e_20;
     char f_11, f_12, f_13, f_14, f_15, f_16, f_17, f_18, f_19, f_20;
+    int turn_count=1;
     //Attempt Turn Change
+    if(turn_count==1){
+        //Turn 1 Stuff
+        turn_1();
+    }else if(turn_count==2){
+        //Turn 2 Stuff
+    }else if(turn_count==3){
+        //Turn 3 Stuff
+    }else if(turn_count==4){
+        //Turn 4 Stuff
+    }else if(turn_count==5){
+        //Turn 5 Stuff
+    }else if(turn_count==6){
+        //Turn 6 Stuff
+    }else if(turn_count==7){
+        //Turn 7 Stuff
+    }else if(turn_count==8){
+        //Turn 8 Stuff
+    }else if(turn_count==9){
+        //Turn 9 Stuff
+    }else{
+        //Turn 10 Stuff
+    }
     
     cout<<"        // Mastermind // "<<endl;
     cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
