@@ -7,21 +7,21 @@ CND_BASEDIR=`pwd`
 CND_BUILDDIR=build
 CND_DISTDIR=dist
 # Debug configuration
-CND_PLATFORM_Debug=Cygwin_4.x-Windows
-CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x-Windows
+CND_PLATFORM_Debug=Cygwin_4.x_1-Windows
+CND_ARTIFACT_DIR_Debug=dist/Debug/Cygwin_4.x_1-Windows
 CND_ARTIFACT_NAME_Debug=forloop
-CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/forloop
-CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x-Windows/package
+CND_ARTIFACT_PATH_Debug=dist/Debug/Cygwin_4.x_1-Windows/forloop
+CND_PACKAGE_DIR_Debug=dist/Debug/Cygwin_4.x_1-Windows/package
 CND_PACKAGE_NAME_Debug=forloop.tar
-CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x-Windows/package/forloop.tar
+CND_PACKAGE_PATH_Debug=dist/Debug/Cygwin_4.x_1-Windows/package/forloop.tar
 # Release configuration
-CND_PLATFORM_Release=Cygwin_4.x-Windows
-CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x-Windows
+CND_PLATFORM_Release=Cygwin_4.x_1-Windows
+CND_ARTIFACT_DIR_Release=dist/Release/Cygwin_4.x_1-Windows
 CND_ARTIFACT_NAME_Release=forloop
-CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x-Windows/forloop
-CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x-Windows/package
+CND_ARTIFACT_PATH_Release=dist/Release/Cygwin_4.x_1-Windows/forloop
+CND_PACKAGE_DIR_Release=dist/Release/Cygwin_4.x_1-Windows/package
 CND_PACKAGE_NAME_Release=forloop.tar
-CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x-Windows/package/forloop.tar
+CND_PACKAGE_PATH_Release=dist/Release/Cygwin_4.x_1-Windows/package/forloop.tar
 #
 # include compiler specific variables
 #
