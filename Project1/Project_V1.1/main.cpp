@@ -118,26 +118,16 @@ int main(int argc, char** argv) {
             cin>>a_1>>b_1>>c_1>>d_1;
             turn_1_pos_1(a_1, e_1, g_1, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_2(b_1, f_1, h_1, sol_1, sol_2, sol_3, sol_4);
-            //Turn 1, Position 3 Determination (Black)
-            if (c_1==sol_3){
-                e_2='B';
-            }
-            else
-            {
-                e_2=' ';
-            }
-            //Turn 1, Position 4 Determination (Black)
-            if (d_1==sol_4){
-                f_2='B';
-            }
-            else
-            {
-                f_2=' ';
-            }
+            turn_1_pos_3(c_1, e_2, g_2, sol_1, sol_2, sol_3, sol_4);
+            turn_1_pos_4(d_1, f_2, h_2, sol_1, sol_2, sol_3, sol_4);
         }else if(turn_count==2){
             //Turn 2 Stuff
             cout<<"Turn 2 - Enter 4 Colors:"<<endl;
             cin>>a_2>>b_2>>c_2>>d_2;
+            turn_2_pos_1(a_2, e_3, g_3, sol_1, sol_2, sol_3, sol_4);
+            turn_2_pos_2(b_2, f_3, h_3, sol_1, sol_2, sol_3, sol_4);
+            turn_2_pos_3(c_2, e_4, g_4, sol_1, sol_2, sol_3, sol_4);
+            turn_2_pos_4(d_2, f_4, h_4, sol_1, sol_2, sol_3, sol_4);
             //Turn 1, Position 1 Determination (Black)
             if (a_2==sol_1){
             e_3='B';
