@@ -141,10 +141,10 @@ int main(int argc, char** argv) {
             //Turn 4 Stuff
             cout<<"Turn 4 - Enter 4 Colors:"<<endl;
             cin>>a_4>>b_4>>c_4>>d_4;
-            /*turn_4_pos_1(a_4, e_7, g_7, sol_1, sol_2, sol_3, sol_4);
+            turn_4_pos_1(a_4, e_7, g_7, sol_1, sol_2, sol_3, sol_4);
             turn_4_pos_2(b_4, f_7, h_7, sol_1, sol_2, sol_3, sol_4);
             turn_4_pos_3(c_4, e_8, g_8, sol_1, sol_2, sol_3, sol_4);
-            turn_4_pos_4(d_4, f_8, h_8, sol_1, sol_2, sol_3, sol_4);*/
+            turn_4_pos_4(d_4, f_8, h_8, sol_1, sol_2, sol_3, sol_4);
         }else if(turn_count==5){
             //Turn 5 Stuff
             cout<<"Turn 5 - Enter 4 Colors:"<<endl;
@@ -402,5 +402,73 @@ void turn_3_pos_4(char d_3, char& f_6, char& h_6,char sol_1, char sol_2, char so
     else
     {
         h_6=' ';
+    }
+}
+
+void turn_4_pos_1(char a_4, char& e_7, char& g_7,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (a_4==sol_1){
+        e_7='B';
+    }
+    else
+    {
+        e_7=' ';
+    }
+    if (a_4==sol_2||a_4==sol_3||a_4==sol_4){
+        g_7='W';
+    }
+    else
+    {
+        g_7=' ';
+    }
+}
+
+void turn_4_pos_2(char b_4, char& f_7, char& h_7,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_4==sol_2){
+        f_7='B';
+    }
+    else
+    {
+        f_7=' ';
+    }
+    if (b_4==sol_1||b_4==sol_3||b_4==sol_4){
+        h_7='W';
+    }
+    else
+    {
+        h_7=' ';
+    }
+}
+
+void turn_4_pos_3(char c_4, char& e_8, char& g_8,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_4==sol_3){
+        e_8='B';
+    }
+    else
+    {
+        e_8=' ';
+    }
+    if (c_4==sol_1||c_4==sol_2||c_4==sol_4){
+        g_8='W';
+    }
+    else
+    {
+        g_8=' ';
+    }
+}
+
+void turn_4_pos_4(char d_4, char& f_8, char& h_8,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_4==sol_4){
+        f_8='B';
+    }
+    else
+    {
+        f_8=' ';
+    }
+    if (d_4==sol_1||d_4==sol_2||d_4==sol_3){
+        h_8='W';
+    }
+    else
+    {
+        h_8=' ';
     }
 }
