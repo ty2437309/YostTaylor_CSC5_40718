@@ -540,3 +540,343 @@ void turn_5_pos_4(char d_5, char& f_10, char& h_10,char sol_1, char sol_2, char 
         h_10=' ';
     }
 }
+//Not Done Yet~
+void turn_1_pos_1(char a_1, char& e_1, char& g_1,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (a_1==sol_1){
+        e_1='B';
+    }
+    else
+    {
+        e_1=' ';
+    }
+    if (a_1==sol_2||a_1==sol_3||a_1==sol_4){
+        g_1='W';
+    }
+    else
+    {
+        g_1=' ';
+    }
+}
+
+void turn_1_pos_2(char b_1, char& f_1, char& h_1,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_1==sol_2){
+        f_1='B';
+    }
+    else
+    {
+        f_1=' ';
+    }
+    if (b_1==sol_1||b_1==sol_3||b_1==sol_4){
+        h_1='W';
+    }
+    else
+    {
+        h_1=' ';
+    }
+}
+
+void turn_1_pos_3(char c_1, char& e_2, char& g_2,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_1==sol_3){
+        e_2='B';
+    }
+    else
+    {
+        e_2=' ';
+    }
+    if (c_1==sol_1||c_1==sol_2||c_1==sol_4){
+        g_2='W';
+    }
+    else
+    {
+        g_2=' ';
+    }
+}
+
+void turn_1_pos_4(char d_1, char& f_2, char& h_2,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_1==sol_4){
+        f_2='B';
+    }
+    else
+    {
+        f_2=' ';
+    }
+    if (d_1==sol_1||d_1==sol_2||d_1==sol_3){
+        h_2='W';
+    }
+    else
+    {
+        h_2=' ';
+    }
+}
+
+void turn_2_pos_1(char a_2, char& e_3, char& g_3,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (a_2==sol_1){
+        e_3='B';
+    }
+    else
+    {
+        e_3=' ';
+    }
+    if (a_2==sol_2||a_2==sol_3||a_2==sol_4){
+        g_3='W';
+    }
+    else
+    {
+        g_3=' ';
+    }
+}
+
+void turn_2_pos_2(char b_2, char& f_3, char& h_3,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_2==sol_2){
+        f_3='B';
+    }
+    else
+    {
+        f_3=' ';
+    }
+    if (b_2==sol_1||b_2==sol_3||b_2==sol_4){
+        h_3='W';
+    }
+    else
+    {
+        h_3=' ';
+    }
+}
+
+void turn_2_pos_3(char c_2, char& e_4, char& g_4,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_2==sol_3){
+        e_4='B';
+    }
+    else
+    {
+        e_4=' ';
+    }
+    if (c_2==sol_1||c_2==sol_2||c_2==sol_4){
+        g_4='W';
+    }
+    else
+    {
+        g_4=' ';
+    }
+}
+
+void turn_2_pos_4(char d_2, char& f_4, char& h_4,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_2==sol_4){
+        f_4='B';
+    }
+    else
+    {
+        f_4=' ';
+    }
+    if (d_2==sol_1||d_2==sol_2||d_2==sol_3){
+        h_4='W';
+    }
+    else
+    {
+        h_4=' ';
+    }
+}
+
+void turn_3_pos_1(char a_3, char& e_5, char& g_5,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (a_3==sol_1){
+        e_5='B';
+    }
+    else
+    {
+        e_5=' ';
+    }
+    if (a_3==sol_2||a_3==sol_3||a_3==sol_4){
+        g_5='W';
+    }
+    else
+    {
+        g_5=' ';
+    }
+}
+
+void turn_3_pos_2(char b_3, char& f_5, char& h_5,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_3==sol_2){
+        f_5='B';
+    }
+    else
+    {
+        f_5=' ';
+    }
+    if (b_3==sol_1||b_3==sol_3||b_3==sol_4){
+        h_5='W';
+    }
+    else
+    {
+        h_5=' ';
+    }
+}
+
+void turn_3_pos_3(char c_3, char& e_6, char& g_6,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_3==sol_3){
+        e_6='B';
+    }
+    else
+    {
+        e_6=' ';
+    }
+    if (c_3==sol_1||c_3==sol_2||c_3==sol_4){
+        g_6='W';
+    }
+    else
+    {
+        g_6=' ';
+    }
+}
+
+void turn_3_pos_4(char d_3, char& f_6, char& h_6,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_3==sol_4){
+        f_6='B';
+    }
+    else
+    {
+        f_6=' ';
+    }
+    if (d_3==sol_1||d_3==sol_2||d_3==sol_3){
+        h_6='W';
+    }
+    else
+    {
+        h_6=' ';
+    }
+}
+
+void turn_4_pos_1(char a_4, char& e_7, char& g_7,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (a_4==sol_1){
+        e_7='B';
+    }
+    else
+    {
+        e_7=' ';
+    }
+    if (a_4==sol_2||a_4==sol_3||a_4==sol_4){
+        g_7='W';
+    }
+    else
+    {
+        g_7=' ';
+    }
+}
+
+void turn_4_pos_2(char b_4, char& f_7, char& h_7,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_4==sol_2){
+        f_7='B';
+    }
+    else
+    {
+        f_7=' ';
+    }
+    if (b_4==sol_1||b_4==sol_3||b_4==sol_4){
+        h_7='W';
+    }
+    else
+    {
+        h_7=' ';
+    }
+}
+
+void turn_4_pos_3(char c_4, char& e_8, char& g_8,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_4==sol_3){
+        e_8='B';
+    }
+    else
+    {
+        e_8=' ';
+    }
+    if (c_4==sol_1||c_4==sol_2||c_4==sol_4){
+        g_8='W';
+    }
+    else
+    {
+        g_8=' ';
+    }
+}
+
+void turn_4_pos_4(char d_4, char& f_8, char& h_8,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_4==sol_4){
+        f_8='B';
+    }
+    else
+    {
+        f_8=' ';
+    }
+    if (d_4==sol_1||d_4==sol_2||d_4==sol_3){
+        h_8='W';
+    }
+    else
+    {
+        h_8=' ';
+    }
+}
+
+void turn_5_pos_1(char a_5, char& e_9, char& g_9,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (a_5==sol_1){
+        e_9='B';
+    }
+    else
+    {
+        e_9=' ';
+    }
+    if (a_5==sol_2||a_5==sol_3||a_5==sol_4){
+        g_9='W';
+    }
+    else
+    {
+        g_9=' ';
+    }
+}
+
+void turn_5_pos_2(char b_5, char& f_9, char& h_9,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_5==sol_2){
+        f_9='B';
+    }
+    else
+    {
+        f_9=' ';
+    }
+    if (b_5==sol_1||b_5==sol_3||b_5==sol_4){
+        h_9='W';
+    }
+    else
+    {
+        h_9=' ';
+    }
+}
+
+void turn_5_pos_3(char c_5, char& e_10, char& g_10,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_5==sol_3){
+        e_10='B';
+    }
+    else
+    {
+        e_10=' ';
+    }
+    if (c_5==sol_1||c_5==sol_2||c_5==sol_4){
+        g_10='W';
+    }
+    else
+    {
+        g_10=' ';
+    }
+}
+
+void turn_5_pos_4(char d_5, char& f_10, char& h_10,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_5==sol_4){
+        f_10='B';
+    }
+    else
+    {
+        f_10=' ';
+    }
+    if (d_5==sol_1||d_5==sol_2||d_5==sol_3){
+        h_10='W';
+    }
+    else
+    {
+        h_10=' ';
+    }
+}
