@@ -116,15 +116,8 @@ int main(int argc, char** argv) {
             //Turn 1 Stuff
             cout<<"Turn 1 - Enter 4 Colors:"<<endl;
             cin>>a_1>>b_1>>c_1>>d_1;
-            
-            //Turn 1, Position 2 Determination (Black)
-            if (b_1==sol_2){
-                f_1='B';
-            }
-            else
-            {
-                f_1=' ';
-            }
+            turn_1_pos_1(a_1, e_1, g_1, sol_1, sol_2, sol_3, sol_4);
+            turn_1_pos_2(b_1, f_1, h_1, sol_1, sol_2, sol_3, sol_4);
             //Turn 1, Position 3 Determination (Black)
             if (c_1==sol_3){
                 e_2='B';
@@ -251,4 +244,58 @@ char turn_1_pos_1(char a_1, char e_1, char g_1,char sol_1, char sol_2, char sol_
         g_1=' ';
     }
     return(e_1, g_1);
+}
+
+char turn_1_pos_2(char b_1, char f_1, char h_1,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_1==sol_2){
+        f_1='B';
+    }
+    else
+    {
+        f_1=' ';
+    }
+    if (b_1==sol_2||b_1==sol_3||b_1==sol_4){
+        h_1='W';
+    }
+    else
+    {
+        h_1=' ';
+    }
+    return(f_1, h_1);
+}
+
+char turn_1_pos_3(char c_1, char e_2, char g_2,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_1==sol_2){
+        e_2='B';
+    }
+    else
+    {
+        e_2=' ';
+    }
+    if (c_1==sol_2||c_1==sol_3||c_1==sol_4){
+        g_2='W';
+    }
+    else
+    {
+        g_2=' ';
+    }
+    return(e_2, g_2);
+}
+
+char turn_1_pos_4(char d_1, char f_2, char h_2,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_1==sol_2){
+        f_2='B';
+    }
+    else
+    {
+        f_2=' ';
+    }
+    if (d_1==sol_2||d_1==sol_3||d_1==sol_4){
+        h_2='W';
+    }
+    else
+    {
+        h_2=' ';
+    }
+    return(f_2, h_2);
 }
