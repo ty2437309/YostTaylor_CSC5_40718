@@ -23,50 +23,50 @@ void turn_1_pos_2(char, char&, char&, char, char, char, char);
 void turn_1_pos_3(char, char&, char&, char, char, char, char);
 void turn_1_pos_4(char, char&, char&, char, char, char, char);
         //Turn 2 Feedback Logic Functions
-char turn_2_pos_1(char, char, char, char, char, char, char);
-char turn_2_pos_2(char, char, char, char, char, char, char);
-char turn_2_pos_3(char, char, char, char, char, char, char);
-char turn_2_pos_4(char, char, char, char, char, char, char);
+void turn_2_pos_1(char, char&, char&, char, char, char, char);
+void turn_2_pos_2(char, char&, char&, char, char, char, char);
+void turn_2_pos_3(char, char&, char&, char, char, char, char);
+void turn_2_pos_4(char, char&, char&, char, char, char, char);
         //Turn 3 Feedback Logic Functions
-char turn_3_pos_1(char, char, char, char, char, char, char);
-char turn_3_pos_2(char, char, char, char, char, char, char);
-char turn_3_pos_3(char, char, char, char, char, char, char);
-char turn_3_pos_4(char, char, char, char, char, char, char);
+void turn_3_pos_1(char, char&, char&, char, char, char, char);
+void turn_3_pos_2(char, char&, char&, char, char, char, char);
+void turn_3_pos_3(char, char&, char&, char, char, char, char);
+void turn_3_pos_4(char, char&, char&, char, char, char, char);
         //Turn 4 Feedback Logic Functions
-char turn_4_pos_1(char, char, char, char, char, char, char);
-char turn_4_pos_2(char, char, char, char, char, char, char);
-char turn_4_pos_3(char, char, char, char, char, char, char);
-char turn_4_pos_4(char, char, char, char, char, char, char);
+void turn_4_pos_1(char, char&, char&, char, char, char, char);
+void turn_4_pos_2(char, char&, char&, char, char, char, char);
+void turn_4_pos_3(char, char&, char&, char, char, char, char);
+void turn_4_pos_4(char, char&, char&, char, char, char, char);
         //Turn 5 Feedback Logic Functions
-char turn_5_pos_1(char, char, char, char, char, char, char);
-char turn_5_pos_2(char, char, char, char, char, char, char);
-char turn_5_pos_3(char, char, char, char, char, char, char);
-char turn_5_pos_4(char, char, char, char, char, char, char);
+void turn_5_pos_1(char, char&, char&, char, char, char, char);
+void turn_5_pos_2(char, char&, char&, char, char, char, char);
+void turn_5_pos_3(char, char&, char&, char, char, char, char);
+void turn_5_pos_4(char, char&, char&, char, char, char, char);
         //Turn 6 Feedback Logic Functions
-char turn_6_pos_1(char, char, char, char, char, char, char);
-char turn_6_pos_2(char, char, char, char, char, char, char);
-char turn_6_pos_3(char, char, char, char, char, char, char);
-char turn_6_pos_4(char, char, char, char, char, char, char);
+void turn_6_pos_1(char, char&, char&, char, char, char, char);
+void turn_6_pos_2(char, char&, char&, char, char, char, char);
+void turn_6_pos_3(char, char&, char&, char, char, char, char);
+void turn_6_pos_4(char, char&, char&, char, char, char, char);
         //Turn 7 Feedback Logic Functions
-char turn_7_pos_1(char, char, char, char, char, char, char);
-char turn_7_pos_2(char, char, char, char, char, char, char);
-char turn_7_pos_3(char, char, char, char, char, char, char);
-char turn_7_pos_4(char, char, char, char, char, char, char);
+void turn_7_pos_1(char, char&, char&, char, char, char, char);
+void turn_7_pos_2(char, char&, char&, char, char, char, char);
+void turn_7_pos_3(char, char&, char&, char, char, char, char);
+void turn_7_pos_4(char, char&, char&, char, char, char, char);
         //Turn 8 Feedback Logic Functions
-char turn_8_pos_1(char, char, char, char, char, char, char);
-char turn_8_pos_2(char, char, char, char, char, char, char);
-char turn_8_pos_3(char, char, char, char, char, char, char);
-char turn_8_pos_4(char, char, char, char, char, char, char);
+void turn_8_pos_1(char, char&, char&, char, char, char, char);
+void turn_8_pos_2(char, char&, char&, char, char, char, char);
+void turn_8_pos_3(char, char&, char&, char, char, char, char);
+void turn_8_pos_4(char, char&, char&, char, char, char, char);
         //Turn 9 Feedback Logic Functions
-char turn_9_pos_1(char, char, char, char, char, char, char);
-char turn_9_pos_2(char, char, char, char, char, char, char);
-char turn_9_pos_3(char, char, char, char, char, char, char);
-char turn_9_pos_4(char, char, char, char, char, char, char);
+void turn_9_pos_1(char, char&, char&, char, char, char, char);
+void turn_9_pos_2(char, char&, char&, char, char, char, char);
+void turn_9_pos_3(char, char&, char&, char, char, char, char);
+void turn_9_pos_4(char, char&, char&, char, char, char, char);
         //Turn 10 Feedback Logic Functions
-char turn_10_pos_1(char, char, char, char, char, char, char);
-char turn_10_pos_2(char, char, char, char, char, char, char);
-char turn_10_pos_3(char, char, char, char, char, char, char);
-char turn_10_pos_4(char, char, char, char, char, char, char);
+void turn_10_pos_1(char, char&, char&, char, char, char, char);
+void turn_10_pos_2(char, char&, char&, char, char, char, char);
+void turn_10_pos_3(char, char&, char&, char, char, char, char);
+void turn_10_pos_4(char, char&, char&, char, char, char, char);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -269,7 +269,7 @@ void turn_1_pos_4(char d_1, char& f_2, char& h_2,char sol_1, char sol_2, char so
     }
 }
 
-char turn_2_pos_1(char a_2, char& e_3, char& g_3,char sol_1, char sol_2, char sol_3, char sol_4){
+void turn_2_pos_1(char a_2, char& e_3, char& g_3,char sol_1, char sol_2, char sol_3, char sol_4){
     if (a_2==sol_1){
         e_3='B';
     }
@@ -284,10 +284,9 @@ char turn_2_pos_1(char a_2, char& e_3, char& g_3,char sol_1, char sol_2, char so
     {
         g_3=' ';
     }
-    return(e_3, g_3);
 }
 
-char turn_2_pos_2(char b_2, char& f_3, char& h_3,char sol_1, char sol_2, char sol_3, char sol_4){
+void turn_2_pos_2(char b_2, char& f_3, char& h_3,char sol_1, char sol_2, char sol_3, char sol_4){
     if (b_2==sol_2){
         f_3='B';
     }
@@ -295,48 +294,45 @@ char turn_2_pos_2(char b_2, char& f_3, char& h_3,char sol_1, char sol_2, char so
     {
         f_3=' ';
     }
-    if (b_2==sol_2||b_2==sol_3||b_2==sol_4){
+    if (b_2==sol_1||b_2==sol_3||b_2==sol_4){
         h_3='W';
     }
     else
     {
         h_3=' ';
     }
-    return(f_3, h_3);
 }
 
-char turn_2_pos_3(char c_2, char& e_4, char& g_4,char sol_1, char sol_2, char sol_3, char sol_4){
-    if (c_2==sol_2){
+void turn_2_pos_3(char c_2, char& e_4, char& g_4,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_2==sol_3){
         e_4='B';
     }
     else
     {
         e_4=' ';
     }
-    if (c_2==sol_2||c_2==sol_3||c_2==sol_4){
+    if (c_2==sol_1||c_2==sol_2||c_2==sol_4){
         g_4='W';
     }
     else
     {
         g_4=' ';
     }
-    return(e_4, g_4);
 }
 
-char turn_2_pos_4(char d_2, char& f_4, char& h_4,char sol_1, char sol_2, char sol_3, char sol_4){
-    if (d_2==sol_2){
+void turn_2_pos_4(char d_2, char& f_4, char& h_4,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_2==sol_4){
         f_4='B';
     }
     else
     {
         f_4=' ';
     }
-    if (d_2==sol_2||d_2==sol_3||d_2==sol_4){
+    if (d_2==sol_1||d_2==sol_2||d_2==sol_3){
         h_4='W';
     }
     else
     {
         h_4=' ';
     }
-    return(f_4, h_4);
 }
