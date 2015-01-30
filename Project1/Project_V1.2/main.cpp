@@ -3,8 +3,8 @@
  * Author: Taylor Yost
  * Created on January 28, 2015, 18:06
  * Purpose: Project 1
- * Changes: Addition of some test feedback logic functions; Experimentation
- *          with pass by reference to fill out feedback; Fixed logic issue.
+ * Changes: Addition of more test feedback logic functions; Fixed more
+ *          logic issues.
  */
 
 //System Libraries
@@ -133,10 +133,10 @@ int main(int argc, char** argv) {
             //Turn 3 Stuff
             cout<<"Turn 3 - Enter 4 Colors:"<<endl;
             cin>>a_3>>b_3>>c_3>>d_3;
-            /*turn_3_pos_1(a_3, e_5, g_5, sol_1, sol_2, sol_3, sol_4);
+            turn_3_pos_1(a_3, e_5, g_5, sol_1, sol_2, sol_3, sol_4);
             turn_3_pos_2(b_3, f_5, h_5, sol_1, sol_2, sol_3, sol_4);
             turn_3_pos_3(c_3, e_6, g_6, sol_1, sol_2, sol_3, sol_4);
-            turn_3_pos_4(d_3, f_6, h_6, sol_1, sol_2, sol_3, sol_4);*/
+            turn_3_pos_4(d_3, f_6, h_6, sol_1, sol_2, sol_3, sol_4);
         }else if(turn_count==4){
             //Turn 4 Stuff
             cout<<"Turn 4 - Enter 4 Colors:"<<endl;
@@ -334,5 +334,73 @@ void turn_2_pos_4(char d_2, char& f_4, char& h_4,char sol_1, char sol_2, char so
     else
     {
         h_4=' ';
+    }
+}
+
+void turn_3_pos_1(char a_3, char& e_5, char& g_5,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (a_3==sol_1){
+        e_5='B';
+    }
+    else
+    {
+        e_5=' ';
+    }
+    if (a_3==sol_2||a_3==sol_3||a_3==sol_4){
+        g_5='W';
+    }
+    else
+    {
+        g_5=' ';
+    }
+}
+
+void turn_3_pos_2(char b_3, char& f_5, char& h_5,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_3==sol_2){
+        f_5='B';
+    }
+    else
+    {
+        f_5=' ';
+    }
+    if (b_3==sol_1||b_3==sol_3||b_3==sol_4){
+        h_5='W';
+    }
+    else
+    {
+        h_5=' ';
+    }
+}
+
+void turn_3_pos_3(char c_3, char& e_6, char& g_6,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_3==sol_3){
+        e_6='B';
+    }
+    else
+    {
+        e_6=' ';
+    }
+    if (c_3==sol_1||c_3==sol_2||c_3==sol_4){
+        g_6='W';
+    }
+    else
+    {
+        g_6=' ';
+    }
+}
+
+void turn_3_pos_4(char d_3, char& f_6, char& h_6,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_3==sol_4){
+        f_6='B';
+    }
+    else
+    {
+        f_6=' ';
+    }
+    if (d_3==sol_1||d_3==sol_2||d_3==sol_3){
+        h_6='W';
+    }
+    else
+    {
+        h_6=' ';
     }
 }
