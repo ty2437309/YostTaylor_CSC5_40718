@@ -16,7 +16,56 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-
+        //Turn 1 Feedback Logic Functions
+turn_1_pos_1(char, char, char, char, char, char, char);
+turn_1_pos_2(char, char, char, char, char, char, char);
+turn_1_pos_3(char, char, char, char, char, char, char);
+turn_1_pos_4(char, char, char, char, char, char, char);
+        //Turn 2 Feedback Logic Functions
+turn_2_pos_1(char, char, char, char, char, char, char);
+turn_2_pos_2(char, char, char, char, char, char, char);
+turn_2_pos_3(char, char, char, char, char, char, char);
+turn_2_pos_4(char, char, char, char, char, char, char);
+        //Turn 3 Feedback Logic Functions
+turn_3_pos_1(char, char, char, char, char, char, char);
+turn_3_pos_2(char, char, char, char, char, char, char);
+turn_3_pos_3(char, char, char, char, char, char, char);
+turn_3_pos_4(char, char, char, char, char, char, char);
+        //Turn 4 Feedback Logic Functions
+turn_4_pos_1(char, char, char, char, char, char, char);
+turn_4_pos_2(char, char, char, char, char, char, char);
+turn_4_pos_3(char, char, char, char, char, char, char);
+turn_4_pos_4(char, char, char, char, char, char, char);
+        //Turn 5 Feedback Logic Functions
+turn_5_pos_1(char, char, char, char, char, char, char);
+turn_5_pos_2(char, char, char, char, char, char, char);
+turn_5_pos_3(char, char, char, char, char, char, char);
+turn_5_pos_4(char, char, char, char, char, char, char);
+        //Turn 6 Feedback Logic Functions
+turn_6_pos_1(char, char, char, char, char, char, char);
+turn_6_pos_2(char, char, char, char, char, char, char);
+turn_6_pos_3(char, char, char, char, char, char, char);
+turn_6_pos_4(char, char, char, char, char, char, char);
+        //Turn 7 Feedback Logic Functions
+turn_7_pos_1(char, char, char, char, char, char, char);
+turn_7_pos_2(char, char, char, char, char, char, char);
+turn_7_pos_3(char, char, char, char, char, char, char);
+turn_7_pos_4(char, char, char, char, char, char, char);
+        //Turn 8 Feedback Logic Functions
+turn_8_pos_1(char, char, char, char, char, char, char);
+turn_8_pos_2(char, char, char, char, char, char, char);
+turn_8_pos_3(char, char, char, char, char, char, char);
+turn_8_pos_4(char, char, char, char, char, char, char);
+        //Turn 9 Feedback Logic Functions
+turn_9_pos_1(char, char, char, char, char, char, char);
+turn_9_pos_2(char, char, char, char, char, char, char);
+turn_9_pos_3(char, char, char, char, char, char, char);
+turn_9_pos_4(char, char, char, char, char, char, char);
+        //Turn 10 Feedback Logic Functions
+turn_10_pos_1(char, char, char, char, char, char, char);
+turn_10_pos_2(char, char, char, char, char, char, char);
+turn_10_pos_3(char, char, char, char, char, char, char);
+turn_10_pos_4(char, char, char, char, char, char, char);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
