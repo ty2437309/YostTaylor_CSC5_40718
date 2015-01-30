@@ -472,3 +472,71 @@ void turn_4_pos_4(char d_4, char& f_8, char& h_8,char sol_1, char sol_2, char so
         h_8=' ';
     }
 }
+
+void turn_5_pos_1(char a_5, char& e_9, char& g_9,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (a_5==sol_1){
+        e_9='B';
+    }
+    else
+    {
+        e_9=' ';
+    }
+    if (a_5==sol_2||a_5==sol_3||a_5==sol_4){
+        g_9='W';
+    }
+    else
+    {
+        g_9=' ';
+    }
+}
+
+void turn_5_pos_2(char b_5, char& f_9, char& h_9,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (b_5==sol_2){
+        f_9='B';
+    }
+    else
+    {
+        f_9=' ';
+    }
+    if (b_5==sol_1||b_5==sol_3||b_5==sol_4){
+        h_9='W';
+    }
+    else
+    {
+        h_9=' ';
+    }
+}
+
+void turn_5_pos_3(char c_5, char& e_10, char& g_10,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (c_5==sol_3){
+        e_10='B';
+    }
+    else
+    {
+        e_10=' ';
+    }
+    if (c_5==sol_1||c_5==sol_2||c_5==sol_4){
+        g_10='W';
+    }
+    else
+    {
+        g_10=' ';
+    }
+}
+
+void turn_5_pos_4(char d_5, char& f_10, char& h_10,char sol_1, char sol_2, char sol_3, char sol_4){
+    if (d_5==sol_4){
+        f_10='B';
+    }
+    else
+    {
+        f_10=' ';
+    }
+    if (d_5==sol_1||d_5==sol_2||d_5==sol_3){
+        h_10='W';
+    }
+    else
+    {
+        h_10=' ';
+    }
+}
