@@ -74,6 +74,14 @@ void turn_10_pos_4(char, char&, char&, char, char, char, char);
 int main(int argc, char** argv) {
     //Declare Variables & Initialize
     int option;
+    //Prompt Player
+    cout<<"      Welcome to the game of Mastermind!       "<<endl;
+    cout<<"Break the Computer's code before turns run out!"<<endl;
+    cout<<"Do you feel up to the challenge?"<<endl;
+    cout<<" [1] Play Game!"<<endl;
+    cout<<" [2] Game Rules"<<endl;
+    cout<<" [3] Exit Game"<<endl;
+    cout<<"Type the number of your choice, then press enter!"<<endl;
     
     //Exit Stage Right!!
     return 0;
