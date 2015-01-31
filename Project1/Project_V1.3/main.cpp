@@ -71,6 +71,7 @@ void turn_10_pos_4(char, char&, char&, char, char, char, char);
 int main(int argc, char** argv) {
     //Declare Variables & Initialize
     bool win=false;
+    string exit;
     int t_1=1, t_2=2, t_3=3, t_4=4, t_5=5;
     int t_6=6, t_7=7, t_8=8, t_9=9, t_10=10;
     char sol_1='R', sol_2='Y', sol_3='P', sol_4='O';
@@ -98,164 +99,168 @@ int main(int argc, char** argv) {
     char g_16=' ', g_17=' ', g_18=' ', g_19=' ', g_20=' ';
     char h_11=' ', h_12=' ', h_13=' ', h_14=' ', h_15=' ';
     char h_16=' ', h_17=' ', h_18=' ', h_19=' ', h_20=' ';
-    for (int turn_count=1; turn_count<=11; turn_count++){
-        cout<<"        // Mastermind // "<<endl;
-        cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
-        cout<<"  "<<t_1<<"   | "<<a_1<<"| "<<b_1<<"| "<<c_1<<"| "<<d_1<<"|"<<e_1<<" | "<<f_1<<"|"<<g_1<<" | "<<h_1<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_2<<" | "<<f_2<<"|"<<g_2<<" | "<<h_2<<"|"<<endl;
-        cout<<"  "<<t_2<<"   | "<<a_2<<"| "<<b_2<<"| "<<c_2<<"| "<<d_2<<"|"<<e_3<<" | "<<f_3<<"|"<<g_3<<" | "<<h_3<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_4<<" | "<<f_4<<"|"<<g_4<<" | "<<h_4<<"|"<<endl;
-        cout<<"  "<<t_3<<"   | "<<a_3<<"| "<<b_3<<"| "<<c_3<<"| "<<d_3<<"|"<<e_5<<" | "<<f_5<<"|"<<g_5<<" | "<<h_5<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_6<<" | "<<f_6<<"|"<<g_6<<" | "<<h_6<<"|"<<endl;
-        cout<<"  "<<t_4<<"   | "<<a_4<<"| "<<b_4<<"| "<<c_4<<"| "<<d_4<<"|"<<e_7<<" | "<<f_7<<"|"<<g_7<<" | "<<h_7<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_8<<" | "<<f_8<<"|"<<g_8<<" | "<<h_8<<"|"<<endl;
-        cout<<"  "<<t_5<<"   | "<<a_5<<"| "<<b_5<<"| "<<c_5<<"| "<<d_5<<"|"<<e_9<<" | "<<f_9<<"|"<<g_9<<" | "<<h_9<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_10<<" | "<<f_10<<"|"<<g_10<<" | "<<h_10<<"|"<<endl;
-        cout<<"  "<<t_6<<"   | "<<a_6<<"| "<<b_6<<"| "<<c_6<<"| "<<d_6<<"|"<<e_11<<" | "<<f_11<<"|"<<g_11<<" | "<<h_11<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_12<<" | "<<f_12<<"|"<<g_12<<" | "<<h_12<<"|"<<endl;
-        cout<<"  "<<t_7<<"   | "<<a_7<<"| "<<b_7<<"| "<<c_7<<"| "<<d_7<<"|"<<e_13<<" | "<<f_13<<"|"<<g_13<<" | "<<h_13<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_14<<" | "<<f_14<<"|"<<g_14<<" | "<<h_14<<"|"<<endl;
-        cout<<"  "<<t_8<<"   | "<<a_8<<"| "<<b_8<<"| "<<c_8<<"| "<<d_8<<"|"<<e_15<<" | "<<f_15<<"|"<<g_15<<" | "<<h_15<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_16<<" | "<<f_16<<"|"<<g_16<<" | "<<h_16<<"|"<<endl;
-        cout<<"  "<<t_9<<"   | "<<a_9<<"| "<<b_9<<"| "<<c_9<<"| "<<d_9<<"|"<<e_17<<" | "<<f_17<<"|"<<g_17<<" | "<<h_17<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_18<<" | "<<f_18<<"|"<<g_18<<" | "<<h_18<<"|"<<endl;
-        cout<<"  "<<t_10<<"  | "<<a_10<<"| "<<b_10<<"| "<<c_10<<"| "<<d_10<<"|"<<e_19<<" | "<<f_19<<"|"<<g_19<<" | "<<h_19<<"|"<<endl;
-        cout<<"      |__|__|__|__|"<<e_20<<" | "<<f_20<<"|"<<g_20<<" | "<<h_20<<"|"<<endl;
-        cout<<"      |    Solution:    |"<<endl;
-        cout<<"      | "<<sol_1<<"  "<<sol_2<<"  "<<sol_3<<"  "<<sol_4<<"      |"<<endl;
-        cout<<"      ~~~~~~~~~~~~~~~~~~~"<<endl;
-        //Turn Feedback Begins Here!
-        if(turn_count==11){
-            //Prints Last Turn Before Loop Ends
-            turn_count++;
-        }else if(turn_count==1){
-            //Turn 1 Stuff
-            cout<<"Turn 1 - Enter 4 Colors:"<<endl;
-            cin>>a_1>>b_1>>c_1>>d_1;
-            turn_1_pos_1(a_1, e_1, g_1, sol_1, sol_2, sol_3, sol_4);
-            turn_1_pos_2(b_1, f_1, h_1, sol_1, sol_2, sol_3, sol_4);
-            turn_1_pos_3(c_1, e_2, g_2, sol_1, sol_2, sol_3, sol_4);
-            turn_1_pos_4(d_1, f_2, h_2, sol_1, sol_2, sol_3, sol_4);
-            if(a_1==sol_1&&b_1==sol_2&&c_1==sol_3&&d_1==sol_4){
-                turn_count=turn_count+9;
-                win=true;
-            }
-        }else if(turn_count==2){
-            //Turn 2 Stuff
-            cout<<"Turn 2 - Enter 4 Colors:"<<endl;
-            cin>>a_2>>b_2>>c_2>>d_2;
-            turn_2_pos_1(a_2, e_3, g_3, sol_1, sol_2, sol_3, sol_4);
-            turn_2_pos_2(b_2, f_3, h_3, sol_1, sol_2, sol_3, sol_4);
-            turn_2_pos_3(c_2, e_4, g_4, sol_1, sol_2, sol_3, sol_4);
-            turn_2_pos_4(d_2, f_4, h_4, sol_1, sol_2, sol_3, sol_4);
-            if(a_2==sol_1&&b_2==sol_2&&c_2==sol_3&&d_2==sol_4){
-                turn_count=turn_count+8;
-                win=true;
-            }
-        }else if(turn_count==3){
-            //Turn 3 Stuff
-            cout<<"Turn 3 - Enter 4 Colors:"<<endl;
-            cin>>a_3>>b_3>>c_3>>d_3;
-            turn_3_pos_1(a_3, e_5, g_5, sol_1, sol_2, sol_3, sol_4);
-            turn_3_pos_2(b_3, f_5, h_5, sol_1, sol_2, sol_3, sol_4);
-            turn_3_pos_3(c_3, e_6, g_6, sol_1, sol_2, sol_3, sol_4);
-            turn_3_pos_4(d_3, f_6, h_6, sol_1, sol_2, sol_3, sol_4);
-            if(a_3==sol_1&&b_3==sol_2&&c_3==sol_3&&d_3==sol_4){
-                turn_count=turn_count+7;
-                win=true;
-            }
-        }else if(turn_count==4){
-            //Turn 4 Stuff
-            cout<<"Turn 4 - Enter 4 Colors:"<<endl;
-            cin>>a_4>>b_4>>c_4>>d_4;
-            turn_4_pos_1(a_4, e_7, g_7, sol_1, sol_2, sol_3, sol_4);
-            turn_4_pos_2(b_4, f_7, h_7, sol_1, sol_2, sol_3, sol_4);
-            turn_4_pos_3(c_4, e_8, g_8, sol_1, sol_2, sol_3, sol_4);
-            turn_4_pos_4(d_4, f_8, h_8, sol_1, sol_2, sol_3, sol_4);
-            if(a_4==sol_1&&b_4==sol_2&&c_4==sol_3&&d_4==sol_4){
-                turn_count=turn_count+6;
-                win=true;
-            }
-        }else if(turn_count==5){
-            //Turn 5 Stuff
-            cout<<"Turn 5 - Enter 4 Colors:"<<endl;
-            cin>>a_5>>b_5>>c_5>>d_5;
-            turn_5_pos_1(a_5, e_9, g_9, sol_1, sol_2, sol_3, sol_4);
-            turn_5_pos_2(b_5, f_9, h_9, sol_1, sol_2, sol_3, sol_4);
-            turn_5_pos_3(c_5, e_10, g_10, sol_1, sol_2, sol_3, sol_4);
-            turn_5_pos_4(d_5, f_10, h_10, sol_1, sol_2, sol_3, sol_4);
-            if(a_5==sol_1&&b_5==sol_2&&c_5==sol_3&&d_5==sol_4){
-                turn_count=turn_count+5;
-                win=true;
-            }
-        }else if(turn_count==6){
-            //Turn 6 Stuff
-            cout<<"Turn 6 - Enter 4 Colors:"<<endl;
-            cin>>a_6>>b_6>>c_6>>d_6;
-            turn_6_pos_1(a_6, e_11, g_11, sol_1, sol_2, sol_3, sol_4);
-            turn_6_pos_2(b_6, f_11, h_11, sol_1, sol_2, sol_3, sol_4);
-            turn_6_pos_3(c_6, e_12, g_12, sol_1, sol_2, sol_3, sol_4);
-            turn_6_pos_4(d_6, f_12, h_12, sol_1, sol_2, sol_3, sol_4);
-            if(a_6==sol_1&&b_6==sol_2&&c_6==sol_3&&d_6==sol_4){
-                turn_count=turn_count+4;
-                win=true;
-            }
-        }else if(turn_count==7){
-            //Turn 7 Stuff
-            cout<<"Turn 7 - Enter 4 Colors:"<<endl;
-            cin>>a_7>>b_7>>c_7>>d_7;
-            turn_7_pos_1(a_7, e_13, g_13, sol_1, sol_2, sol_3, sol_4);
-            turn_7_pos_2(b_7, f_13, h_13, sol_1, sol_2, sol_3, sol_4);
-            turn_7_pos_3(c_7, e_14, g_14, sol_1, sol_2, sol_3, sol_4);
-            turn_7_pos_4(d_7, f_14, h_14, sol_1, sol_2, sol_3, sol_4);
-            if(a_7==sol_1&&b_7==sol_2&&c_7==sol_3&&d_7==sol_4){
-                turn_count=turn_count+3;
-                win=true;
-            }
-        }else if(turn_count==8){
-            //Turn 8 Stuff
-            cout<<"Turn 8 - Enter 4 Colors:"<<endl;
-            cin>>a_8>>b_8>>c_8>>d_8;
-            turn_8_pos_1(a_8, e_15, g_15, sol_1, sol_2, sol_3, sol_4);
-            turn_8_pos_2(b_8, f_15, h_15, sol_1, sol_2, sol_3, sol_4);
-            turn_8_pos_3(c_8, e_16, g_16, sol_1, sol_2, sol_3, sol_4);
-            turn_8_pos_4(d_8, f_16, h_16, sol_1, sol_2, sol_3, sol_4);
-            if(a_8==sol_1&&b_8==sol_2&&c_8==sol_3&&d_8==sol_4){
-                turn_count=turn_count+2;
-                win=true;
-            }
-        }else if(turn_count==9){
-            //Turn 9 Stuff
-            cout<<"Turn 9 - Enter 4 Colors:"<<endl;
-            cin>>a_9>>b_9>>c_9>>d_9;
-            turn_9_pos_1(a_9, e_17, g_17, sol_1, sol_2, sol_3, sol_4);
-            turn_9_pos_2(b_9, f_17, h_17, sol_1, sol_2, sol_3, sol_4);
-            turn_9_pos_3(c_9, e_18, g_18, sol_1, sol_2, sol_3, sol_4);
-            turn_9_pos_4(d_9, f_18, h_18, sol_1, sol_2, sol_3, sol_4);
-            if(a_9==sol_1&&b_9==sol_2&&c_9==sol_3&&d_9==sol_4){
+    do{
+        for (int turn_count=1; turn_count<=11; turn_count++){
+            cout<<"        // Mastermind // "<<endl;
+            cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
+            cout<<"  "<<t_1<<"   | "<<a_1<<"| "<<b_1<<"| "<<c_1<<"| "<<d_1<<"|"<<e_1<<" | "<<f_1<<"|"<<g_1<<" | "<<h_1<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_2<<" | "<<f_2<<"|"<<g_2<<" | "<<h_2<<"|"<<endl;
+            cout<<"  "<<t_2<<"   | "<<a_2<<"| "<<b_2<<"| "<<c_2<<"| "<<d_2<<"|"<<e_3<<" | "<<f_3<<"|"<<g_3<<" | "<<h_3<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_4<<" | "<<f_4<<"|"<<g_4<<" | "<<h_4<<"|"<<endl;
+            cout<<"  "<<t_3<<"   | "<<a_3<<"| "<<b_3<<"| "<<c_3<<"| "<<d_3<<"|"<<e_5<<" | "<<f_5<<"|"<<g_5<<" | "<<h_5<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_6<<" | "<<f_6<<"|"<<g_6<<" | "<<h_6<<"|"<<endl;
+            cout<<"  "<<t_4<<"   | "<<a_4<<"| "<<b_4<<"| "<<c_4<<"| "<<d_4<<"|"<<e_7<<" | "<<f_7<<"|"<<g_7<<" | "<<h_7<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_8<<" | "<<f_8<<"|"<<g_8<<" | "<<h_8<<"|"<<endl;
+            cout<<"  "<<t_5<<"   | "<<a_5<<"| "<<b_5<<"| "<<c_5<<"| "<<d_5<<"|"<<e_9<<" | "<<f_9<<"|"<<g_9<<" | "<<h_9<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_10<<" | "<<f_10<<"|"<<g_10<<" | "<<h_10<<"|"<<endl;
+            cout<<"  "<<t_6<<"   | "<<a_6<<"| "<<b_6<<"| "<<c_6<<"| "<<d_6<<"|"<<e_11<<" | "<<f_11<<"|"<<g_11<<" | "<<h_11<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_12<<" | "<<f_12<<"|"<<g_12<<" | "<<h_12<<"|"<<endl;
+            cout<<"  "<<t_7<<"   | "<<a_7<<"| "<<b_7<<"| "<<c_7<<"| "<<d_7<<"|"<<e_13<<" | "<<f_13<<"|"<<g_13<<" | "<<h_13<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_14<<" | "<<f_14<<"|"<<g_14<<" | "<<h_14<<"|"<<endl;
+            cout<<"  "<<t_8<<"   | "<<a_8<<"| "<<b_8<<"| "<<c_8<<"| "<<d_8<<"|"<<e_15<<" | "<<f_15<<"|"<<g_15<<" | "<<h_15<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_16<<" | "<<f_16<<"|"<<g_16<<" | "<<h_16<<"|"<<endl;
+            cout<<"  "<<t_9<<"   | "<<a_9<<"| "<<b_9<<"| "<<c_9<<"| "<<d_9<<"|"<<e_17<<" | "<<f_17<<"|"<<g_17<<" | "<<h_17<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_18<<" | "<<f_18<<"|"<<g_18<<" | "<<h_18<<"|"<<endl;
+            cout<<"  "<<t_10<<"  | "<<a_10<<"| "<<b_10<<"| "<<c_10<<"| "<<d_10<<"|"<<e_19<<" | "<<f_19<<"|"<<g_19<<" | "<<h_19<<"|"<<endl;
+            cout<<"      |__|__|__|__|"<<e_20<<" | "<<f_20<<"|"<<g_20<<" | "<<h_20<<"|"<<endl;
+            cout<<"      |    Solution:    |"<<endl;
+            cout<<"      | "<<sol_1<<"  "<<sol_2<<"  "<<sol_3<<"  "<<sol_4<<"      |"<<endl;
+            cout<<"      ~~~~~~~~~~~~~~~~~~~"<<endl;
+            //Turn Feedback Begins Here!
+            if(turn_count==11){
+                //Prints Last Turn Before Loop Ends
                 turn_count++;
-                win=true;
-            }
-        }else{
-            //Turn 10 Stuff
-            cout<<"Turn 10 - Enter 4 Colors:"<<endl;
-            cin>>a_10>>b_10>>c_10>>d_10;
-            turn_10_pos_1(a_10, e_19, g_19, sol_1, sol_2, sol_3, sol_4);
-            turn_10_pos_2(b_10, f_19, h_19, sol_1, sol_2, sol_3, sol_4);
-            turn_10_pos_3(c_10, e_20, g_20, sol_1, sol_2, sol_3, sol_4);
-            turn_10_pos_4(d_10, f_20, h_20, sol_1, sol_2, sol_3, sol_4);
-            if(a_10==sol_1&&b_10==sol_2&&c_10==sol_3&&d_10==sol_4){
-                win=true;
+            }else if(turn_count==1){
+                //Turn 1 Stuff
+                cout<<"Turn 1 - Enter 4 Colors:"<<endl;
+                cin>>a_1>>b_1>>c_1>>d_1;
+                turn_1_pos_1(a_1, e_1, g_1, sol_1, sol_2, sol_3, sol_4);
+                turn_1_pos_2(b_1, f_1, h_1, sol_1, sol_2, sol_3, sol_4);
+                turn_1_pos_3(c_1, e_2, g_2, sol_1, sol_2, sol_3, sol_4);
+                turn_1_pos_4(d_1, f_2, h_2, sol_1, sol_2, sol_3, sol_4);
+                if(a_1==sol_1&&b_1==sol_2&&c_1==sol_3&&d_1==sol_4){
+                    turn_count=turn_count+9;
+                    win=true;
+                }
+            }else if(turn_count==2){
+                //Turn 2 Stuff
+                cout<<"Turn 2 - Enter 4 Colors:"<<endl;
+                cin>>a_2>>b_2>>c_2>>d_2;
+                turn_2_pos_1(a_2, e_3, g_3, sol_1, sol_2, sol_3, sol_4);
+                turn_2_pos_2(b_2, f_3, h_3, sol_1, sol_2, sol_3, sol_4);
+                turn_2_pos_3(c_2, e_4, g_4, sol_1, sol_2, sol_3, sol_4);
+                turn_2_pos_4(d_2, f_4, h_4, sol_1, sol_2, sol_3, sol_4);
+                if(a_2==sol_1&&b_2==sol_2&&c_2==sol_3&&d_2==sol_4){
+                    turn_count=turn_count+8;
+                    win=true;
+                }
+            }else if(turn_count==3){
+                //Turn 3 Stuff
+                cout<<"Turn 3 - Enter 4 Colors:"<<endl;
+                cin>>a_3>>b_3>>c_3>>d_3;
+                turn_3_pos_1(a_3, e_5, g_5, sol_1, sol_2, sol_3, sol_4);
+                turn_3_pos_2(b_3, f_5, h_5, sol_1, sol_2, sol_3, sol_4);
+                turn_3_pos_3(c_3, e_6, g_6, sol_1, sol_2, sol_3, sol_4);
+                turn_3_pos_4(d_3, f_6, h_6, sol_1, sol_2, sol_3, sol_4);
+                if(a_3==sol_1&&b_3==sol_2&&c_3==sol_3&&d_3==sol_4){
+                    turn_count=turn_count+7;
+                    win=true;
+                }
+            }else if(turn_count==4){
+                //Turn 4 Stuff
+                cout<<"Turn 4 - Enter 4 Colors:"<<endl;
+                cin>>a_4>>b_4>>c_4>>d_4;
+                turn_4_pos_1(a_4, e_7, g_7, sol_1, sol_2, sol_3, sol_4);
+                turn_4_pos_2(b_4, f_7, h_7, sol_1, sol_2, sol_3, sol_4);
+                turn_4_pos_3(c_4, e_8, g_8, sol_1, sol_2, sol_3, sol_4);
+                turn_4_pos_4(d_4, f_8, h_8, sol_1, sol_2, sol_3, sol_4);
+                if(a_4==sol_1&&b_4==sol_2&&c_4==sol_3&&d_4==sol_4){
+                    turn_count=turn_count+6;
+                    win=true;
+                }
+            }else if(turn_count==5){
+                //Turn 5 Stuff
+                cout<<"Turn 5 - Enter 4 Colors:"<<endl;
+                cin>>a_5>>b_5>>c_5>>d_5;
+                turn_5_pos_1(a_5, e_9, g_9, sol_1, sol_2, sol_3, sol_4);
+                turn_5_pos_2(b_5, f_9, h_9, sol_1, sol_2, sol_3, sol_4);
+                turn_5_pos_3(c_5, e_10, g_10, sol_1, sol_2, sol_3, sol_4);
+                turn_5_pos_4(d_5, f_10, h_10, sol_1, sol_2, sol_3, sol_4);
+                if(a_5==sol_1&&b_5==sol_2&&c_5==sol_3&&d_5==sol_4){
+                    turn_count=turn_count+5;
+                    win=true;
+                }
+            }else if(turn_count==6){
+                //Turn 6 Stuff
+                cout<<"Turn 6 - Enter 4 Colors:"<<endl;
+                cin>>a_6>>b_6>>c_6>>d_6;
+                turn_6_pos_1(a_6, e_11, g_11, sol_1, sol_2, sol_3, sol_4);
+                turn_6_pos_2(b_6, f_11, h_11, sol_1, sol_2, sol_3, sol_4);
+                turn_6_pos_3(c_6, e_12, g_12, sol_1, sol_2, sol_3, sol_4);
+                turn_6_pos_4(d_6, f_12, h_12, sol_1, sol_2, sol_3, sol_4);
+                if(a_6==sol_1&&b_6==sol_2&&c_6==sol_3&&d_6==sol_4){
+                    turn_count=turn_count+4;
+                    win=true;
+                }
+            }else if(turn_count==7){
+                //Turn 7 Stuff
+                cout<<"Turn 7 - Enter 4 Colors:"<<endl;
+                cin>>a_7>>b_7>>c_7>>d_7;
+                turn_7_pos_1(a_7, e_13, g_13, sol_1, sol_2, sol_3, sol_4);
+                turn_7_pos_2(b_7, f_13, h_13, sol_1, sol_2, sol_3, sol_4);
+                turn_7_pos_3(c_7, e_14, g_14, sol_1, sol_2, sol_3, sol_4);
+                turn_7_pos_4(d_7, f_14, h_14, sol_1, sol_2, sol_3, sol_4);
+                if(a_7==sol_1&&b_7==sol_2&&c_7==sol_3&&d_7==sol_4){
+                    turn_count=turn_count+3;
+                    win=true;
+                }
+            }else if(turn_count==8){
+                //Turn 8 Stuff
+                cout<<"Turn 8 - Enter 4 Colors:"<<endl;
+                cin>>a_8>>b_8>>c_8>>d_8;
+                turn_8_pos_1(a_8, e_15, g_15, sol_1, sol_2, sol_3, sol_4);
+                turn_8_pos_2(b_8, f_15, h_15, sol_1, sol_2, sol_3, sol_4);
+                turn_8_pos_3(c_8, e_16, g_16, sol_1, sol_2, sol_3, sol_4);
+                turn_8_pos_4(d_8, f_16, h_16, sol_1, sol_2, sol_3, sol_4);
+                if(a_8==sol_1&&b_8==sol_2&&c_8==sol_3&&d_8==sol_4){
+                    turn_count=turn_count+2;
+                    win=true;
+                }
+            }else if(turn_count==9){
+                //Turn 9 Stuff
+                cout<<"Turn 9 - Enter 4 Colors:"<<endl;
+                cin>>a_9>>b_9>>c_9>>d_9;
+                turn_9_pos_1(a_9, e_17, g_17, sol_1, sol_2, sol_3, sol_4);
+                turn_9_pos_2(b_9, f_17, h_17, sol_1, sol_2, sol_3, sol_4);
+                turn_9_pos_3(c_9, e_18, g_18, sol_1, sol_2, sol_3, sol_4);
+                turn_9_pos_4(d_9, f_18, h_18, sol_1, sol_2, sol_3, sol_4);
+                if(a_9==sol_1&&b_9==sol_2&&c_9==sol_3&&d_9==sol_4){
+                    turn_count++;
+                    win=true;
+                }
+            }else{
+                //Turn 10 Stuff
+                cout<<"Turn 10 - Enter 4 Colors:"<<endl;
+                cin>>a_10>>b_10>>c_10>>d_10;
+                turn_10_pos_1(a_10, e_19, g_19, sol_1, sol_2, sol_3, sol_4);
+                turn_10_pos_2(b_10, f_19, h_19, sol_1, sol_2, sol_3, sol_4);
+                turn_10_pos_3(c_10, e_20, g_20, sol_1, sol_2, sol_3, sol_4);
+                turn_10_pos_4(d_10, f_20, h_20, sol_1, sol_2, sol_3, sol_4);
+                if(a_10==sol_1&&b_10==sol_2&&c_10==sol_3&&d_10==sol_4){
+                    win=true;
+                }
             }
         }
-    }
-    if(win==true){
-        cout<<"You Win!"<<endl;
-    }
-    else
-    {
-        cout<<"You Lose!"<<endl;
-    }
+        if(win==true){
+            cout<<"You Win!"<<endl;
+        }
+        else
+        {
+            cout<<"You Lose!"<<endl;
+        }
+        cout<<"Would you like to run the game again (Yes/No)?"<<endl;
+        cin>>exit;
+    }while(exit=="Yes"||exit=="yes");
     //Exit Stage Right!!
     return 0;
 }
