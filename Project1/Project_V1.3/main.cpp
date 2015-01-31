@@ -69,7 +69,6 @@ void turn_10_pos_4(char, char&, char&, char, char, char, char);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables & Initialize
-    bool end_cond=false;
     int t_1=1, t_2=2, t_3=3, t_4=4, t_5=5;
     int t_6=6, t_7=7, t_8=8, t_9=9, t_10=10;
     char sol_1='R', sol_2='Y', sol_3='P', sol_4='O';
@@ -97,7 +96,7 @@ int main(int argc, char** argv) {
     char g_16=' ', g_17=' ', g_18=' ', g_19=' ', g_20=' ';
     char h_11=' ', h_12=' ', h_13=' ', h_14=' ', h_15=' ';
     char h_16=' ', h_17=' ', h_18=' ', h_19=' ', h_20=' ';
-    for (int turn_count=1; end_cond=true; turn_count++){
+    for (int turn_count=1; turn_count<=11; turn_count++){
         cout<<"        // Mastermind // "<<endl;
         cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
         cout<<"  "<<t_1<<"   | "<<a_1<<"| "<<b_1<<"| "<<c_1<<"| "<<d_1<<"|"<<e_1<<" | "<<f_1<<"|"<<g_1<<" | "<<h_1<<"|"<<endl;
@@ -123,15 +122,18 @@ int main(int argc, char** argv) {
         cout<<"      |    Solution:    |"<<endl;
         cout<<"      | "<<sol_1<<"  "<<sol_2<<"  "<<sol_3<<"  "<<sol_4<<"      |"<<endl;
         cout<<"      ~~~~~~~~~~~~~~~~~~~"<<endl;
-        //Attempt Turn Change
-        if(turn_count==1){
+        //Turn Feedback Begins Here!
+        if(turn_count==11){
+            //Prints Turn 10 If Needed
+            turn_count++;
+        }else if(turn_count==1){
             //Turn 1 Stuff
             cout<<"Turn 1 - Enter 4 Colors:"<<endl;
             cin>>a_1>>b_1>>c_1>>d_1;
             turn_1_pos_1(a_1, e_1, g_1, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_2(b_1, f_1, h_1, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_3(c_1, e_2, g_2, sol_1, sol_2, sol_3, sol_4);
-            turn_1_pos_4(d_1, f_2, h_2, sol_1, sol_2, sol_3, sol_4);            
+            turn_1_pos_4(d_1, f_2, h_2, sol_1, sol_2, sol_3, sol_4);
         }else if(turn_count==2){
             //Turn 2 Stuff
             cout<<"Turn 2 - Enter 4 Colors:"<<endl;
@@ -204,10 +206,8 @@ int main(int argc, char** argv) {
             turn_10_pos_2(b_10, f_19, h_19, sol_1, sol_2, sol_3, sol_4);
             turn_10_pos_3(c_10, e_20, g_20, sol_1, sol_2, sol_3, sol_4);
             turn_10_pos_4(d_10, f_20, h_20, sol_1, sol_2, sol_3, sol_4);
-            end_cond=true;
         }
     }
-    
     //Exit Stage Right!!
     return 0;
 }
