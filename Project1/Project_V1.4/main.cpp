@@ -17,52 +17,55 @@ using namespace std;
 //Global Constants
 
 //Function Prototypes
-        //Turn 1 Feedback Logic Functions
+    //Menu Option Functions
+int game();
+void rules();
+    //Turn 1 Feedback Logic Functions
 void turn_1_pos_1(char, char&, char&, char, char, char, char);
 void turn_1_pos_2(char, char&, char&, char, char, char, char);
 void turn_1_pos_3(char, char&, char&, char, char, char, char);
 void turn_1_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 2 Feedback Logic Functions
+    //Turn 2 Feedback Logic Functions
 void turn_2_pos_1(char, char&, char&, char, char, char, char);
 void turn_2_pos_2(char, char&, char&, char, char, char, char);
 void turn_2_pos_3(char, char&, char&, char, char, char, char);
 void turn_2_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 3 Feedback Logic Functions
+    //Turn 3 Feedback Logic Functions
 void turn_3_pos_1(char, char&, char&, char, char, char, char);
 void turn_3_pos_2(char, char&, char&, char, char, char, char);
 void turn_3_pos_3(char, char&, char&, char, char, char, char);
 void turn_3_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 4 Feedback Logic Functions
+    //Turn 4 Feedback Logic Functions
 void turn_4_pos_1(char, char&, char&, char, char, char, char);
 void turn_4_pos_2(char, char&, char&, char, char, char, char);
 void turn_4_pos_3(char, char&, char&, char, char, char, char);
 void turn_4_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 5 Feedback Logic Functions
+    //Turn 5 Feedback Logic Functions
 void turn_5_pos_1(char, char&, char&, char, char, char, char);
 void turn_5_pos_2(char, char&, char&, char, char, char, char);
 void turn_5_pos_3(char, char&, char&, char, char, char, char);
 void turn_5_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 6 Feedback Logic Functions
+    //Turn 6 Feedback Logic Functions
 void turn_6_pos_1(char, char&, char&, char, char, char, char);
 void turn_6_pos_2(char, char&, char&, char, char, char, char);
 void turn_6_pos_3(char, char&, char&, char, char, char, char);
 void turn_6_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 7 Feedback Logic Functions
+    //Turn 7 Feedback Logic Functions
 void turn_7_pos_1(char, char&, char&, char, char, char, char);
 void turn_7_pos_2(char, char&, char&, char, char, char, char);
 void turn_7_pos_3(char, char&, char&, char, char, char, char);
 void turn_7_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 8 Feedback Logic Functions
+    //Turn 8 Feedback Logic Functions
 void turn_8_pos_1(char, char&, char&, char, char, char, char);
 void turn_8_pos_2(char, char&, char&, char, char, char, char);
 void turn_8_pos_3(char, char&, char&, char, char, char, char);
 void turn_8_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 9 Feedback Logic Functions
+    //Turn 9 Feedback Logic Functions
 void turn_9_pos_1(char, char&, char&, char, char, char, char);
 void turn_9_pos_2(char, char&, char&, char, char, char, char);
 void turn_9_pos_3(char, char&, char&, char, char, char, char);
 void turn_9_pos_4(char, char&, char&, char, char, char, char);
-        //Turn 10 Feedback Logic Functions
+    //Turn 10 Feedback Logic Functions
 void turn_10_pos_1(char, char&, char&, char, char, char, char);
 void turn_10_pos_2(char, char&, char&, char, char, char, char);
 void turn_10_pos_3(char, char&, char&, char, char, char, char);
@@ -71,10 +74,19 @@ void turn_10_pos_4(char, char&, char&, char, char, char, char);
 int main(int argc, char** argv) {
     //Declare Variables & Initialize
     int option;
+    
+    //Exit Stage Right!!
+    return 0;
+}
+
+int game(){
+    //Declare Variables & Initialize
+        //Turn Variables
     int t_1=1, t_2=2, t_3=3, t_4=4, t_5=5;
     int t_6=6, t_7=7, t_8=8, t_9=9, t_10=10;
-    bool win=false;
+        //Code-maker Variables
     char sol_1='R', sol_2='Y', sol_3='P', sol_4='O';
+        //Output Variables
     char a_1=' ', a_2=' ', a_3=' ', a_4=' ', a_5=' ';
     char a_6=' ', a_7=' ', a_8=' ', a_9=' ', a_10=' ';
     char b_1=' ', b_2=' ', b_3=' ', b_4=' ', b_5=' ';
@@ -99,9 +111,10 @@ int main(int argc, char** argv) {
     char g_16=' ', g_17=' ', g_18=' ', g_19=' ', g_20=' ';
     char h_11=' ', h_12=' ', h_13=' ', h_14=' ', h_15=' ';
     char h_16=' ', h_17=' ', h_18=' ', h_19=' ', h_20=' ';
+        //Loop Variables
+    bool win=false;
     string exit;
-    cout<<"Welcome to Mastermind!"<<endl;
-    cout<<""
+    //Turns Begin Here!
     do{
         for (int turn_count=1; turn_count<=11; turn_count++){
             cout<<"        // Mastermind // "<<endl;
@@ -264,8 +277,7 @@ int main(int argc, char** argv) {
         cout<<"Would you like to run the game again (Yes/No)?"<<endl;
         cin>>exit;
     }while(exit=="Yes"||exit=="yes");
-    //Exit Stage Right!!
-    return 0;
+    return(0);
 }
 
 void turn_1_pos_1(char a_1, char& e_1, char& g_1,char sol_1, char sol_2, char sol_3, char sol_4){
