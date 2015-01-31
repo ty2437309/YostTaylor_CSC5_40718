@@ -4,7 +4,7 @@
  * Created on January 28, 2015, 18:06
  * Purpose: Project 1
  * Changes: Fixed logic typos, output box errors.  Added logic for win/loss
- *          determinations.
+ *          determinations.  Added replay loop.
  */
 
 //System Libraries
@@ -70,6 +70,7 @@ void turn_10_pos_4(char, char&, char&, char, char, char, char);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables & Initialize
+    bool win=false;
     int t_1=1, t_2=2, t_3=3, t_4=4, t_5=5;
     int t_6=6, t_7=7, t_8=8, t_9=9, t_10=10;
     char sol_1='R', sol_2='Y', sol_3='P', sol_4='O';
@@ -137,6 +138,7 @@ int main(int argc, char** argv) {
             turn_1_pos_4(d_1, f_2, h_2, sol_1, sol_2, sol_3, sol_4);
             if(a_1==sol_1&&b_1==sol_2&&c_1==sol_3&&d_1==sol_4){
                 turn_count=turn_count+9;
+                win=true;
             }
         }else if(turn_count==2){
             //Turn 2 Stuff
@@ -148,6 +150,7 @@ int main(int argc, char** argv) {
             turn_2_pos_4(d_2, f_4, h_4, sol_1, sol_2, sol_3, sol_4);
             if(a_2==sol_1&&b_2==sol_2&&c_2==sol_3&&d_2==sol_4){
                 turn_count=turn_count+8;
+                win=true;
             }
         }else if(turn_count==3){
             //Turn 3 Stuff
@@ -159,6 +162,7 @@ int main(int argc, char** argv) {
             turn_3_pos_4(d_3, f_6, h_6, sol_1, sol_2, sol_3, sol_4);
             if(a_3==sol_1&&b_3==sol_2&&c_3==sol_3&&d_3==sol_4){
                 turn_count=turn_count+7;
+                win=true;
             }
         }else if(turn_count==4){
             //Turn 4 Stuff
@@ -170,6 +174,7 @@ int main(int argc, char** argv) {
             turn_4_pos_4(d_4, f_8, h_8, sol_1, sol_2, sol_3, sol_4);
             if(a_4==sol_1&&b_4==sol_2&&c_4==sol_3&&d_4==sol_4){
                 turn_count=turn_count+6;
+                win=true;
             }
         }else if(turn_count==5){
             //Turn 5 Stuff
@@ -181,6 +186,7 @@ int main(int argc, char** argv) {
             turn_5_pos_4(d_5, f_10, h_10, sol_1, sol_2, sol_3, sol_4);
             if(a_5==sol_1&&b_5==sol_2&&c_5==sol_3&&d_5==sol_4){
                 turn_count=turn_count+5;
+                win=true;
             }
         }else if(turn_count==6){
             //Turn 6 Stuff
@@ -192,6 +198,7 @@ int main(int argc, char** argv) {
             turn_6_pos_4(d_6, f_12, h_12, sol_1, sol_2, sol_3, sol_4);
             if(a_6==sol_1&&b_6==sol_2&&c_6==sol_3&&d_6==sol_4){
                 turn_count=turn_count+4;
+                win=true;
             }
         }else if(turn_count==7){
             //Turn 7 Stuff
@@ -203,6 +210,7 @@ int main(int argc, char** argv) {
             turn_7_pos_4(d_7, f_14, h_14, sol_1, sol_2, sol_3, sol_4);
             if(a_7==sol_1&&b_7==sol_2&&c_7==sol_3&&d_7==sol_4){
                 turn_count=turn_count+3;
+                win=true;
             }
         }else if(turn_count==8){
             //Turn 8 Stuff
@@ -214,6 +222,7 @@ int main(int argc, char** argv) {
             turn_8_pos_4(d_8, f_16, h_16, sol_1, sol_2, sol_3, sol_4);
             if(a_8==sol_1&&b_8==sol_2&&c_8==sol_3&&d_8==sol_4){
                 turn_count=turn_count+2;
+                win=true;
             }
         }else if(turn_count==9){
             //Turn 9 Stuff
@@ -225,6 +234,7 @@ int main(int argc, char** argv) {
             turn_9_pos_4(d_9, f_18, h_18, sol_1, sol_2, sol_3, sol_4);
             if(a_9==sol_1&&b_9==sol_2&&c_9==sol_3&&d_9==sol_4){
                 turn_count++;
+                win=true;
             }
         }else{
             //Turn 10 Stuff
@@ -234,7 +244,17 @@ int main(int argc, char** argv) {
             turn_10_pos_2(b_10, f_19, h_19, sol_1, sol_2, sol_3, sol_4);
             turn_10_pos_3(c_10, e_20, g_20, sol_1, sol_2, sol_3, sol_4);
             turn_10_pos_4(d_10, f_20, h_20, sol_1, sol_2, sol_3, sol_4);
+            if(a_10==sol_1&&b_10==sol_2&&c_10==sol_3&&d_10==sol_4){
+                win=true;
+            }
         }
+    }
+    if(win==true){
+        cout<<"You Win!"<<endl;
+    }
+    else
+    {
+        cout<<"You Lose!"<<endl;
     }
     //Exit Stage Right!!
     return 0;
