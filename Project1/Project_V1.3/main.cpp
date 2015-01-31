@@ -3,7 +3,7 @@
  * Author: Taylor Yost
  * Created on January 28, 2015, 18:06
  * Purpose: Project 1
- * Changes: All feedback logic functions, calls, and definitions added.
+ * Changes: Fixed logic typos, output box errors.
  */
 
 //System Libraries
@@ -68,23 +68,35 @@ void turn_10_pos_3(char, char&, char&, char, char, char, char);
 void turn_10_pos_4(char, char&, char&, char, char, char, char);
 //Execution Begins Here!
 int main(int argc, char** argv) {
-    //Declare Variables
+    //Declare Variables & Initialize
     bool end_cond=false;
     int t_1=1, t_2=2, t_3=3, t_4=4, t_5=5;
     int t_6=6, t_7=7, t_8=8, t_9=9, t_10=10;
     char sol_1='R', sol_2='Y', sol_3='P', sol_4='O';
-    char a_1, a_2, a_3, a_4, a_5, a_6, a_7, a_8, a_9, a_10;
-    char b_1, b_2, b_3, b_4, b_5, b_6, b_7, b_8, b_9, b_10;
-    char c_1, c_2, c_3, c_4, c_5, c_6, c_7, c_8, c_9, c_10;
-    char d_1, d_2, d_3, d_4, d_5, d_6, d_7, d_8, d_9, d_10;
-    char e_1, e_2, e_3, e_4, e_5, e_6, e_7, e_8, e_9, e_10;
-    char f_1, f_2, f_3, f_4, f_5, f_6, f_7, f_8, f_9, f_10;
-    char g_1, g_2, g_3, g_4, g_5, g_6, g_7, g_8, g_9, g_10;
-    char h_1, h_2, h_3, h_4, h_5, h_6, h_7, h_8, h_9, h_10;
-    char e_11, e_12, e_13, e_14, e_15, e_16, e_17, e_18, e_19, e_20;
-    char f_11, f_12, f_13, f_14, f_15, f_16, f_17, f_18, f_19, f_20;
-    char g_11, g_12, g_13, g_14, g_15, g_16, g_17, g_18, g_19, g_20;
-    char h_11, h_12, h_13, h_14, h_15, h_16, h_17, h_18, h_19, h_20;
+    char a_1=' ', a_2=' ', a_3=' ', a_4=' ', a_5=' ';
+    char a_6=' ', a_7=' ', a_8=' ', a_9=' ', a_10=' ';
+    char b_1=' ', b_2=' ', b_3=' ', b_4=' ', b_5=' ';
+    char b_6=' ', b_7=' ', b_8=' ', b_9=' ', b_10=' ';
+    char c_1=' ', c_2=' ', c_3=' ', c_4=' ', c_5=' ';
+    char c_6=' ', c_7=' ', c_8=' ', c_9=' ', c_10=' ';
+    char d_1=' ', d_2=' ', d_3=' ', d_4=' ', d_5=' ';
+    char d_6=' ', d_7=' ', d_8=' ', d_9=' ', d_10=' ';
+    char e_1=' ', e_2=' ', e_3=' ', e_4=' ', e_5=' ';
+    char e_6=' ', e_7=' ', e_8=' ', e_9=' ', e_10=' ';
+    char f_1=' ', f_2=' ', f_3=' ', f_4=' ', f_5=' ';
+    char f_6=' ', f_7=' ', f_8=' ', f_9=' ', f_10=' ';
+    char g_1=' ', g_2=' ', g_3=' ', g_4=' ', g_5=' ';
+    char g_6=' ', g_7=' ', g_8=' ', g_9=' ', g_10=' ';
+    char h_1=' ', h_2=' ', h_3=' ', h_4=' ', h_5=' ';
+    char h_6=' ', h_7=' ', h_8=' ', h_9=' ', h_10=' ';
+    char e_11=' ', e_12=' ', e_13=' ', e_14=' ', e_15=' ';
+    char e_16=' ', e_17=' ', e_18=' ', e_19=' ', e_20=' ';
+    char f_11=' ', f_12=' ', f_13=' ', f_14=' ', f_15=' ';
+    char f_16=' ', f_17=' ', f_18=' ', f_19=' ', f_20=' ';
+    char g_11=' ', g_12=' ', g_13=' ', g_14=' ', g_15=' ';
+    char g_16=' ', g_17=' ', g_18=' ', g_19=' ', g_20=' ';
+    char h_11=' ', h_12=' ', h_13=' ', h_14=' ', h_15=' ';
+    char h_16=' ', h_17=' ', h_18=' ', h_19=' ', h_20=' ';
     for (int turn_count=1; end_cond=true; turn_count++){
         cout<<"        // Mastermind // "<<endl;
         cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
@@ -106,7 +118,7 @@ int main(int argc, char** argv) {
         cout<<"      |__|__|__|__|"<<e_16<<" | "<<f_16<<"|"<<g_16<<" | "<<h_16<<"|"<<endl;
         cout<<"  "<<t_9<<"   | "<<a_9<<"| "<<b_9<<"| "<<c_9<<"| "<<d_9<<"|"<<e_17<<" | "<<f_17<<"|"<<g_17<<" | "<<h_17<<"|"<<endl;
         cout<<"      |__|__|__|__|"<<e_18<<" | "<<f_18<<"|"<<g_18<<" | "<<h_18<<"|"<<endl;
-        cout<<"  "<<t_10<<"   | "<<a_10<<"| "<<b_10<<"| "<<c_10<<"| "<<d_10<<"|"<<e_19<<" | "<<f_19<<"|"<<g_19<<" | "<<h_19<<"|"<<endl;
+        cout<<"  "<<t_10<<"  | "<<a_10<<"| "<<b_10<<"| "<<c_10<<"| "<<d_10<<"|"<<e_19<<" | "<<f_19<<"|"<<g_19<<" | "<<h_19<<"|"<<endl;
         cout<<"      |__|__|__|__|"<<e_20<<" | "<<f_20<<"|"<<g_20<<" | "<<h_20<<"|"<<endl;
         cout<<"      |    Solution:    |"<<endl;
         cout<<"      | "<<sol_1<<"  "<<sol_2<<"  "<<sol_3<<"  "<<sol_4<<"      |"<<endl;
@@ -171,7 +183,7 @@ int main(int argc, char** argv) {
         }else if(turn_count==8){
             //Turn 8 Stuff
             cout<<"Turn 8 - Enter 4 Colors:"<<endl;
-            cin>>a_4>>b_4>>c_4>>d_4;
+            cin>>a_8>>b_8>>c_8>>d_8;
             turn_8_pos_1(a_8, e_15, g_15, sol_1, sol_2, sol_3, sol_4);
             turn_8_pos_2(b_8, f_15, h_15, sol_1, sol_2, sol_3, sol_4);
             turn_8_pos_3(c_8, e_16, g_16, sol_1, sol_2, sol_3, sol_4);
