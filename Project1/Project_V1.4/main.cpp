@@ -82,6 +82,23 @@ int main(int argc, char** argv) {
     cout<<" [2] Game Rules"<<endl;
     cout<<" [3] Exit Game"<<endl;
     cout<<"Type the number of your choice, then press enter!"<<endl;
+    cin>>option;
+    switch(option){
+        case 1:{
+            cout<<"Play Game!"<<endl;
+            game();
+        }break;
+        case 2:{
+            cout<<"Game Rules"<<endl;
+            rules();
+        }break;
+        case 3:{
+            //Exit Program
+        }break;
+        default:{
+            cout<<"Invalid Choice!"<<endl;
+        }
+    }
     
     //Exit Stage Right!!
     return 0;
@@ -286,6 +303,10 @@ int game(){
         cin>>exit;
     }while(exit=="Yes"||exit=="yes");
     return(0);
+}
+
+void rules(){
+    cout<<"Rules Here"<<endl;
 }
 
 void turn_1_pos_1(char a_1, char& e_1, char& g_1,char sol_1, char sol_2, char sol_3, char sol_4){
