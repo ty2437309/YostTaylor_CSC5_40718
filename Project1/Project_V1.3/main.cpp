@@ -3,7 +3,8 @@
  * Author: Taylor Yost
  * Created on January 28, 2015, 18:06
  * Purpose: Project 1
- * Changes: Fixed logic typos, output box errors.
+ * Changes: Fixed logic typos, output box errors.  Added logic for win/loss
+ *          determinations.
  */
 
 //System Libraries
@@ -124,7 +125,7 @@ int main(int argc, char** argv) {
         cout<<"      ~~~~~~~~~~~~~~~~~~~"<<endl;
         //Turn Feedback Begins Here!
         if(turn_count==11){
-            //Prints Turn 10 If Needed
+            //Prints Last Turn Before Loop Ends
             turn_count++;
         }else if(turn_count==1){
             //Turn 1 Stuff
@@ -134,6 +135,9 @@ int main(int argc, char** argv) {
             turn_1_pos_2(b_1, f_1, h_1, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_3(c_1, e_2, g_2, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_4(d_1, f_2, h_2, sol_1, sol_2, sol_3, sol_4);
+            if(a_1==sol_1&&b_1==sol_2&&c_1==sol_3&&d_1==sol_4){
+                turn_count=turn_count+9;
+            }
         }else if(turn_count==2){
             //Turn 2 Stuff
             cout<<"Turn 2 - Enter 4 Colors:"<<endl;
@@ -142,6 +146,9 @@ int main(int argc, char** argv) {
             turn_2_pos_2(b_2, f_3, h_3, sol_1, sol_2, sol_3, sol_4);
             turn_2_pos_3(c_2, e_4, g_4, sol_1, sol_2, sol_3, sol_4);
             turn_2_pos_4(d_2, f_4, h_4, sol_1, sol_2, sol_3, sol_4);
+            if(a_2==sol_1&&b_2==sol_2&&c_2==sol_3&&d_2==sol_4){
+                turn_count=turn_count+8;
+            }
         }else if(turn_count==3){
             //Turn 3 Stuff
             cout<<"Turn 3 - Enter 4 Colors:"<<endl;
@@ -150,6 +157,9 @@ int main(int argc, char** argv) {
             turn_3_pos_2(b_3, f_5, h_5, sol_1, sol_2, sol_3, sol_4);
             turn_3_pos_3(c_3, e_6, g_6, sol_1, sol_2, sol_3, sol_4);
             turn_3_pos_4(d_3, f_6, h_6, sol_1, sol_2, sol_3, sol_4);
+            if(a_3==sol_1&&b_3==sol_2&&c_3==sol_3&&d_3==sol_4){
+                turn_count=turn_count+7;
+            }
         }else if(turn_count==4){
             //Turn 4 Stuff
             cout<<"Turn 4 - Enter 4 Colors:"<<endl;
@@ -158,6 +168,9 @@ int main(int argc, char** argv) {
             turn_4_pos_2(b_4, f_7, h_7, sol_1, sol_2, sol_3, sol_4);
             turn_4_pos_3(c_4, e_8, g_8, sol_1, sol_2, sol_3, sol_4);
             turn_4_pos_4(d_4, f_8, h_8, sol_1, sol_2, sol_3, sol_4);
+            if(a_4==sol_1&&b_4==sol_2&&c_4==sol_3&&d_4==sol_4){
+                turn_count=turn_count+6;
+            }
         }else if(turn_count==5){
             //Turn 5 Stuff
             cout<<"Turn 5 - Enter 4 Colors:"<<endl;
@@ -166,6 +179,9 @@ int main(int argc, char** argv) {
             turn_5_pos_2(b_5, f_9, h_9, sol_1, sol_2, sol_3, sol_4);
             turn_5_pos_3(c_5, e_10, g_10, sol_1, sol_2, sol_3, sol_4);
             turn_5_pos_4(d_5, f_10, h_10, sol_1, sol_2, sol_3, sol_4);
+            if(a_5==sol_1&&b_5==sol_2&&c_5==sol_3&&d_5==sol_4){
+                turn_count=turn_count+5;
+            }
         }else if(turn_count==6){
             //Turn 6 Stuff
             cout<<"Turn 6 - Enter 4 Colors:"<<endl;
@@ -174,6 +190,9 @@ int main(int argc, char** argv) {
             turn_6_pos_2(b_6, f_11, h_11, sol_1, sol_2, sol_3, sol_4);
             turn_6_pos_3(c_6, e_12, g_12, sol_1, sol_2, sol_3, sol_4);
             turn_6_pos_4(d_6, f_12, h_12, sol_1, sol_2, sol_3, sol_4);
+            if(a_6==sol_1&&b_6==sol_2&&c_6==sol_3&&d_6==sol_4){
+                turn_count=turn_count+4;
+            }
         }else if(turn_count==7){
             //Turn 7 Stuff
             cout<<"Turn 7 - Enter 4 Colors:"<<endl;
@@ -182,6 +201,9 @@ int main(int argc, char** argv) {
             turn_7_pos_2(b_7, f_13, h_13, sol_1, sol_2, sol_3, sol_4);
             turn_7_pos_3(c_7, e_14, g_14, sol_1, sol_2, sol_3, sol_4);
             turn_7_pos_4(d_7, f_14, h_14, sol_1, sol_2, sol_3, sol_4);
+            if(a_7==sol_1&&b_7==sol_2&&c_7==sol_3&&d_7==sol_4){
+                turn_count=turn_count+3;
+            }
         }else if(turn_count==8){
             //Turn 8 Stuff
             cout<<"Turn 8 - Enter 4 Colors:"<<endl;
@@ -190,6 +212,9 @@ int main(int argc, char** argv) {
             turn_8_pos_2(b_8, f_15, h_15, sol_1, sol_2, sol_3, sol_4);
             turn_8_pos_3(c_8, e_16, g_16, sol_1, sol_2, sol_3, sol_4);
             turn_8_pos_4(d_8, f_16, h_16, sol_1, sol_2, sol_3, sol_4);
+            if(a_8==sol_1&&b_8==sol_2&&c_8==sol_3&&d_8==sol_4){
+                turn_count=turn_count+2;
+            }
         }else if(turn_count==9){
             //Turn 9 Stuff
             cout<<"Turn 9 - Enter 4 Colors:"<<endl;
@@ -198,6 +223,9 @@ int main(int argc, char** argv) {
             turn_9_pos_2(b_9, f_17, h_17, sol_1, sol_2, sol_3, sol_4);
             turn_9_pos_3(c_9, e_18, g_18, sol_1, sol_2, sol_3, sol_4);
             turn_9_pos_4(d_9, f_18, h_18, sol_1, sol_2, sol_3, sol_4);
+            if(a_9==sol_1&&b_9==sol_2&&c_9==sol_3&&d_9==sol_4){
+                turn_count++;
+            }
         }else{
             //Turn 10 Stuff
             cout<<"Turn 10 - Enter 4 Colors:"<<endl;
