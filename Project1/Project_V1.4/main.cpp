@@ -159,7 +159,7 @@ void game(){
     //Turns Begin Here!
     for (int turn_count=1; turn_count<=11; turn_count++){
         cout<<"        // Mastermind // "<<endl;
-        cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
+        cout<<"Turns ~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         cout<<"  "<<t_1<<"   | "<<a_1<<"| "<<b_1<<"| "<<c_1<<"| "<<d_1<<"|"<<e_1<<" | "<<f_1<<"|"<<g_1<<" | "<<h_1<<"|"<<endl;
         cout<<"      |__|__|__|__|"<<e_2<<" | "<<f_2<<"|"<<g_2<<" | "<<h_2<<"|"<<endl;
         cout<<"  "<<t_2<<"   | "<<a_2<<"| "<<b_2<<"| "<<c_2<<"| "<<d_2<<"|"<<e_3<<" | "<<f_3<<"|"<<g_3<<" | "<<h_3<<"|"<<endl;
@@ -182,14 +182,17 @@ void game(){
         cout<<"      |__|__|__|__|"<<e_20<<" | "<<f_20<<"|"<<g_20<<" | "<<h_20<<"|"<<endl;
         cout<<"      |    Solution:    |"<<endl;
         cout<<"      | "<<sol_1<<"  "<<sol_2<<"  "<<sol_3<<"  "<<sol_4<<"      |"<<endl;
-        cout<<"      ~~~~~~~~~~~~~~~~~~~"<<endl;
+        cout<<"      ~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         //Turn Feedback Begins Here!
         if(turn_count==11){
             //Prints Last Turn Before Loop Ends
             turn_count++;
         }else if(turn_count==1){
             //Turn 1 Stuff
-            cout<<"Turn 1 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 1!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;         
             cin>>a_1>>b_1>>c_1>>d_1;
             turn_1_pos_1(a_1, e_1, g_1, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_2(b_1, f_1, h_1, sol_1, sol_2, sol_3, sol_4);
@@ -201,7 +204,10 @@ void game(){
             }
         }else if(turn_count==2){
             //Turn 2 Stuff
-            cout<<"Turn 2 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 2!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_2>>b_2>>c_2>>d_2;
             turn_2_pos_1(a_2, e_3, g_3, sol_1, sol_2, sol_3, sol_4);
             turn_2_pos_2(b_2, f_3, h_3, sol_1, sol_2, sol_3, sol_4);
@@ -213,7 +219,10 @@ void game(){
             }
         }else if(turn_count==3){
             //Turn 3 Stuff
-            cout<<"Turn 3 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 3!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_3>>b_3>>c_3>>d_3;
             turn_3_pos_1(a_3, e_5, g_5, sol_1, sol_2, sol_3, sol_4);
             turn_3_pos_2(b_3, f_5, h_5, sol_1, sol_2, sol_3, sol_4);
@@ -225,7 +234,10 @@ void game(){
             }
         }else if(turn_count==4){
             //Turn 4 Stuff
-            cout<<"Turn 4 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 4!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_4>>b_4>>c_4>>d_4;
             turn_4_pos_1(a_4, e_7, g_7, sol_1, sol_2, sol_3, sol_4);
             turn_4_pos_2(b_4, f_7, h_7, sol_1, sol_2, sol_3, sol_4);
@@ -237,7 +249,10 @@ void game(){
             }
         }else if(turn_count==5){
             //Turn 5 Stuff
-            cout<<"Turn 5 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 5!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_5>>b_5>>c_5>>d_5;
             turn_5_pos_1(a_5, e_9, g_9, sol_1, sol_2, sol_3, sol_4);
             turn_5_pos_2(b_5, f_9, h_9, sol_1, sol_2, sol_3, sol_4);
@@ -249,7 +264,10 @@ void game(){
             }
         }else if(turn_count==6){
             //Turn 6 Stuff
-            cout<<"Turn 6 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 6!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_6>>b_6>>c_6>>d_6;
             turn_6_pos_1(a_6, e_11, g_11, sol_1, sol_2, sol_3, sol_4);
             turn_6_pos_2(b_6, f_11, h_11, sol_1, sol_2, sol_3, sol_4);
@@ -261,7 +279,10 @@ void game(){
             }
         }else if(turn_count==7){
             //Turn 7 Stuff
-            cout<<"Turn 7 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 7!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_7>>b_7>>c_7>>d_7;
             turn_7_pos_1(a_7, e_13, g_13, sol_1, sol_2, sol_3, sol_4);
             turn_7_pos_2(b_7, f_13, h_13, sol_1, sol_2, sol_3, sol_4);
@@ -273,7 +294,10 @@ void game(){
             }
         }else if(turn_count==8){
             //Turn 8 Stuff
-            cout<<"Turn 8 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 8!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_8>>b_8>>c_8>>d_8;
             turn_8_pos_1(a_8, e_15, g_15, sol_1, sol_2, sol_3, sol_4);
             turn_8_pos_2(b_8, f_15, h_15, sol_1, sol_2, sol_3, sol_4);
@@ -285,7 +309,10 @@ void game(){
             }
         }else if(turn_count==9){
             //Turn 9 Stuff
-            cout<<"Turn 9 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 9!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_9>>b_9>>c_9>>d_9;
             turn_9_pos_1(a_9, e_17, g_17, sol_1, sol_2, sol_3, sol_4);
             turn_9_pos_2(b_9, f_17, h_17, sol_1, sol_2, sol_3, sol_4);
@@ -297,7 +324,10 @@ void game(){
             }
         }else{
             //Turn 10 Stuff
-            cout<<"Turn 10 - Enter 4 Colors:"<<endl;
+            cout<<"Turn 10! Last Chance!!"<<endl;
+            cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
+            cout<<"Please enter four color code guess separated"<<endl;
+            cout<<"by spaces."<<endl;
             cin>>a_10>>b_10>>c_10>>d_10;
             turn_10_pos_1(a_10, e_19, g_19, sol_1, sol_2, sol_3, sol_4);
             turn_10_pos_2(b_10, f_19, h_19, sol_1, sol_2, sol_3, sol_4);
@@ -310,15 +340,38 @@ void game(){
     }
     if(win==true){
         cout<<"You Win!"<<endl;
+        cout<<"You are a Mastermind!"<<endl;
     }
     else
     {
         cout<<"You Lose!"<<endl;
+        cout<<"Maybe logic isn't your strong suit..."<<endl;
     }
 }
 
 void rules(){
-    cout<<"Rules Here"<<endl;
+    cout<<endl;
+    cout<<"Rules of Mastermind:"<<endl;
+    cout<<endl;
+    cout<<"The game of Mastermind is played with two players. One player is"<<endl;
+    cout<<"the Code-Maker, while one is the Code-Breaker. The goal of the"<<endl;
+    cout<<"Code-Breaker is to guess the code made by the Code-Maker. Should"<<endl;
+    cout<<"the Code-Breaker fail to guess correctly within ten turns, the"<<endl;
+    cout<<"game is lost and you may play again."<<endl;
+    cout<<endl;
+    cout<<"Job of Code-Breaker: The Code-Breaker will have to guess both the"<<endl;
+    cout<<"correct color and order of the code. Using feedback from the"<<endl;
+    cout<<"Code-Maker, the Code-Breaker can use logic to reveal the correct"<<endl;
+    cout<<"code. Valid colors are as follows; Red(R), Orange(O), Yellow(Y),"<<endl;
+    cout<<"Green(G), Blue(B), and Purple(P). Colors may be repeated, and are"<<endl;
+    cout<<"random."<<endl;
+    cout<<endl;
+    cout<<"Feedback: The Code-Maker gives feedback to the Code-Breaker with"<<endl;
+    cout<<"two colors. Black(B) means that the Code-Breaker has guessed a"<<endl;
+    cout<<"correct color, and that it is in the right position. White(W)"<<endl;
+    cout<<"means that the Code-Breaker has guessed a correct color, but it"<<endl;
+    cout<<"is in the wrong position."<<endl;
+    cout<<endl;
 }
 
 void turn_1_pos_1(char a_1, char& e_1, char& g_1,char sol_1, char sol_2, char sol_3, char sol_4){
