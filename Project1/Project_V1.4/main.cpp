@@ -4,7 +4,8 @@
  * Created on January 28, 2015, 18:06
  * Purpose: Project 1
  * Changes: Freed up main, moved game to its own function. Enabled switch
- *          statement for game menu.
+ *          statement for game menu. Code now made by computer. Game considered
+ *          scope-complete.
  */
 
 //System Libraries
