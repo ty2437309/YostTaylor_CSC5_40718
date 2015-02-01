@@ -112,6 +112,11 @@ void game(){
         //Turn Variables
     int t_1=1, t_2=2, t_3=3, t_4=4, t_5=5;
     int t_6=6, t_7=7, t_8=8, t_9=9, t_10=10;
+        //Black~White Box Variables
+    int black_1, black_2, black_3, black_4, black_5;
+    int black_6, black_7, black_8, black_9, black_10;
+    int white_1, white_2, white_3, white_4, white_5;
+    int white_6, white_7, white_8, white_9, white_10;
         //Code-maker Variables
     unsigned int pass_1, pass_2, pass_3, pass_4;
     char sol_1, sol_2, sol_3, sol_4;
@@ -190,7 +195,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;         
             cin>>a_1>>b_1>>c_1>>d_1;
-            turn_1_pos_1(a_1, e_1, g_1, sol_1, sol_2, sol_3, sol_4);
+            turn_1_pos_1(a_1, black_1, white_1, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_2(b_1, f_1, h_1, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_3(c_1, e_2, g_2, sol_1, sol_2, sol_3, sol_4);
             turn_1_pos_4(d_1, f_2, h_2, sol_1, sol_2, sol_3, sol_4);
