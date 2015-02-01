@@ -3,9 +3,7 @@
  * Author: Taylor Yost
  * Created on January 28, 2015, 18:06
  * Purpose: Project 1
- * Changes: Freed up main, moved game to its own function. Enabled switch
- *          statement for game menu. Added rules function. Code now made by
- *          computer. Game considered scope-complete.
+ * Changes: Attempt at B/W box redesign.
  */
 
 //System Libraries
