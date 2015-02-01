@@ -3,8 +3,8 @@
  * Author: Taylor Yost
  * Created on January 28, 2015, 18:06
  * Purpose: Project 1
- * Changes: Fixed logic typos, output box errors.  Added logic for win/loss
- *          determinations.  Added replay loop.
+ * Changes: Freed up main, moved game to its own function. Enabled switch
+ *          statement for game menu.
  */
 
 //System Libraries
@@ -91,7 +91,6 @@ int main(int argc, char** argv) {
                 game();
             }break;
             case 2:{
-                cout<<"Game Rules"<<endl;
                 rules();
             }break;
             case 3:{
@@ -101,11 +100,11 @@ int main(int argc, char** argv) {
                 cout<<"Invalid Choice!"<<endl;
             }
         }
-        cout<<"Would you like to run the program again (Yes/No)?"<<endl;
+        cout<<"About to exit the game, are you sure? (Yes/No)"<<endl;
         cin>>exit;
-    }while(exit=="Yes"||exit=="yes");
+    }while(exit=="No"||exit=="no");
     //Exit Stage Right!!
-    return 0;
+    return(0);
 }
 
 int game(){
