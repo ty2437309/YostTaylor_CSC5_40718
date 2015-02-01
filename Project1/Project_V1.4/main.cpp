@@ -18,8 +18,8 @@ using namespace std;
 
 //Function Prototypes
     //Menu Option Functions
-int game();
-int rules();
+void game();
+void rules();
     //Turn 1 Feedback Logic Functions
 void turn_1_pos_1(char, char&, char&, char, char, char, char);
 void turn_1_pos_2(char, char&, char&, char, char, char, char);
@@ -72,7 +72,7 @@ void turn_10_pos_3(char, char&, char&, char, char, char, char);
 void turn_10_pos_4(char, char&, char&, char, char, char, char);
 //Execution Begins Here!
 int main(int argc, char** argv) {
-    //Declare Variables & Initialize
+    //Declare Variables
     int option;
     string exit;
     //Prompt Player
@@ -97,7 +97,7 @@ int main(int argc, char** argv) {
                 //Exit Program
             }break;
             default:{
-                cout<<"Invalid Choice!"<<endl;
+                cout<<"Invalid Choice! Exiting Mastermind..."<<endl;
             }
         }
         cout<<"About to exit the game, are you sure? (Yes/No)"<<endl;
@@ -107,7 +107,7 @@ int main(int argc, char** argv) {
     return(0);
 }
 
-int game(){
+void game(){
     //Declare Variables & Initialize
         //Turn Variables
     int t_1=1, t_2=2, t_3=3, t_4=4, t_5=5;
@@ -300,12 +300,10 @@ int game(){
     {
         cout<<"You Lose!"<<endl;
     }
-    return(0);
 }
 
-int rules(){
+void rules(){
     cout<<"Rules Here"<<endl;
-    return(0);
 }
 
 void turn_1_pos_1(char a_1, char& e_1, char& g_1,char sol_1, char sol_2, char sol_3, char sol_4){
