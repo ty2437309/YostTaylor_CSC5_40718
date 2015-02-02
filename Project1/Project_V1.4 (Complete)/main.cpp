@@ -3,21 +3,22 @@
  * Author: Taylor Yost
  * Created on January 28, 2015, 18:06
  * Purpose: Project 1
- * Changes: Freed up main, moved game to its own function. Enabled switch
- *          statement for game menu. Added rules function. Code now made by
- *          computer. Game considered scope-complete.
+ * Changes: Version 1.0 - Scope Complete Build
  */
 
 //System Libraries
 #include <cstdlib>
+#include <iomanip>
 #include <iostream>
 #include <ctime>
+#include <fstream>
 using namespace std;
 
 //User Libraries
 
 //Global Constants
-
+//Standard Mastermind Always Has 6 Colors
+const int NCOLOR=6;
 //Function Prototypes
     //Menu Option Functions
 void game();
@@ -148,10 +149,10 @@ void game(){
     bool win=false;
     //Computer Makes Code
     srand(static_cast<unsigned int>(time(0)));
-    pass_1=rand()%6;
-    pass_2=rand()%6;
-    pass_3=rand()%6;
-    pass_4=rand()%6;
+    pass_1=rand()%NCOLOR;
+    pass_2=rand()%NCOLOR;
+    pass_3=rand()%NCOLOR;
+    pass_4=rand()%NCOLOR;
     sol_1=code[pass_1];
     sol_2=code[pass_2];
     sol_3=code[pass_3];    
@@ -364,6 +365,12 @@ void game(){
 }
 
 void rules(){
+    //Declare Variables
+    char write;
+    float n1=355, n2=113;
+    //Declare a File Object
+    ofstream output;
+    //Output Rules
     cout<<endl;
     cout<<"Rules of Mastermind:"<<endl;
     cout<<endl;
@@ -386,6 +393,35 @@ void rules(){
     cout<<"means that the Code-Breaker has guessed a correct color, but it"<<endl;
     cout<<"is in the wrong position."<<endl;
     cout<<endl;
+    cout<<"Would you like to write the rules to a file for easy viewing"<<endl;
+    cout<<"in game? (Y/N)"<<endl;
+    cin>>write;
+    if(write=='Y'||write=='y'){
+        output.open("MastermindRules.txt");
+        output<<"Rules of Mastermind:"<<endl;
+        output<<endl;
+        output<<"The game of Mastermind is played with two players. One player is"<<endl;
+        output<<"the Code-Maker, while one is the Code-Breaker. The goal of the"<<endl;
+        output<<"Code-Breaker is to guess the code made by the Code-Maker. Should"<<endl;
+        output<<"the Code-Breaker fail to guess correctly within ten turns, the"<<endl;
+        output<<"game is lost and you may play again."<<endl;
+        output<<endl;
+        output<<"Job of Code-Breaker: The Code-Breaker will have to guess both the"<<endl;
+        output<<"correct color and order of the code. Using feedback from the"<<endl;
+        output<<"Code-Maker, the Code-Breaker can use logic to reveal the correct"<<endl;
+        output<<"code. Valid colors are as follows; Red(R), Orange(O), Yellow(Y),"<<endl;
+        output<<"Green(G), Blue(B), and Purple(P). Colors may be repeated, and are"<<endl;
+        output<<"random."<<endl;
+        output<<endl;
+        output<<"Feedback: The Code-Maker gives feedback to the Code-Breaker with"<<endl;
+        output<<"two colors. Black(B) means that the Code-Breaker has guessed a"<<endl;
+        output<<"correct color, and that it is in the right position. White(W)"<<endl;
+        output<<"means that the Code-Breaker has guessed a correct color, but it"<<endl;
+        output<<"is in the wrong position."<<endl;
+        output<<fixed<<setprecision(2)<<showpoint;
+        output<<"Universe Check...is PI still PI?? "<<n1/n2<<endl;
+        output.close();
+    }
 }
 
 void turn_1_pos_1(char a_1, char& e_1, char& g_1,char sol_1, char sol_2, char sol_3, char sol_4){
