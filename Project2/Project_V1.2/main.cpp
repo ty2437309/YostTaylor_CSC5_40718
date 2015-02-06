@@ -19,6 +19,7 @@ using namespace std;
 //Global Constants
 //Standard Mastermind Always Has 6 Colors
 const int NCOLOR=6;
+const int NSOL=4;
 //Function Prototypes
     //Menu Option Functions
 void game();
@@ -63,19 +64,16 @@ int main(int argc, char** argv) {
 void game(){
     //Declare Variables & Initialize
         //Code-maker Variables
-    unsigned int pass_1, pass_2, pass_3, pass_4;
-    char sol_1, sol_2, sol_3, sol_4;
-    const int SIZE=6;
-    char code[SIZE]={'R', 'O', 'Y', 'G', 'B', 'P'};
+    char pass;
+    unsigned int cdindx=0;
+    char sol[NSOL]={' ', ' ', ' ', ' '};
+    char code[NCOLOR]={'R', 'O', 'Y', 'G', 'B', 'P'};
         //Output Variables
-    char a_1=' ', a_2=' ', a_3=' ', a_4=' ', a_5=' ';
-    char a_6=' ', a_7=' ', a_8=' ', a_9=' ', a_10=' ';
-    char b_1=' ', b_2=' ', b_3=' ', b_4=' ', b_5=' ';
-    char b_6=' ', b_7=' ', b_8=' ', b_9=' ', b_10=' ';
-    char c_1=' ', c_2=' ', c_3=' ', c_4=' ', c_5=' ';
-    char c_6=' ', c_7=' ', c_8=' ', c_9=' ', c_10=' ';
-    char d_1=' ', d_2=' ', d_3=' ', d_4=' ', d_5=' ';
-    char d_6=' ', d_7=' ', d_8=' ', d_9=' ', d_10=' ';
+    char turn1[NSOL]={' ', ' ', ' ', ' '}, turn2[NSOL]={' ', ' ', ' ', ' '};
+    char turn3[NSOL]={' ', ' ', ' ', ' '}, turn4[NSOL]={' ', ' ', ' ', ' '};
+    char turn5[NSOL]={' ', ' ', ' ', ' '}, turn6[NSOL]={' ', ' ', ' ', ' '};
+    char turn7[NSOL]={' ', ' ', ' ', ' '}, turn8[NSOL]={' ', ' ', ' ', ' '};
+    char turn9[NSOL]={' ', ' ', ' ', ' '}, turn10[NSOL]={' ', ' ', ' ', ' '};
     char e_1=' ', e_2=' ', e_3=' ', e_4=' ', e_5=' ';
     char e_6=' ', e_7=' ', e_8=' ', e_9=' ', e_10=' ';
     char f_1=' ', f_2=' ', f_3=' ', f_4=' ', f_5=' ';
@@ -88,38 +86,34 @@ void game(){
     bool win=false;
     //Computer Makes Code
     srand(static_cast<unsigned int>(time(0)));
-    pass_1=rand()%NCOLOR;
-    pass_2=rand()%NCOLOR;
-    pass_3=rand()%NCOLOR;
-    pass_4=rand()%NCOLOR;
-    sol_1=code[pass_1];
-    sol_2=code[pass_2];
-    sol_3=code[pass_3];    
-    sol_4=code[pass_4];
+    for(cdindx=0; cdindx<=3; cdindx++){
+        pass=rand()%NCOLOR;
+        sol[cdindx]=code[pass];
+    }
     //Turns Begin Here!
     for (int turn_count=1; turn_count<=11; turn_count++){
         cout<<"        // Mastermind // "<<endl;
         cout<<"Turns ~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
-        cout<<"  1   | "<<a_1<<"| "<<b_1<<"| "<<c_1<<"| "<<d_1<<"|"<<e_1<<" | "<<f_1<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                <<e_2<<" | "<<f_2<<"|"<<endl;
-        cout<<"  2   | "<<a_2<<"| "<<b_2<<"| "<<c_2<<"| "<<d_2<<"|"<<e_3<<" | "<<f_3<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                <<e_4<<" | "<<f_4<<"|"<<endl;
-        cout<<"  3   | "<<a_3<<"| "<<b_3<<"| "<<c_3<<"| "<<d_3<<"|"<<e_5<<" | "<<f_5<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                <<e_6<<" | "<<f_6<<"|"<<endl;
-        cout<<"  4   | "<<a_4<<"| "<<b_4<<"| "<<c_4<<"| "<<d_4<<"|"<<e_7<<" | "<<f_7<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                <<e_8<<" | "<<f_8<<"|"<<endl;
-        cout<<"  5   | "<<a_5<<"| "<<b_5<<"| "<<c_5<<"| "<<d_5<<"|"<<e_9<<" | "<<f_9<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                <<e_10<<" | "<<f_10<<"|"<<endl;
-        cout<<"  6   | "<<a_6<<"| "<<b_6<<"| "<<c_6<<"| "<<d_6<<"|"<<e_11<<" | "<<f_11<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                <<e_12<<" | "<<f_12<<"|"<<endl;
-        cout<<"  7   | "<<a_7<<"| "<<b_7<<"| "<<c_7<<"| "<<d_7<<"|"<<e_13<<" | "<<f_13<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                <<e_14<<" | "<<f_14<<"|"<<endl;
-        cout<<"  8   | "<<a_8<<"| "<<b_8<<"| "<<c_8<<"| "<<d_8<<"|"<<e_15<<" | "<<f_15<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                <<e_16<<" | "<<f_16<<"|"<<endl;
-        cout<<"  9   | "<<a_9<<"| "<<b_9<<"| "<<c_9<<"| "<<d_9<<"|"<<e_17<<" | "<<f_17<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                    <<e_18<<" | "<<f_18<<"|"<<endl;
-        cout<<"  10  | "<<a_10<<"| "<<b_10<<"| "<<c_10<<"| "<<d_10<<"|"<<e_19<<" | "<<f_19<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                    <<e_20<<" | "<<f_20<<"|"<<endl;
+        cout<<"  1   | "<<turn1[0]<<"| "<<turn1[1]<<"| "<<turn1[2]<<"| "<<turn1[3]<<"|"<<e_1<<" | "<<f_1<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_2<<" | "<<f_2<<"|"<<endl;
+        cout<<"  2   | "<<turn2[0]<<"| "<<turn2[1]<<"| "<<turn2[2]<<"| "<<turn2[3]<<"|"<<e_3<<" | "<<f_3<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_4<<" | "<<f_4<<"|"<<endl;
+        cout<<"  3   | "<<turn3[0]<<"| "<<turn3[1]<<"| "<<turn3[2]<<"| "<<turn3[3]<<"|"<<e_5<<" | "<<f_5<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_6<<" | "<<f_6<<"|"<<endl;
+        cout<<"  4   | "<<turn4[0]<<"| "<<turn4[1]<<"| "<<turn4[2]<<"| "<<turn4[3]<<"|"<<e_7<<" | "<<f_7<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_8<<" | "<<f_8<<"|"<<endl;
+        cout<<"  5   | "<<turn5[0]<<"| "<<turn5[1]<<"| "<<turn5[2]<<"| "<<turn5[3]<<"|"<<e_9<<" | "<<f_9<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_10<<" | "<<f_10<<"|"<<endl;
+        cout<<"  6   | "<<turn6[0]<<"| "<<turn6[1]<<"| "<<turn6[2]<<"| "<<turn6[3]<<"|"<<e_11<<" | "<<f_11<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_12<<" | "<<f_12<<"|"<<endl;
+        cout<<"  7   | "<<turn7[0]<<"| "<<turn7[1]<<"| "<<turn7[2]<<"| "<<turn7[3]<<"|"<<e_13<<" | "<<f_13<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_14<<" | "<<f_14<<"|"<<endl;
+        cout<<"  8   | "<<turn8[0]<<"| "<<turn8[1]<<"| "<<turn8[2]<<"| "<<turn8[3]<<"|"<<e_15<<" | "<<f_15<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_16<<" | "<<f_16<<"|"<<endl;
+        cout<<"  9   | "<<turn9[0]<<"| "<<turn9[1]<<"| "<<turn9[2]<<"| "<<turn9[3]<<"|"<<e_17<<" | "<<f_17<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                    <<e_18<<" | "<<f_18<<"|"<<endl;
+        cout<<"  10  | "<<turn10[0]<<"| "<<turn10[1]<<"| "<<turn10[2]<<"| "<<turn10[3]<<"|"<<e_19<<" | "<<f_19<<"|"<<endl;
+        cout<<"      |__|__|__|__|"                                                        <<e_20<<" | "<<f_20<<"|"<<endl;
         cout<<"      ~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         //Turn Feedback Begins Here!
         if(turn_count==11){
@@ -131,7 +125,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;         
-            cin>>a_1>>b_1>>c_1>>d_1;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_1==sol_1&&b_1==sol_2&&c_1==sol_3&&d_1==sol_4){
                 turn_count=turn_count+9;
                 win=true;
@@ -142,7 +136,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_2>>b_2>>c_2>>d_2;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_2==sol_1&&b_2==sol_2&&c_2==sol_3&&d_2==sol_4){
                 turn_count=turn_count+8;
                 win=true;
@@ -153,7 +147,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_3>>b_3>>c_3>>d_3;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_3==sol_1&&b_3==sol_2&&c_3==sol_3&&d_3==sol_4){
                 turn_count=turn_count+7;
                 win=true;
@@ -164,7 +158,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_4>>b_4>>c_4>>d_4;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_4==sol_1&&b_4==sol_2&&c_4==sol_3&&d_4==sol_4){
                 turn_count=turn_count+6;
                 win=true;
@@ -175,7 +169,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_5>>b_5>>c_5>>d_5;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_5==sol_1&&b_5==sol_2&&c_5==sol_3&&d_5==sol_4){
                 turn_count=turn_count+5;
                 win=true;
@@ -186,7 +180,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_6>>b_6>>c_6>>d_6;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_6==sol_1&&b_6==sol_2&&c_6==sol_3&&d_6==sol_4){
                 turn_count=turn_count+4;
                 win=true;
@@ -197,7 +191,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_7>>b_7>>c_7>>d_7;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_7==sol_1&&b_7==sol_2&&c_7==sol_3&&d_7==sol_4){
                 turn_count=turn_count+3;
                 win=true;
@@ -208,7 +202,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_8>>b_8>>c_8>>d_8;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_8==sol_1&&b_8==sol_2&&c_8==sol_3&&d_8==sol_4){
                 turn_count=turn_count+2;
                 win=true;
@@ -219,7 +213,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_9>>b_9>>c_9>>d_9;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             if(a_9==sol_1&&b_9==sol_2&&c_9==sol_3&&d_9==sol_4){
                 turn_count++;
                 win=true;
@@ -231,7 +225,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>a_10>>b_10>>c_10>>d_10;
+            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             while(last_chance==0){
                 cout<<"This is your last chance!! Are you sure?"<<endl;
                 cout<<" [1] Retry Input"<<endl;
@@ -240,7 +234,7 @@ void game(){
                 switch(last_chance){
                     case 1:{
                         cout<<"Second Try:"<<endl;
-                        cin>>a_10>>b_10>>c_10>>d_10;                        
+                        cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];                        
                     }break;
                     default:{
                         //Continue To End
