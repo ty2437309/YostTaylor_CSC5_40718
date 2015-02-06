@@ -276,6 +276,11 @@ int feedback1(char turn1[], char sol[]){
             black++;
         }
     }
+    for(int index=0;index<=3;index++){
+        if((turn1[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+    }
 }
 
 void rules(){
