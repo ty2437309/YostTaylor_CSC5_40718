@@ -3,7 +3,7 @@
  * Author: Taylor Yost
  * Created on January 28, 2015, 18:06
  * Purpose: Project 2 Ver 1.2
- * Changes: Attempt at addition of arrays.
+ * Changes: Addition of arrays/framework.
  */
 
 //System Libraries
@@ -136,7 +136,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn2[0]>>turn2[1]>>turn2[2]>>turn2[3];
             if(a_2==sol_1&&b_2==sol_2&&c_2==sol_3&&d_2==sol_4){
                 turn_count=turn_count+8;
                 win=true;
@@ -147,7 +147,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn3[0]>>turn3[1]>>turn3[2]>>turn3[3];
             if(a_3==sol_1&&b_3==sol_2&&c_3==sol_3&&d_3==sol_4){
                 turn_count=turn_count+7;
                 win=true;
@@ -158,7 +158,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn4[0]>>turn4[1]>>turn4[2]>>turn4[3];
             if(a_4==sol_1&&b_4==sol_2&&c_4==sol_3&&d_4==sol_4){
                 turn_count=turn_count+6;
                 win=true;
@@ -169,7 +169,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn5[0]>>turn5[1]>>turn5[2]>>turn5[3];
             if(a_5==sol_1&&b_5==sol_2&&c_5==sol_3&&d_5==sol_4){
                 turn_count=turn_count+5;
                 win=true;
@@ -180,7 +180,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn6[0]>>turn6[1]>>turn6[2]>>turn6[3];
             if(a_6==sol_1&&b_6==sol_2&&c_6==sol_3&&d_6==sol_4){
                 turn_count=turn_count+4;
                 win=true;
@@ -191,7 +191,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn7[0]>>turn7[1]>>turn7[2]>>turn7[3];
             if(a_7==sol_1&&b_7==sol_2&&c_7==sol_3&&d_7==sol_4){
                 turn_count=turn_count+3;
                 win=true;
@@ -202,7 +202,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn8[0]>>turn8[1]>>turn8[2]>>turn8[3];
             if(a_8==sol_1&&b_8==sol_2&&c_8==sol_3&&d_8==sol_4){
                 turn_count=turn_count+2;
                 win=true;
@@ -213,7 +213,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn9[0]>>turn9[1]>>turn9[2]>>turn9[3];
             if(a_9==sol_1&&b_9==sol_2&&c_9==sol_3&&d_9==sol_4){
                 turn_count++;
                 win=true;
@@ -225,7 +225,7 @@ void game(){
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
-            cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
+            cin>>turn10[0]>>turn10[1]>>turn10[2]>>turn10[3];
             while(last_chance==0){
                 cout<<"This is your last chance!! Are you sure?"<<endl;
                 cout<<" [1] Retry Input"<<endl;
@@ -234,7 +234,7 @@ void game(){
                 switch(last_chance){
                     case 1:{
                         cout<<"Second Try:"<<endl;
-                        cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];                        
+                        cin>>turn10[0]>>turn10[1]>>turn10[2]>>turn10[3];                        
                     }break;
                     default:{
                         //Continue To End
