@@ -17,13 +17,23 @@ using namespace std;
 //User Libraries
 
 //Global Constants
-//Standard Mastermind Always Has 6 Colors
+//Standard Mastermind Always Has 6 Colors, 4 Solutions
 const int NCOLOR=6;
 const int NSOL=4;
 //Function Prototypes
     //Menu Option Functions
 void game();
 void rules();
+int feedback1(char[], char[]);
+int feedback2(char[], char[]);
+int feedback3(char[], char[]);
+int feedback4(char[], char[]);
+int feedback5(char[], char[]);
+int feedback6(char[], char[]);
+int feedback7(char[], char[]);
+int feedback8(char[], char[]);
+int feedback9(char[], char[]);
+int feedback10(char[], char[]);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -91,7 +101,7 @@ void game(){
         sol[cdindx]=code[pass];
     }
     //Turns Begin Here!
-    for (int turn_count=1; turn_count<=11; turn_count++){
+    for(int turn_count=1;turn_count<=11;turn_count++){
         cout<<"        // Mastermind // "<<endl;
         cout<<"Turns ~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
         cout<<"  1   | "<<turn1[0]<<"| "<<turn1[1]<<"| "<<turn1[2]<<"| "<<turn1[3]<<"|"<<e_1<<" | "<<f_1<<"|"<<endl;
@@ -126,7 +136,8 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;         
             cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
-            if(a_1==sol_1&&b_1==sol_2&&c_1==sol_3&&d_1==sol_4){
+            feedback1(turn1, sol);
+            if(){
                 turn_count=turn_count+9;
                 win=true;
             }
@@ -137,7 +148,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn2[0]>>turn2[1]>>turn2[2]>>turn2[3];
-            if(a_2==sol_1&&b_2==sol_2&&c_2==sol_3&&d_2==sol_4){
+            if(){
                 turn_count=turn_count+8;
                 win=true;
             }
@@ -148,7 +159,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn3[0]>>turn3[1]>>turn3[2]>>turn3[3];
-            if(a_3==sol_1&&b_3==sol_2&&c_3==sol_3&&d_3==sol_4){
+            if(){
                 turn_count=turn_count+7;
                 win=true;
             }
@@ -159,7 +170,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn4[0]>>turn4[1]>>turn4[2]>>turn4[3];
-            if(a_4==sol_1&&b_4==sol_2&&c_4==sol_3&&d_4==sol_4){
+            if(){
                 turn_count=turn_count+6;
                 win=true;
             }
@@ -170,7 +181,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn5[0]>>turn5[1]>>turn5[2]>>turn5[3];
-            if(a_5==sol_1&&b_5==sol_2&&c_5==sol_3&&d_5==sol_4){
+            if(){
                 turn_count=turn_count+5;
                 win=true;
             }
@@ -181,7 +192,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn6[0]>>turn6[1]>>turn6[2]>>turn6[3];
-            if(a_6==sol_1&&b_6==sol_2&&c_6==sol_3&&d_6==sol_4){
+            if(){
                 turn_count=turn_count+4;
                 win=true;
             }
@@ -192,7 +203,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn7[0]>>turn7[1]>>turn7[2]>>turn7[3];
-            if(a_7==sol_1&&b_7==sol_2&&c_7==sol_3&&d_7==sol_4){
+            if(){
                 turn_count=turn_count+3;
                 win=true;
             }
@@ -203,7 +214,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn8[0]>>turn8[1]>>turn8[2]>>turn8[3];
-            if(a_8==sol_1&&b_8==sol_2&&c_8==sol_3&&d_8==sol_4){
+            if(){
                 turn_count=turn_count+2;
                 win=true;
             }
@@ -214,7 +225,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn9[0]>>turn9[1]>>turn9[2]>>turn9[3];
-            if(a_9==sol_1&&b_9==sol_2&&c_9==sol_3&&d_9==sol_4){
+            if(){
                 turn_count++;
                 win=true;
             }
@@ -241,7 +252,7 @@ void game(){
                     }
                 }
             }
-            if(a_10==sol_1&&b_10==sol_2&&c_10==sol_3&&d_10==sol_4){
+            if(){
                 win=true;
             }
         }
@@ -254,6 +265,16 @@ void game(){
     {
         cout<<"You Lose!"<<endl;
         cout<<"Maybe logic isn't your strong suit..."<<endl;
+    }
+}
+
+int feedback1(char turn1[], char sol[]){
+    //Declare Variables
+    int index=0, black=0, white=0;
+    for(int index=0;index<=3;index++){
+        if(turn1[index]==sol[index]){
+            black++;
+        }
     }
 }
 
