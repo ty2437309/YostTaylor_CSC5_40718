@@ -94,7 +94,7 @@ void game(){
         //Loop Variables
     bool win=false;
         //Feedback Control Variables
-    int black=0, white=0;
+    int black=0, white=0, a=0, b=1;
     //Computer Makes Code
     srand(static_cast<unsigned int>(time(0)));
     for(cdindx=0; cdindx<=3; cdindx++){
@@ -133,7 +133,7 @@ void game(){
         }else if(turn_count==1){
             //Turn 1 Stuff
             //Turn 1 Array Identifiers
-            int a=0, b=1, c=0, d=1;
+            int c=0, d=1;
             cout<<"Turn 1!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -147,7 +147,7 @@ void game(){
         }else if(turn_count==2){
             //Turn 2 Stuff
             //Turn 2 Array Identifiers
-            int a=0, b=1, c=2, d=3;
+            int c=2, d=3;
             cout<<"Turn 2!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -155,8 +155,8 @@ void game(){
             cin>>turn2[0]>>turn2[1]>>turn2[2]>>turn2[3];
         }else if(turn_count==3){
             //Turn 3 Stuff
-            //Turn 1 Identifiers
-            int a=0, b=1, c=4, d=5;
+            //Turn 3 Array Identifiers
+            int c=4, d=5;
             cout<<"Turn 3!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -164,8 +164,8 @@ void game(){
             cin>>turn3[0]>>turn3[1]>>turn3[2]>>turn3[3];
         }else if(turn_count==4){
             //Turn 4 Stuff
-            //Turn 1 Identifiers
-            int a=0, b=1, c=6, d=7;
+            //Turn 4 Array Identifiers
+            int c=6, d=7;
             cout<<"Turn 4!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -173,8 +173,8 @@ void game(){
             cin>>turn4[0]>>turn4[1]>>turn4[2]>>turn4[3];
         }else if(turn_count==5){
             //Turn 5 Stuff
-            //Turn 1 Identifiers
-            int a=0, b=1, c=8, d=9;
+            //Turn 5 Array Identifiers
+            int c=8, d=9;
             cout<<"Turn 5!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -182,8 +182,8 @@ void game(){
             cin>>turn5[0]>>turn5[1]>>turn5[2]>>turn5[3];
         }else if(turn_count==6){
             //Turn 6 Stuff
-            //Turn 1 Identifiers
-            int a=0, b=1, c=10, d=11;
+            //Turn 6 Array Identifiers
+            int c=10, d=11;
             cout<<"Turn 6!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -191,8 +191,8 @@ void game(){
             cin>>turn6[0]>>turn6[1]>>turn6[2]>>turn6[3];
         }else if(turn_count==7){
             //Turn 7 Stuff
-            //Turn 1 Identifiers
-            int a=0, b=1, c=12, d=13;
+            //Turn 7 Array Identifiers
+            int c=12, d=13;
             cout<<"Turn 7!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -200,8 +200,8 @@ void game(){
             cin>>turn7[0]>>turn7[1]>>turn7[2]>>turn7[3];
         }else if(turn_count==8){
             //Turn 8 Stuff
-            //Turn 1 Identifiers
-            int a=0, b=1, c=14, d=15;
+            //Turn 8 Array Identifiers
+            int c=14, d=15;
             cout<<"Turn 8!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -209,8 +209,8 @@ void game(){
             cin>>turn8[0]>>turn8[1]>>turn8[2]>>turn8[3];
         }else if(turn_count==9){
             //Turn 9 Stuff
-            //Turn 1 Identifiers
-            int a=0, b=1, c=16, d=17;
+            //Turn 9 Array Identifiers
+            int c=16, d=17;
             cout<<"Turn 9!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -218,8 +218,8 @@ void game(){
             cin>>turn9[0]>>turn9[1]>>turn9[2]>>turn9[3];
         }else{
             //Turn 10 Stuff
-            //Turn 1 Identifiers
-            int a=0, b=1, c=18, d=19;
+            //Turn 10 Array Identifiers
+            int c=18, d=19;
             int last_chance=0;
             cout<<"Turn 10!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
