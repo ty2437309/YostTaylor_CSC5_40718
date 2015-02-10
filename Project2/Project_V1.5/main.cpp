@@ -2,8 +2,8 @@
  * File: main.cpp
  * Author: Taylor Yost
  * Created on February 05, 2015, 19:25
- * Purpose: Project 2 Ver 1.3
- * Changes: Addition of arrays/framework. Updated logic.
+ * Purpose: Project 2 Ver 1.5
+ * Changes: Addition of temporary framework. Updated logic.
  */
 
 //System Libraries
@@ -104,7 +104,7 @@ void game(){
     //Turns Begin Here!
     for(int turn_count=1;turn_count<=11;turn_count++){
         cout<<"        // Mastermind // "<<endl;
-        cout<<"Turns ~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
         cout<<"  1   | "<<turn1[0]<<"| "<<turn1[1]<<"| "<<turn1[2]<<"| "<<turn1[3]<<"|"<<fbck[0][0]<<" | "<<fbck[0][1]<<"|"<<endl;
         cout<<"      |__|__|__|__|"                                                    <<fbck[1][0]<<" | "<<fbck[1][1]<<"|"<<endl;
         cout<<"  2   | "<<turn2[0]<<"| "<<turn2[1]<<"| "<<turn2[2]<<"| "<<turn2[3]<<"|"<<fbck[2][0]<<" | "<<fbck[2][1]<<"|"<<endl;
@@ -125,7 +125,7 @@ void game(){
         cout<<"      |__|__|__|__|"                                                    <<fbck[17][0]<<" | "<<fbck[17][1]<<"|"<<endl;
         cout<<"  10  | "<<turn10[0]<<"| "<<turn10[1]<<"| "<<turn10[2]<<"| "<<turn10[3]<<"|"<<fbck[18][0]<<" | "<<fbck[18][1]<<"|"<<endl;
         cout<<"      |__|__|__|__|"                                                        <<fbck[19][0]<<" | "<<fbck[19][1]<<"|"<<endl;
-        cout<<"      ~~~~~~~~~~~~~~~~~~~~~~~~~"<<sol[0]<<sol[1]<<sol[2]<<sol[3]<<endl;
+        cout<<"      ~~~~~~~~~~~~~~~~~~~"<<sol[0]<<sol[1]<<sol[2]<<sol[3]<<endl;
         //Turn Feedback Begins Here!
         if(turn_count==11){
             //Prints Last Turn Before Loop Ends
@@ -142,7 +142,7 @@ void game(){
             feedback1(turn1, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count=turn_count+9;
             }
         }else if(turn_count==2){
             //Turn 2 Stuff
@@ -391,50 +391,50 @@ void feedback2(char turn2[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn2[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn2[0]==sol[1])&&(turn2[0]!=sol[0])&&(turn2[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn2[0]==sol[2])&&(turn2[0]!=sol[0])&&(turn2[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn2[0]==sol[3])&&(turn2[0]!=sol[0])&&(turn2[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn2[1]==sol[0])&&(turn2[1]!=sol[1])&&(turn2[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn2[1]==sol[2])&&(turn2[1]!=sol[1])&&(turn2[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn2[1]==sol[3])&&(turn2[1]!=sol[1])&&(turn2[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn2[2]==sol[0])&&(turn2[2]!=sol[2])&&(turn2[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn2[2]==sol[1])&&(turn2[2]!=sol[2])&&(turn2[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn2[2]==sol[3])&&(turn2[2]!=sol[2])&&(turn2[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn2[3]==sol[0])&&(turn2[3]!=sol[3])&&(turn2[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn2[3]==sol[1])&&(turn2[3]!=sol[3])&&(turn2[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn2[3]==sol[2])&&(turn2[3]!=sol[3])&&(turn2[2]!=sol[2])){
                 white++;
             }
         }
@@ -446,50 +446,50 @@ void feedback3(char turn3[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn3[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn3[0]==sol[1])&&(turn3[0]!=sol[0])&&(turn3[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn3[0]==sol[2])&&(turn3[0]!=sol[0])&&(turn3[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn3[0]==sol[3])&&(turn3[0]!=sol[0])&&(turn3[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn3[1]==sol[0])&&(turn3[1]!=sol[1])&&(turn3[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn3[1]==sol[2])&&(turn3[1]!=sol[1])&&(turn3[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn3[1]==sol[3])&&(turn3[1]!=sol[1])&&(turn3[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn3[2]==sol[0])&&(turn3[2]!=sol[2])&&(turn3[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn3[2]==sol[1])&&(turn3[2]!=sol[2])&&(turn3[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn3[2]==sol[3])&&(turn3[2]!=sol[2])&&(turn3[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn3[3]==sol[0])&&(turn3[3]!=sol[3])&&(turn3[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn3[3]==sol[1])&&(turn3[3]!=sol[3])&&(turn3[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn3[3]==sol[2])&&(turn3[3]!=sol[3])&&(turn3[2]!=sol[2])){
                 white++;
             }
         }
@@ -501,50 +501,50 @@ void feedback4(char turn4[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn4[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn4[0]==sol[1])&&(turn4[0]!=sol[0])&&(turn4[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn4[0]==sol[2])&&(turn4[0]!=sol[0])&&(turn4[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn4[0]==sol[3])&&(turn4[0]!=sol[0])&&(turn4[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn4[1]==sol[0])&&(turn4[1]!=sol[1])&&(turn4[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn4[1]==sol[2])&&(turn4[1]!=sol[1])&&(turn4[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn4[1]==sol[3])&&(turn4[1]!=sol[1])&&(turn4[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn4[2]==sol[0])&&(turn4[2]!=sol[2])&&(turn4[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn4[2]==sol[1])&&(turn4[2]!=sol[2])&&(turn4[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn4[2]==sol[3])&&(turn4[2]!=sol[2])&&(turn4[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn4[3]==sol[0])&&(turn4[3]!=sol[3])&&(turn4[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn4[3]==sol[1])&&(turn4[3]!=sol[3])&&(turn4[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn4[3]==sol[2])&&(turn4[3]!=sol[3])&&(turn4[2]!=sol[2])){
                 white++;
             }
         }
@@ -556,50 +556,50 @@ void feedback5(char turn5[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn5[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn5[0]==sol[1])&&(turn5[0]!=sol[0])&&(turn5[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn5[0]==sol[2])&&(turn5[0]!=sol[0])&&(turn5[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn5[0]==sol[3])&&(turn5[0]!=sol[0])&&(turn5[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn5[1]==sol[0])&&(turn5[1]!=sol[1])&&(turn5[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn5[1]==sol[2])&&(turn5[1]!=sol[1])&&(turn5[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn5[1]==sol[3])&&(turn5[1]!=sol[1])&&(turn5[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn5[2]==sol[0])&&(turn5[2]!=sol[2])&&(turn5[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn5[2]==sol[1])&&(turn5[2]!=sol[2])&&(turn5[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn5[2]==sol[3])&&(turn5[2]!=sol[2])&&(turn5[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn5[3]==sol[0])&&(turn5[3]!=sol[3])&&(turn5[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn5[3]==sol[1])&&(turn5[3]!=sol[3])&&(turn5[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn5[3]==sol[2])&&(turn5[3]!=sol[3])&&(turn5[2]!=sol[2])){
                 white++;
             }
         }
@@ -611,50 +611,50 @@ void feedback6(char turn6[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn6[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn6[0]==sol[1])&&(turn6[0]!=sol[0])&&(turn6[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn6[0]==sol[2])&&(turn6[0]!=sol[0])&&(turn6[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn6[0]==sol[3])&&(turn6[0]!=sol[0])&&(turn6[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn6[1]==sol[0])&&(turn6[1]!=sol[1])&&(turn6[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn6[1]==sol[2])&&(turn6[1]!=sol[1])&&(turn6[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn6[1]==sol[3])&&(turn6[1]!=sol[1])&&(turn6[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn6[2]==sol[0])&&(turn6[2]!=sol[2])&&(turn6[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn6[2]==sol[1])&&(turn6[2]!=sol[2])&&(turn6[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn6[2]==sol[3])&&(turn6[2]!=sol[2])&&(turn6[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn6[3]==sol[0])&&(turn6[3]!=sol[3])&&(turn6[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn6[3]==sol[1])&&(turn6[3]!=sol[3])&&(turn6[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn6[3]==sol[2])&&(turn6[3]!=sol[3])&&(turn6[2]!=sol[2])){
                 white++;
             }
         }
@@ -666,50 +666,50 @@ void feedback7(char turn7[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn7[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn7[0]==sol[1])&&(turn7[0]!=sol[0])&&(turn7[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn7[0]==sol[2])&&(turn7[0]!=sol[0])&&(turn7[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn7[0]==sol[3])&&(turn7[0]!=sol[0])&&(turn7[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn7[1]==sol[0])&&(turn7[1]!=sol[1])&&(turn7[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn7[1]==sol[2])&&(turn7[1]!=sol[1])&&(turn7[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn7[1]==sol[3])&&(turn7[1]!=sol[1])&&(turn7[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn7[2]==sol[0])&&(turn7[2]!=sol[2])&&(turn7[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn7[2]==sol[1])&&(turn7[2]!=sol[2])&&(turn7[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn7[2]==sol[3])&&(turn7[2]!=sol[2])&&(turn7[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn7[3]==sol[0])&&(turn7[3]!=sol[3])&&(turn7[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn7[3]==sol[1])&&(turn7[3]!=sol[3])&&(turn7[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn7[3]==sol[2])&&(turn7[3]!=sol[3])&&(turn7[2]!=sol[2])){
                 white++;
             }
         }
@@ -721,50 +721,50 @@ void feedback8(char turn8[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn8[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn8[0]==sol[1])&&(turn8[0]!=sol[0])&&(turn8[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn8[0]==sol[2])&&(turn8[0]!=sol[0])&&(turn8[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn8[0]==sol[3])&&(turn8[0]!=sol[0])&&(turn8[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn8[1]==sol[0])&&(turn8[1]!=sol[1])&&(turn8[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn8[1]==sol[2])&&(turn8[1]!=sol[1])&&(turn8[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn8[1]==sol[3])&&(turn8[1]!=sol[1])&&(turn8[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn8[2]==sol[0])&&(turn8[2]!=sol[2])&&(turn8[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn8[2]==sol[1])&&(turn8[2]!=sol[2])&&(turn8[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn8[2]==sol[3])&&(turn8[2]!=sol[2])&&(turn8[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn8[3]==sol[0])&&(turn8[3]!=sol[3])&&(turn8[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn8[3]==sol[1])&&(turn8[3]!=sol[3])&&(turn8[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn8[3]==sol[2])&&(turn8[3]!=sol[3])&&(turn8[2]!=sol[2])){
                 white++;
             }
         }
@@ -776,50 +776,50 @@ void feedback9(char turn9[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn9[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn9[0]==sol[1])&&(turn9[0]!=sol[0])&&(turn9[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn9[0]==sol[2])&&(turn9[0]!=sol[0])&&(turn9[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn9[0]==sol[3])&&(turn9[0]!=sol[0])&&(turn9[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn9[1]==sol[0])&&(turn9[1]!=sol[1])&&(turn9[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn9[1]==sol[2])&&(turn9[1]!=sol[1])&&(turn9[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn9[1]==sol[3])&&(turn9[1]!=sol[1])&&(turn9[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn9[2]==sol[0])&&(turn9[2]!=sol[2])&&(turn9[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn9[2]==sol[1])&&(turn9[2]!=sol[2])&&(turn9[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn9[2]==sol[3])&&(turn9[2]!=sol[2])&&(turn9[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn9[3]==sol[0])&&(turn9[3]!=sol[3])&&(turn9[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn9[3]==sol[1])&&(turn9[3]!=sol[3])&&(turn9[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn9[3]==sol[2])&&(turn9[3]!=sol[3])&&(turn9[2]!=sol[2])){
                 white++;
             }
         }
@@ -831,50 +831,50 @@ void feedback10(char turn10[], char sol[], int& black, int& white){
     int index=0, temp=0;
     //Check For Colors
     for(int index=0;index<=3;index++){
-        if(turn1[index]==sol[index]){
+        if(turn10[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn10[0]==sol[1])&&(turn10[0]!=sol[0])&&(turn10[1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn10[0]==sol[2])&&(turn10[0]!=sol[0])&&(turn10[2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn10[0]==sol[3])&&(turn10[0]!=sol[0])&&(turn10[3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn10[1]==sol[0])&&(turn10[1]!=sol[1])&&(turn10[0]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn10[1]==sol[2])&&(turn10[1]!=sol[1])&&(turn10[2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn10[1]==sol[3])&&(turn10[1]!=sol[1])&&(turn10[3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn10[2]==sol[0])&&(turn10[2]!=sol[2])&&(turn10[0]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn10[2]==sol[1])&&(turn10[2]!=sol[2])&&(turn10[1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn10[2]==sol[3])&&(turn10[2]!=sol[2])&&(turn10[3]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn10[3]==sol[0])&&(turn10[3]!=sol[3])&&(turn10[0]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn10[3]==sol[1])&&(turn10[3]!=sol[3])&&(turn10[1]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn10[3]==sol[2])&&(turn10[3]!=sol[3])&&(turn10[2]!=sol[2])){
                 white++;
             }
         }
