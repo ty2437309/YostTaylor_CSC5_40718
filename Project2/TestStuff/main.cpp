@@ -52,26 +52,46 @@ int main(int argc, char** argv) {
     //Check For White
     for(int index=0;index<=3;index++){
         if(index=0){
-            if((turn1[0]==sol[1])||(turn1[0]==sol[2])||
-               (turn1[0]==sol[3])){
+            if((turn1[0]==sol[1])&&(turn1[0]==sol[2])){
+               flag++;
+            }  
+            if((turn1[0]==sol[1])&&(turn1[0]==sol[3])){
+               flag++;
+            } 
+            if(turn1[0]==sol[1]){
                white++;
-            }            
+            } 
         }
         if(index=1){
-            if((turn1[1]==sol[0])||(turn1[1]==sol[2])||
-               (turn1[1]==sol[3])){
+            if((turn1[1]==sol[0])&&(turn1[1]==sol[2])){
+               flag++;
+            }  
+            if((turn1[1]==sol[0])&&(turn1[1]==sol[3])){
+               flag++;
+            } 
+            if(turn1[1]==sol[0]){
                white++;
             }            
         }
         if(index=2){
-            if((turn1[2]==sol[0])||(turn1[2]==sol[1])||
-               (turn1[2]==sol[3])){
+            if((turn1[0]==sol[1])&&(turn1[0]==sol[2])){
+               flag++;
+            }  
+            if((turn1[0]==sol[1])&&(turn1[0]==sol[3])){
+               flag++;
+            } 
+            if(turn1[0]==sol[1]){
                white++;
             }            
         }
         if(index=3){
-            if((turn1[3]==sol[0])||(turn1[3]==sol[1])||
-               (turn1[3]==sol[2])){
+            if((turn1[0]==sol[1])&&(turn1[0]==sol[2])){
+               flag++;
+            }  
+            if((turn1[0]==sol[1])&&(turn1[0]==sol[3])){
+               flag++;
+            } 
+            if(turn1[0]==sol[1]){
                white++;
             }            
         }
