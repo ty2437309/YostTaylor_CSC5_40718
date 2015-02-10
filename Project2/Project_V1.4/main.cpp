@@ -36,7 +36,7 @@ void feedback7(char[], char[], int&, int&);
 void feedback8(char[], char[], int&, int&);
 void feedback9(char[], char[], int&, int&);
 void feedback10(char[], char[], int&, int&);
-bool feedbackout(char [FBCKR][FBCKC], bool, int&, int&, int, int, int, int);
+bool feedbackout(char [FBCKR][FBCKC], bool, int, int, int, int, int, int);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -125,7 +125,7 @@ void game(){
         cout<<"      |__|__|__|__|"                                                    <<fbck[17][0]<<" | "<<fbck[17][1]<<"|"<<endl;
         cout<<"  10  | "<<turn10[0]<<"| "<<turn10[1]<<"| "<<turn10[2]<<"| "<<turn10[3]<<"|"<<fbck[18][0]<<" | "<<fbck[18][1]<<"|"<<endl;
         cout<<"      |__|__|__|__|"                                                        <<fbck[19][0]<<" | "<<fbck[19][1]<<"|"<<endl;
-        cout<<"      ~~~~~~~~~~~~~~~~~~~~~~~~~"<<endl;
+        cout<<"      ~~~~~~~~~~~~~~~~~~~~~~~~~"<<sol[0]<<sol[1]<<sol[2]<<sol[3]<<endl;
         //Turn Feedback Begins Here!
         if(turn_count==11){
             //Prints Last Turn Before Loop Ends
@@ -147,7 +147,7 @@ void game(){
         }else if(turn_count==2){
             //Turn 2 Stuff
             //Turn 2 Array Identifiers
-            int c=2, d=3;
+            int c=2, d=3, black=0, white=0;
             cout<<"Turn 2!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -161,7 +161,7 @@ void game(){
         }else if(turn_count==3){
             //Turn 3 Stuff
             //Turn 3 Array Identifiers
-            int c=4, d=5;
+            int c=4, d=5, black=0, white=0;
             cout<<"Turn 3!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -175,7 +175,7 @@ void game(){
         }else if(turn_count==4){
             //Turn 4 Stuff
             //Turn 4 Array Identifiers
-            int c=6, d=7;
+            int c=6, d=7, black=0, white=0;
             cout<<"Turn 4!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -189,7 +189,7 @@ void game(){
         }else if(turn_count==5){
             //Turn 5 Stuff
             //Turn 5 Array Identifiers
-            int c=8, d=9;
+            int c=8, d=9, black=0, white=0;
             cout<<"Turn 5!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -203,7 +203,7 @@ void game(){
         }else if(turn_count==6){
             //Turn 6 Stuff
             //Turn 6 Array Identifiers
-            int c=10, d=11;
+            int c=10, d=11, black=0, white=0;
             cout<<"Turn 6!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -217,7 +217,7 @@ void game(){
         }else if(turn_count==7){
             //Turn 7 Stuff
             //Turn 7 Array Identifiers
-            int c=12, d=13;
+            int c=12, d=13, black=0, white=0;
             cout<<"Turn 7!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -231,7 +231,7 @@ void game(){
         }else if(turn_count==8){
             //Turn 8 Stuff
             //Turn 8 Array Identifiers
-            int c=14, d=15;
+            int c=14, d=15, black=0, white=0;
             cout<<"Turn 8!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -245,7 +245,7 @@ void game(){
         }else if(turn_count==9){
             //Turn 9 Stuff
             //Turn 9 Array Identifiers
-            int c=16, d=17;
+            int c=16, d=17, black=0, white=0;
             cout<<"Turn 9!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -259,7 +259,7 @@ void game(){
         }else{
             //Turn 10 Stuff
             //Turn 10 Array Identifiers
-            int c=18, d=19, last_chance=0;
+            int c=18, d=19, last_chance=0, black=0, white=0;
             cout<<"Turn 10!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -298,7 +298,7 @@ void game(){
     }
 }
 
-bool feedbackout(char fbck[FBCKR][FBCKC], bool win, int& black, int& white, int a, int b, int c, int d){
+bool feedbackout(char fbck[FBCKR][FBCKC], bool win, int black, int white, int a, int b, int c, int d){
     //Begin Box Assignment
     if(black==1&&white==0){
         fbck[c][a]='B'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
@@ -328,8 +328,6 @@ bool feedbackout(char fbck[FBCKR][FBCKC], bool win, int& black, int& white, int 
     }else{
         fbck[c][a]=' '; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
     }
-    black=0;
-    white=0;
     return(win);
 }
 
