@@ -334,43 +334,55 @@ bool feedbackout(char fbck[FBCKR][FBCKC], bool win, int black, int white, int a,
 void feedback1(char turn1[], char sol[], int& black, int& white){
     //Declare Variables
     int index=0, temp=0;
-    //Check For Black
+    //Check For Colors
     for(int index=0;index<=3;index++){
         if(turn1[index]==sol[index]){
             black++;
         }
-    }
-    //Check For White
-    for(int index=0;index<=3;index++){
-        if(index=0){
-            if((turn1[0]==sol[1])||(turn1[0]==sol[2])||
-               (turn1[0]==sol[3])){
-               white++;
-            }            
+        if(index==0){
+            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+                white++;
+            }
+            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+                white++;
+            }
+            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+                white++;
+            } 
+        }        
+        if(index==1){
+            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+                white++;
+            }
+            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+                white++;
+            }
+            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+                white++;
+            }
         }
-        if(index=1){
-            if((turn1[1]==sol[0])||(turn1[1]==sol[2])||
-               (turn1[1]==sol[3])){
-               white++;
-            }            
+        if(index==2){
+            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+                white++;
+            }
+            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+                white++;
+            }
+            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+                white++;
+            }
         }
-        if(index=2){
-            if((turn1[2]==sol[0])||(turn1[2]==sol[1])||
-               (turn1[2]==sol[3])){
-               white++;
-            }            
+        if(index==3){
+            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+                white++;
+            }
+            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+                white++;
+            }
+            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+                white++;
+            }
         }
-        if(index=3){
-            if((turn1[3]==sol[0])||(turn1[3]==sol[1])||
-               (turn1[3]==sol[2])){
-               white++;
-            }            
-        }
-    }
-    //Eliminate Duplicates
-    if(black+white>4){
-        temp=white-black;
-        white=white-temp;
     }
 }
 

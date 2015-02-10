@@ -50,7 +50,6 @@ int main(int argc, char** argv) {
         }
     }
     //Check For White
-    index=0;
     for(int index=0;index<=3;index++){
         if(index==0){
             if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
@@ -62,7 +61,6 @@ int main(int argc, char** argv) {
             if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
                 white++;
             } 
-            cout<<"indx 0 white"<<white<<endl;
         }        
         if(index==1){
             if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
@@ -74,7 +72,6 @@ int main(int argc, char** argv) {
             if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
                 white++;
             }
-            cout<<"indx 1 white"<<white<<endl;
         }
         if(index==2){
             if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
@@ -86,7 +83,6 @@ int main(int argc, char** argv) {
             if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
                 white++;
             }
-            cout<<"indx 2 white"<<white<<endl;
         }
         if(index==3){
             if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
@@ -98,7 +94,6 @@ int main(int argc, char** argv) {
             if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
                 white++;
             }
-            cout<<"indx 3 white"<<white<<endl;
         }
     }
     
