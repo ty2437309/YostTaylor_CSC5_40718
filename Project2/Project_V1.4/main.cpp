@@ -153,6 +153,11 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn2[0]>>turn2[1]>>turn2[2]>>turn2[3];
+            feedback2(turn2, sol, black, white);
+            feedbackout(fbck, win, black, white, a, b, c, d);
+            if(win==true){
+                break;
+            }
         }else if(turn_count==3){
             //Turn 3 Stuff
             //Turn 3 Array Identifiers
@@ -162,6 +167,11 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn3[0]>>turn3[1]>>turn3[2]>>turn3[3];
+            feedback3(turn3, sol, black, white);
+            feedbackout(fbck, win, black, white, a, b, c, d);
+            if(win==true){
+                break;
+            }
         }else if(turn_count==4){
             //Turn 4 Stuff
             //Turn 4 Array Identifiers
@@ -171,6 +181,11 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn4[0]>>turn4[1]>>turn4[2]>>turn4[3];
+            feedback4(turn4, sol, black, white);
+            feedbackout(fbck, win, black, white, a, b, c, d);
+            if(win==true){
+                break;
+            }
         }else if(turn_count==5){
             //Turn 5 Stuff
             //Turn 5 Array Identifiers
@@ -180,6 +195,11 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn5[0]>>turn5[1]>>turn5[2]>>turn5[3];
+            feedback5(turn5, sol, black, white);
+            feedbackout(fbck, win, black, white, a, b, c, d);
+            if(win==true){
+                break;
+            }
         }else if(turn_count==6){
             //Turn 6 Stuff
             //Turn 6 Array Identifiers
@@ -189,6 +209,11 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn6[0]>>turn6[1]>>turn6[2]>>turn6[3];
+            feedback6(turn6, sol, black, white);
+            feedbackout(fbck, win, black, white, a, b, c, d);
+            if(win==true){
+                break;
+            }
         }else if(turn_count==7){
             //Turn 7 Stuff
             //Turn 7 Array Identifiers
@@ -198,6 +223,11 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn7[0]>>turn7[1]>>turn7[2]>>turn7[3];
+            feedback7(turn7, sol, black, white);
+            feedbackout(fbck, win, black, white, a, b, c, d);
+            if(win==true){
+                break;
+            }
         }else if(turn_count==8){
             //Turn 8 Stuff
             //Turn 8 Array Identifiers
@@ -207,6 +237,11 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn8[0]>>turn8[1]>>turn8[2]>>turn8[3];
+            feedback8(turn8, sol, black, white);
+            feedbackout(fbck, win, black, white, a, b, c, d);
+            if(win==true){
+                break;
+            }
         }else if(turn_count==9){
             //Turn 9 Stuff
             //Turn 9 Array Identifiers
@@ -216,11 +251,15 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn9[0]>>turn9[1]>>turn9[2]>>turn9[3];
+            feedback9(turn9, sol, black, white);
+            feedbackout(fbck, win, black, white, a, b, c, d);
+            if(win==true){
+                break;
+            }
         }else{
             //Turn 10 Stuff
             //Turn 10 Array Identifiers
-            int c=18, d=19;
-            int last_chance=0;
+            int c=18, d=19, last_chance=0;
             cout<<"Turn 10!"<<endl;
             cout<<"Acceptable answers are: R, O, Y, G, B, and P."<<endl;
             cout<<"Please enter four color code guess separated"<<endl;
@@ -238,6 +277,11 @@ void game(){
                     }break;
                     default:{
                         //Continue To End
+                        feedback10(turn10, sol, black, white);
+                        feedbackout(fbck, win, black, white, a, b, c, d);
+                        if(win==true){
+                            break;
+                        }
                     }
                 }
             }
@@ -300,16 +344,307 @@ void feedback1(char turn1[], char sol[], int& black, int& white){
     }
     //Check For White
     for(int index=0;index<=3;index++){
-        if((turn1[index]==sol[0])&&(index!=0)){
+        if(index=0){
+            if((turn1[0]==sol[1])||(turn1[0]==sol[2])||
+               (turn1[0]==sol[3])){
+               white++;
+            }            
+        }
+        if(index=1){
+            if((turn1[1]==sol[0])||(turn1[1]==sol[2])||
+               (turn1[1]==sol[3])){
+               white++;
+            }            
+        }
+        if(index=2){
+            if((turn1[2]==sol[0])||(turn1[2]==sol[1])||
+               (turn1[2]==sol[3])){
+               white++;
+            }            
+        }
+        if(index=3){
+            if((turn1[3]==sol[0])||(turn1[3]==sol[1])||
+               (turn1[3]==sol[2])){
+               white++;
+            }            
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }
+}
+
+void feedback2(char turn2[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn2[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn2[index]==sol[0])&&(index!=0)){
             white++;
         }
-        if((turn1[index]==sol[1])&&(index!=1)){
+        if((turn2[index]==sol[1])&&(index!=1)){
             white++;
         }
-        if((turn1[index]==sol[2])&&(index!=2)){
+        if((turn2[index]==sol[2])&&(index!=2)){
             white++;
         }
-        if((turn1[index]==sol[3])&&(index!=3)){
+        if((turn2[index]==sol[3])&&(index!=3)){
+            white++;
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }    
+}
+
+void feedback3(char turn3[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn3[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn3[index]==sol[0])&&(index!=0)){
+            white++;
+        }
+        if((turn3[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+        if((turn3[index]==sol[2])&&(index!=2)){
+            white++;
+        }
+        if((turn3[index]==sol[3])&&(index!=3)){
+            white++;
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }    
+}
+
+void feedback4(char turn4[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn4[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn4[index]==sol[0])&&(index!=0)){
+            white++;
+        }
+        if((turn4[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+        if((turn4[index]==sol[2])&&(index!=2)){
+            white++;
+        }
+        if((turn4[index]==sol[3])&&(index!=3)){
+            white++;
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }    
+}
+
+void feedback5(char turn5[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn5[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn5[index]==sol[0])&&(index!=0)){
+            white++;
+        }
+        if((turn5[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+        if((turn5[index]==sol[2])&&(index!=2)){
+            white++;
+        }
+        if((turn5[index]==sol[3])&&(index!=3)){
+            white++;
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }    
+}
+
+void feedback6(char turn6[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn6[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn6[index]==sol[0])&&(index!=0)){
+            white++;
+        }
+        if((turn6[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+        if((turn6[index]==sol[2])&&(index!=2)){
+            white++;
+        }
+        if((turn6[index]==sol[3])&&(index!=3)){
+            white++;
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }    
+}
+
+void feedback7(char turn7[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn7[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn7[index]==sol[0])&&(index!=0)){
+            white++;
+        }
+        if((turn7[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+        if((turn7[index]==sol[2])&&(index!=2)){
+            white++;
+        }
+        if((turn7[index]==sol[3])&&(index!=3)){
+            white++;
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }    
+}
+
+void feedback8(char turn8[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn8[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn8[index]==sol[0])&&(index!=0)){
+            white++;
+        }
+        if((turn8[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+        if((turn8[index]==sol[2])&&(index!=2)){
+            white++;
+        }
+        if((turn8[index]==sol[3])&&(index!=3)){
+            white++;
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }    
+}
+
+void feedback9(char turn9[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn9[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn9[index]==sol[0])&&(index!=0)){
+            white++;
+        }
+        if((turn9[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+        if((turn9[index]==sol[2])&&(index!=2)){
+            white++;
+        }
+        if((turn9[index]==sol[3])&&(index!=3)){
+            white++;
+        }
+    }
+    //Eliminate Duplicates
+    if(black+white>4){
+        temp=white-black;
+        white=white-temp;
+    }    
+}
+
+void feedback10(char turn10[], char sol[], int& black, int& white){
+    //Declare Variables
+    int index=0, temp=0;
+    //Check For Black
+    for(int index=0;index<=3;index++){
+        if(turn10[index]==sol[index]){
+            black++;
+        }
+    }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if((turn10[index]==sol[0])&&(index!=0)){
+            white++;
+        }
+        if((turn10[index]==sol[1])&&(index!=1)){
+            white++;
+        }
+        if((turn10[index]==sol[2])&&(index!=2)){
+            white++;
+        }
+        if((turn10[index]==sol[3])&&(index!=3)){
             white++;
         }
     }

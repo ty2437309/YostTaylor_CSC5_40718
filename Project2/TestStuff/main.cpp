@@ -41,26 +41,43 @@ int main(int argc, char** argv) {
     //Output Test
     cout<<"Solution: "<<sol[0]<<sol[1]<<sol[2]<<sol[3]<<endl;
     //Output for loop test
-    int index=0, black=0, white=0;
+    int index=0, black=0, white=0, flag=0;
     char turn1[NSOL]={'P', 'G', 'G', 'O'};
+    //Check For Black
     for(int index=0;index<=3;index++){
         if(turn1[index]==sol[index]){
             black++;
         }
-        if((turn1[index]==sol[0])&&(index!=0)){
-            white++;
-        }
-        if((turn1[index]==sol[1])&&(index!=1)){
-            white++;
-        }
-        if((turn1[index]==sol[2])&&(index!=2)){
-            white++;
-        }
-        if((turn1[index]==sol[3])&&(index!=3)){
-            white++;
-        }
-        
     }
+    //Check For White
+    for(int index=0;index<=3;index++){
+        if(index=0){
+            if((turn1[0]==sol[1])||(turn1[0]==sol[2])||
+               (turn1[0]==sol[3])){
+               white++;
+            }            
+        }
+        if(index=1){
+            if((turn1[1]==sol[0])||(turn1[1]==sol[2])||
+               (turn1[1]==sol[3])){
+               white++;
+            }            
+        }
+        if(index=2){
+            if((turn1[2]==sol[0])||(turn1[2]==sol[1])||
+               (turn1[2]==sol[3])){
+               white++;
+            }            
+        }
+        if(index=3){
+            if((turn1[3]==sol[0])||(turn1[3]==sol[1])||
+               (turn1[3]==sol[2])){
+               white++;
+            }            
+        }
+    }
+    //Eliminate Duplicates
+
     cout<<"Black: "<<black<<" White: "<<white<<endl;
     return 0;
 }
