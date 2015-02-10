@@ -36,7 +36,7 @@ void feedback7(char[], char[], int&, int&);
 void feedback8(char[], char[], int&, int&);
 void feedback9(char[], char[], int&, int&);
 void feedback10(char[], char[], int&, int&);
-void feedbackout(char [FBCKR][FBCKC], int, int, int, int, int, int);
+bool feedbackout(char [FBCKR][FBCKC], bool, int, int, int, int, int, int);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -140,7 +140,7 @@ void game(){
             cout<<"by spaces."<<endl;         
             cin>>turn1[0]>>turn1[1]>>turn1[2]>>turn1[3];
             feedback1(turn1, sol, black, white);
-            feedbackout(fbck, black, white, a, b, c, d);
+            feedbackout(fbck, win, black, white, a, b, c, d);
         }else if(turn_count==2){
             //Turn 2 Stuff
             cout<<"Turn 2!"<<endl;
@@ -233,7 +233,7 @@ void game(){
     }
 }
 
-void feedbackout(char fbck[FBCKR][FBCKC], int black, int white, int a, int b, int c, int d){
+bool feedbackout(char fbck[FBCKR][FBCKC], bool win, int black, int white, int a, int b, int c, int d){
     //Begin Box Assignment
     if(black==1&&white==0){
         fbck[c][a]='B'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
@@ -255,15 +255,15 @@ void feedbackout(char fbck[FBCKR][FBCKC], int black, int white, int a, int b, in
         fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='W';
     }else if(black==4&&white==0){
         fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='B';
+        win=true;
     }else if(black==0&&white==4){
         fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
     }else if(black==1&&white==3){
         fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
-    }
-    else
-    {
+    }else{
         fbck[c][a]=' '; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
     }
+    return(win);
 }
 
 void feedback1(char turn1[], char sol[], int& black, int& white){
