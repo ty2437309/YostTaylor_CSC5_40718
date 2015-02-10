@@ -235,6 +235,39 @@ void game(){
     }
 }
 
+void feedbackout(char& fbck[][], char& fbck[][], char& fbck[][], char& fbck[][],
+                 int black, int white, int a, int b, int c, int d){
+    if(black==1&&white==0){
+        fbck[c][a]='B'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==0&&white==1){
+        fbck[c][a]='W'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==1&&white==1){
+        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==2&&white==0){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==0&&white==2){
+        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==2&&white==2){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='W'; fbck[d][b]='W';
+    }else if(black==3&&white==0){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]=' ';
+    }else if(black==0&&white==3){
+        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]=' ';
+    }else if(black==3&&white==1){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='W';
+    }else if(black==4&&white==0){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='B';
+    }else if(black==0&&white==4){
+        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
+    }else if(black==1&&white==3){
+        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
+    }
+    else
+    {
+        fbck[c][a]=' '; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
+    }
+}
+
 void feedback1(char turn1[], char sol[], int& black, int& white){
     //Declare Variables
     int index=0, temp=0;
