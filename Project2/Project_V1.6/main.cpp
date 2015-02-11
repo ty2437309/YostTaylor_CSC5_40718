@@ -132,9 +132,9 @@ void game(){
             cin>>turn[0]>>turn[1]>>turn[2]>>turn[3];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count=turn_count+9;
-            }
+//            if(win==true){
+//                turn_count=turn_count+9;
+//            }
         }else if(turn_count==2){
             //Turn 2 Stuff
             //Turn 2 Array Identifiers
@@ -146,9 +146,9 @@ void game(){
             cin>>turn[4]>>turn[5]>>turn[6]>>turn[7];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count=turn_count+8;
-            }
+//            if(win==true){
+//                turn_count=turn_count+8;
+//            }
         }else if(turn_count==3){
             //Turn 3 Stuff
             //Turn 3 Array Identifiers
@@ -160,9 +160,9 @@ void game(){
             cin>>turn[8]>>turn[9]>>turn[10]>>turn[11];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count=turn_count+7;
-            }
+//            if(win==true){
+//                turn_count=turn_count+7;
+//            }
         }else if(turn_count==4){
             //Turn 4 Stuff
             //Turn 4 Array Identifiers
@@ -174,9 +174,9 @@ void game(){
             cin>>turn[12]>>turn[13]>>turn[14]>>turn[15];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count=turn_count+6;
-            }
+//            if(win==true){
+//                turn_count=turn_count+6;
+//            }
         }else if(turn_count==5){
             //Turn 5 Stuff
             //Turn 5 Array Identifiers
@@ -188,9 +188,9 @@ void game(){
             cin>>turn[16]>>turn[17]>>turn[18]>>turn[19];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count=turn_count+5;
-            }
+//            if(win==true){
+//                turn_count=turn_count+5;
+//            }
         }else if(turn_count==6){
             //Turn 6 Stuff
             //Turn 6 Array Identifiers
@@ -202,9 +202,9 @@ void game(){
             cin>>turn[20]>>turn[21]>>turn[22]>>turn[23];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count=turn_count+4;
-            }
+//            if(win==true){
+//                turn_count=turn_count+4;
+//            }
         }else if(turn_count==7){
             //Turn 7 Stuff
             //Turn 7 Array Identifiers
@@ -216,9 +216,9 @@ void game(){
             cin>>turn[24]>>turn[25]>>turn[26]>>turn[27];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count=turn_count+3;
-            }
+//            if(win==true){
+//                turn_count=turn_count+3;
+//            }
         }else if(turn_count==8){
             //Turn 8 Stuff
             //Turn 8 Array Identifiers
@@ -230,9 +230,9 @@ void game(){
             cin>>turn[28]>>turn[29]>>turn[30]>>turn[31];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count=turn_count+2;
-            }
+//            if(win==true){
+//                turn_count=turn_count+2;
+//            }
         }else if(turn_count==9){
             //Turn 9 Stuff
             //Turn 9 Array Identifiers
@@ -244,9 +244,9 @@ void game(){
             cin>>turn[32]>>turn[33]>>turn[34]>>turn[35];
             feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
-            if(win==true){
-                turn_count++;
-            }
+//            if(win==true){
+//                turn_count++;
+//            }
         }else{
             //Turn 10 Stuff
             //Turn 10 Array Identifiers
@@ -325,16 +325,34 @@ bool feedbackout(char fbck[FBCKR][FBCKC], bool win, int black, int white, int a,
 void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
     //Declare Variables
     int index=0, temp=0;
-    //Determine What Turn It Is
+    //Determine What Turn Index To Use
     if(turn_count==1){
         temp=0;
+    }else if(turn_count==2){
+        temp=4;
+    }else if(turn_count==3){
+        temp=8;
+    }else if(turn_count==4){
+        temp=12;
+    }else if(turn_count==5){
+        temp=16;
+    }else if(turn_count==6){
+        temp=20;
+    }else if(turn_count==7){
+        temp=24;
+    }else if(turn_count==8){
+        temp=28;
+    }else if(turn_count==9){
+        temp=32;
+    }else{
+        temp=36;
     }
     //Check For Colors
-    for(int index=temp;index<=3;index++){
+    for(int index=temp;index<=(temp+3);index++){
         if(turn[index]==sol[index]){
             black++;
         }
-        if(index==0){
+        if(index==temp){
             if((turn[index]==sol[1])&&(turn[index]!=sol[0])&&(turn[index+1]!=sol[1])){
                 white++;
             }
@@ -345,7 +363,7 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
                 white++;
             } 
         }        
-        if(index==1){
+        if(index==temp+1){
             if((turn[index]==sol[0])&&(turn[index]!=sol[1])&&(turn[index-1]!=sol[0])){
                 white++;
             }
@@ -356,7 +374,7 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
                 white++;
             }
         }
-        if(index==2){
+        if(index==temp+2){
             if((turn[index]==sol[0])&&(turn[index]!=sol[2])&&(turn[index-2]!=sol[0])){
                 white++;
             }
@@ -367,7 +385,7 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
                 white++;
             }
         }
-        if(index==3){
+        if(index==temp+3){
             if((turn[index]==sol[0])&&(turn[index]!=sol[3])&&(turn[index-3]!=sol[0])){
                 white++;
             }
