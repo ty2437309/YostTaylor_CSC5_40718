@@ -26,6 +26,7 @@ const int FBCKC=2;  //Feedback Block Columns
 //Function Prototypes
     //Menu Option Functions
 void game();
+void gameout();
 void rules();
 void feedback(char[], char[], int&, int&, int);
 void feedbackout(char [FBCKR][FBCKC], bool&, int, int, int, int, int, int);
@@ -94,29 +95,8 @@ void game(){
     }
     //Turns Begin Here!
     for(int turn_count=1;turn_count<=11;turn_count++){
-        cout<<"        // Mastermind // "<<endl;
-        cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
-        cout<<"  1   | "<<turn[0]<<"| "<<turn[1]<<"| "<<turn[2]<<"| "<<turn[3]<<"|"<<fbck[0][0]<<" | "<<fbck[0][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[1][0]<<" | "<<fbck[1][1]<<"|"<<endl;
-        cout<<"  2   | "<<turn[4]<<"| "<<turn[5]<<"| "<<turn[6]<<"| "<<turn[7]<<"|"<<fbck[2][0]<<" | "<<fbck[2][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[3][0]<<" | "<<fbck[3][1]<<"|"<<endl;
-        cout<<"  3   | "<<turn[8]<<"| "<<turn[9]<<"| "<<turn[10]<<"| "<<turn[11]<<"|"<<fbck[4][0]<<" | "<<fbck[4][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[5][0]<<" | "<<fbck[5][1]<<"|"<<endl;
-        cout<<"  4   | "<<turn[12]<<"| "<<turn[13]<<"| "<<turn[14]<<"| "<<turn[15]<<"|"<<fbck[6][0]<<" | "<<fbck[6][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[7][0]<<" | "<<fbck[7][1]<<"|"<<endl;
-        cout<<"  5   | "<<turn[16]<<"| "<<turn[17]<<"| "<<turn[18]<<"| "<<turn[19]<<"|"<<fbck[8][0]<<" | "<<fbck[8][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[9][0]<<" | "<<fbck[9][1]<<"|"<<endl;
-        cout<<"  6   | "<<turn[20]<<"| "<<turn[21]<<"| "<<turn[22]<<"| "<<turn[23]<<"|"<<fbck[10][0]<<" | "<<fbck[10][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[11][0]<<" | "<<fbck[11][1]<<"|"<<endl;
-        cout<<"  7   | "<<turn[24]<<"| "<<turn[25]<<"| "<<turn[26]<<"| "<<turn[27]<<"|"<<fbck[12][0]<<" | "<<fbck[12][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[13][0]<<" | "<<fbck[13][1]<<"|"<<endl;
-        cout<<"  8   | "<<turn[28]<<"| "<<turn[29]<<"| "<<turn[30]<<"| "<<turn[31]<<"|"<<fbck[14][0]<<" | "<<fbck[14][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[15][0]<<" | "<<fbck[15][1]<<"|"<<endl;
-        cout<<"  9   | "<<turn[32]<<"| "<<turn[33]<<"| "<<turn[34]<<"| "<<turn[35]<<"|"<<fbck[16][0]<<" | "<<fbck[16][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                    <<fbck[17][0]<<" | "<<fbck[17][1]<<"|"<<endl;
-        cout<<"  10  | "<<turn[36]<<"| "<<turn[37]<<"| "<<turn[38]<<"| "<<turn[39]<<"|"<<fbck[18][0]<<" | "<<fbck[18][1]<<"|"<<endl;
-        cout<<"      |__|__|__|__|"                                                        <<fbck[19][0]<<" | "<<fbck[19][1]<<"|"<<endl;
-        cout<<"      ~~~~~~~~~~~~~~~~~~~"<<sol[0]<<sol[1]<<sol[2]<<sol[3]<<endl;
+        gameout(fbck, turn);
+        
         //Turn Feedback Begins Here!
         if(turn_count==11){
             //Prints Last Turn Before Loop Ends
@@ -289,40 +269,66 @@ void game(){
     }
 }
 
+void gameout(char fbck[FBCKR][FBCKC], char turn[], char sol[]){
+    cout<<"        // Mastermind // "<<endl;
+    cout<<"Turns ~~~~~~~~~~~~~~~~~~~"<<endl;
+    cout<<"  1   | "<<turn[0]<<"| "<<turn[1]<<"| "<<turn[2]<<"| "<<turn[3]<<"|"<<fbck[0][0]<<" | "<<fbck[0][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                <<fbck[1][0]<<" | "<<fbck[1][1]<<"|"<<endl;
+    cout<<"  2   | "<<turn[4]<<"| "<<turn[5]<<"| "<<turn[6]<<"| "<<turn[7]<<"|"<<fbck[2][0]<<" | "<<fbck[2][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                <<fbck[3][0]<<" | "<<fbck[3][1]<<"|"<<endl;
+    cout<<"  3   | "<<turn[8]<<"| "<<turn[9]<<"| "<<turn[10]<<"| "<<turn[11]<<"|"<<fbck[4][0]<<" | "<<fbck[4][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                    <<fbck[5][0]<<" | "<<fbck[5][1]<<"|"<<endl;
+    cout<<"  4   | "<<turn[12]<<"| "<<turn[13]<<"| "<<turn[14]<<"| "<<turn[15]<<"|"<<fbck[6][0]<<" | "<<fbck[6][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                    <<fbck[7][0]<<" | "<<fbck[7][1]<<"|"<<endl;
+    cout<<"  5   | "<<turn[16]<<"| "<<turn[17]<<"| "<<turn[18]<<"| "<<turn[19]<<"|"<<fbck[8][0]<<" | "<<fbck[8][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                    <<fbck[9][0]<<" | "<<fbck[9][1]<<"|"<<endl;
+    cout<<"  6   | "<<turn[20]<<"| "<<turn[21]<<"| "<<turn[22]<<"| "<<turn[23]<<"|"<<fbck[10][0]<<" | "<<fbck[10][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                    <<fbck[11][0]<<" | "<<fbck[11][1]<<"|"<<endl;
+    cout<<"  7   | "<<turn[24]<<"| "<<turn[25]<<"| "<<turn[26]<<"| "<<turn[27]<<"|"<<fbck[12][0]<<" | "<<fbck[12][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                    <<fbck[13][0]<<" | "<<fbck[13][1]<<"|"<<endl;
+    cout<<"  8   | "<<turn[28]<<"| "<<turn[29]<<"| "<<turn[30]<<"| "<<turn[31]<<"|"<<fbck[14][0]<<" | "<<fbck[14][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                    <<fbck[15][0]<<" | "<<fbck[15][1]<<"|"<<endl;
+    cout<<"  9   | "<<turn[32]<<"| "<<turn[33]<<"| "<<turn[34]<<"| "<<turn[35]<<"|"<<fbck[16][0]<<" | "<<fbck[16][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                    <<fbck[17][0]<<" | "<<fbck[17][1]<<"|"<<endl;
+    cout<<"  10  | "<<turn[36]<<"| "<<turn[37]<<"| "<<turn[38]<<"| "<<turn[39]<<"|"<<fbck[18][0]<<" | "<<fbck[18][1]<<"|"<<endl;
+    cout<<"      |__|__|__|__|"                                                    <<fbck[19][0]<<" | "<<fbck[19][1]<<"|"<<endl;
+    cout<<"      ~~~~~~~~~~~~~~~~~~~"<<sol[0]<<sol[1]<<sol[2]<<sol[3]<<endl;
+}
+
 void feedbackout(char fbck[FBCKR][FBCKC], bool& win, int black, int white, int a, int b, int c, int d){
-    //Begin Box Assignment
+    //Feedback Box Assignment
     if(black==1&&white==0){
         fbck[c][a]='B'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
     }else if(black==0&&white==1){
         fbck[c][a]='W'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
-    }else if(black==1&&white==1){
-        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
     }else if(black==2&&white==0){
         fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]=' '; fbck[d][b]=' ';
     }else if(black==0&&white==2){
         fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
-    }else if(black==2&&white==2){
-        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='W'; fbck[d][b]='W';
+    }else if(black==1&&white==1){
+        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
     }else if(black==3&&white==0){
         fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]=' ';
     }else if(black==0&&white==3){
         fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]=' ';
+    }else if(black==2&&white==2){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='W'; fbck[d][b]='W';
     }else if(black==3&&white==1){
         fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='W';
-    }else if(black==4&&white==0){
-        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='B';
-        win=true;
-    }else if(black==0&&white==4){
-        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
     }else if(black==1&&white==3){
         fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
+    }else if(black==0&&white==4){
+        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
+    }else if(black==4&&white==0){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='B';
+        win=true;    
     }else{
         fbck[c][a]=' '; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
     }
 }
 
 void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
-    //Declare Variables
+    //Declare Control Variables
     int index=0, temp=0;
     //Determine What Turn Index To Use
     if(turn_count==1){
@@ -346,7 +352,7 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
     }else{
         temp=36;
     }
-    //Check For Colors
+    //Check For Black~White Feedback
     for(int index=temp;index<=(temp+3);index++){
         if(turn[index]==sol[index]){
             black++;
@@ -361,8 +367,7 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
             if((turn[index]==sol[3])&&(turn[index]!=sol[0])&&(turn[index+3]!=sol[3])){
                 white++;
             } 
-        }        
-        if(index==temp+1){
+        }else if(index==temp+1){
             if((turn[index]==sol[0])&&(turn[index]!=sol[1])&&(turn[index-1]!=sol[0])){
                 white++;
             }
@@ -372,8 +377,7 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
             if((turn[index]==sol[3])&&(turn[index]!=sol[1])&&(turn[index+3]!=sol[3])){
                 white++;
             }
-        }
-        if(index==temp+2){
+        }else if(index==temp+2){
             if((turn[index]==sol[0])&&(turn[index]!=sol[2])&&(turn[index-2]!=sol[0])){
                 white++;
             }
@@ -383,8 +387,7 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
             if((turn[index]==sol[3])&&(turn[index]!=sol[2])&&(turn[index+1]!=sol[3])){
                 white++;
             }
-        }
-        if(index==temp+3){
+        }else if(index==temp+3){
             if((turn[index]==sol[0])&&(turn[index]!=sol[3])&&(turn[index-3]!=sol[0])){
                 white++;
             }
