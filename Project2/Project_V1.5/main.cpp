@@ -156,7 +156,7 @@ void game(){
             feedback2(turn2, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count=turn_count+8;
             }
         }else if(turn_count==3){
             //Turn 3 Stuff
@@ -170,7 +170,7 @@ void game(){
             feedback3(turn3, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count=turn_count+7;
             }
         }else if(turn_count==4){
             //Turn 4 Stuff
@@ -184,7 +184,7 @@ void game(){
             feedback4(turn4, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count=turn_count+6;
             }
         }else if(turn_count==5){
             //Turn 5 Stuff
@@ -198,7 +198,7 @@ void game(){
             feedback5(turn5, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count=turn_count+5;
             }
         }else if(turn_count==6){
             //Turn 6 Stuff
@@ -212,7 +212,7 @@ void game(){
             feedback6(turn6, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count=turn_count+4;
             }
         }else if(turn_count==7){
             //Turn 7 Stuff
@@ -226,7 +226,7 @@ void game(){
             feedback7(turn7, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count=turn_count+3;
             }
         }else if(turn_count==8){
             //Turn 8 Stuff
@@ -240,7 +240,7 @@ void game(){
             feedback8(turn8, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count=turn_count+2;
             }
         }else if(turn_count==9){
             //Turn 9 Stuff
@@ -254,7 +254,7 @@ void game(){
             feedback9(turn9, sol, black, white);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
-                break;
+                turn_count++;
             }
         }else{
             //Turn 10 Stuff
@@ -279,9 +279,6 @@ void game(){
                         //Continue To End
                         feedback10(turn10, sol, black, white);
                         feedbackout(fbck, win, black, white, a, b, c, d);
-                        if(win==true){
-                            break;
-                        }
                     }
                 }
             }

@@ -26,10 +26,10 @@ const int FBCKC=2;  //Feedback Block Columns
 //Function Prototypes
     //Menu Option Functions
 void game();
-void gameout();
-void rules();
+void gameout(char [FBCKR][FBCKC], char [], char []);
 void feedback(char[], char[], int&, int&, int);
 void feedbackout(char [FBCKR][FBCKC], bool&, int, int, int, int, int, int);
+void rules();
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -86,7 +86,7 @@ void game(){
         //Loop Variables
     bool win=false;
         //Feedback Control Variables
-    int black=0, white=0, a=0, b=1;
+    int a=0, b=1, black=0, white=0;
     //Computer Makes Code
     srand(static_cast<unsigned int>(time(0)));
     for(cdindx=0; cdindx<=3; cdindx++){
@@ -95,8 +95,8 @@ void game(){
     }
     //Turns Begin Here!
     for(int turn_count=1;turn_count<=11;turn_count++){
-        gameout(fbck, turn);
-        
+        //Output Board
+        gameout(fbck, turn, sol);
         //Turn Feedback Begins Here!
         if(turn_count==11){
             //Prints Last Turn Before Loop Ends
@@ -250,9 +250,6 @@ void game(){
                         //Continue To End
                         feedback(turn, sol, black, white, turn_count);
                         feedbackout(fbck, win, black, white, a, b, c, d);
-                        if(win==true){
-                            break;
-                        }
                     }
                 }
             }
@@ -352,8 +349,10 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
     }else{
         temp=36;
     }
+    cout<<"temp:"<<temp<<endl;
     //Check For Black~White Feedback
     for(int index=temp;index<=(temp+3);index++){
+        cout<<"index:"<<index<<endl;
         if(turn[index]==sol[index]){
             black++;
         }
@@ -367,7 +366,8 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
             if((turn[index]==sol[3])&&(turn[index]!=sol[0])&&(turn[index+3]!=sol[3])){
                 white++;
             } 
-        }else if(index==temp+1){
+        }
+        if(index==temp+1){
             if((turn[index]==sol[0])&&(turn[index]!=sol[1])&&(turn[index-1]!=sol[0])){
                 white++;
             }
@@ -377,7 +377,8 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
             if((turn[index]==sol[3])&&(turn[index]!=sol[1])&&(turn[index+3]!=sol[3])){
                 white++;
             }
-        }else if(index==temp+2){
+        }
+        if(index==temp+2){
             if((turn[index]==sol[0])&&(turn[index]!=sol[2])&&(turn[index-2]!=sol[0])){
                 white++;
             }
@@ -387,7 +388,8 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
             if((turn[index]==sol[3])&&(turn[index]!=sol[2])&&(turn[index+1]!=sol[3])){
                 white++;
             }
-        }else if(index==temp+3){
+        }
+        if(index==temp+3){
             if((turn[index]==sol[0])&&(turn[index]!=sol[3])&&(turn[index-3]!=sol[0])){
                 white++;
             }

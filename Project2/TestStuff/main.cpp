@@ -20,25 +20,6 @@ int main(int argc, char** argv) {
     unsigned int cdindx=0;
     char sol[NSOL]={'O', 'O', 'P', 'G'};
     char code[NCOLOR]={'R', 'O', 'Y', 'G', 'B', 'P'};
-    
-    //Computer Makes Code
-    ///srand(static_cast<unsigned int>(time(0)));
-    
-    /*for(cdindx=0; cdindx<=3; cdindx++){
-        pass=rand()%NCOLOR;
-        sol[cdindx]=pass;
-    */
-    ///for(cdindx=0; cdindx<=3; cdindx++){
-    ///pass=rand()%NCOLOR;
-    //pass_2=rand()%NCOLOR;
-    //pass_3=rand()%NCOLOR;
-    //pass_4=rand()%NCOLOR;
-    ///sol[cdindx]=code[pass];
-    //sol[1]=code[pass_2];
-    //sol[2]=code[pass_3];    
-    //sol[3]=code[pass_4];
-    ///}
-    //Output Test
     cout<<"Solution: "<<sol[0]<<sol[1]<<sol[2]<<sol[3]<<endl;
     //Output for loop test
     int index=0, black=0, white=0, flag=0;
