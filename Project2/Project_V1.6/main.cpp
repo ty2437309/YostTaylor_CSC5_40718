@@ -27,16 +27,7 @@ const int FBCKC=2;  //Feedback Block Columns
     //Menu Option Functions
 void game();
 void rules();
-void feedback1(char[], char[], int&, int&);
-void feedback2(char[], char[], int&, int&);
-void feedback3(char[], char[], int&, int&);
-void feedback4(char[], char[], int&, int&);
-void feedback5(char[], char[], int&, int&);
-void feedback6(char[], char[], int&, int&);
-void feedback7(char[], char[], int&, int&);
-void feedback8(char[], char[], int&, int&);
-void feedback9(char[], char[], int&, int&);
-void feedback10(char[], char[], int&, int&);
+void feedback(char[], char[], int&, int&, int);
 bool feedbackout(char [FBCKR][FBCKC], bool, int, int, int, int, int, int);
 //Execution Begins Here!
 int main(int argc, char** argv) {
@@ -139,7 +130,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;         
             cin>>turn[0]>>turn[1]>>turn[2]>>turn[3];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count=turn_count+9;
@@ -153,7 +144,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn[4]>>turn[5]>>turn[6]>>turn[7];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count=turn_count+8;
@@ -167,7 +158,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn[8]>>turn[9]>>turn[10]>>turn[11];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count=turn_count+7;
@@ -181,7 +172,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn[12]>>turn[13]>>turn[14]>>turn[15];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count=turn_count+6;
@@ -195,7 +186,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn[16]>>turn[17]>>turn[18]>>turn[19];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count=turn_count+5;
@@ -209,7 +200,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn[20]>>turn[21]>>turn[22]>>turn[23];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count=turn_count+4;
@@ -223,7 +214,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn[24]>>turn[25]>>turn[26]>>turn[27];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count=turn_count+3;
@@ -237,7 +228,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn[28]>>turn[29]>>turn[30]>>turn[31];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count=turn_count+2;
@@ -251,7 +242,7 @@ void game(){
             cout<<"Please enter four color code guess separated"<<endl;
             cout<<"by spaces."<<endl;
             cin>>turn[32]>>turn[33]>>turn[34]>>turn[35];
-            feedback(turn, sol, black, white);
+            feedback(turn, sol, black, white, turn_count);
             feedbackout(fbck, win, black, white, a, b, c, d);
             if(win==true){
                 turn_count++;
@@ -277,7 +268,7 @@ void game(){
                     }break;
                     default:{
                         //Continue To End
-                        feedback(turn, sol, black, white);
+                        feedback(turn, sol, black, white, turn_count);
                         feedbackout(fbck, win, black, white, a, b, c, d);
                         if(win==true){
                             break;
@@ -331,57 +322,59 @@ bool feedbackout(char fbck[FBCKR][FBCKC], bool win, int black, int white, int a,
     return(win);
 }
 
-void feedback(char turn[], char sol[], int& black, int& white){
+void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
     //Declare Variables
     int index=0, temp=0;
     //Determine What Turn It Is
-    
+    if(turn_count==1){
+        temp=0;
+    }
     //Check For Colors
-    for(int index=0;index<=3;index++){
+    for(int index=temp;index<=3;index++){
         if(turn[index]==sol[index]){
             black++;
         }
         if(index==0){
-            if((turn1[0]==sol[1])&&(turn1[0]!=sol[0])&&(turn1[1]!=sol[1])){
+            if((turn[index]==sol[1])&&(turn[index]!=sol[0])&&(turn[index+1]!=sol[1])){
                 white++;
             }
-            if((turn1[0]==sol[2])&&(turn1[0]!=sol[0])&&(turn1[2]!=sol[2])){
+            if((turn[index]==sol[2])&&(turn[index]!=sol[0])&&(turn[index+2]!=sol[2])){
                 white++;
             }
-            if((turn1[0]==sol[3])&&(turn1[0]!=sol[0])&&(turn1[3]!=sol[3])){
+            if((turn[index]==sol[3])&&(turn[index]!=sol[0])&&(turn[index+3]!=sol[3])){
                 white++;
             } 
         }        
         if(index==1){
-            if((turn1[1]==sol[0])&&(turn1[1]!=sol[1])&&(turn1[0]!=sol[0])){
+            if((turn[index]==sol[0])&&(turn[index]!=sol[1])&&(turn[index-1]!=sol[0])){
                 white++;
             }
-            if((turn1[1]==sol[2])&&(turn1[1]!=sol[1])&&(turn1[2]!=sol[2])){
+            if((turn[index]==sol[2])&&(turn[index]!=sol[1])&&(turn[index+2]!=sol[2])){
                 white++;
             }
-            if((turn1[1]==sol[3])&&(turn1[1]!=sol[1])&&(turn1[3]!=sol[3])){
+            if((turn[index]==sol[3])&&(turn[index]!=sol[1])&&(turn[index+3]!=sol[3])){
                 white++;
             }
         }
         if(index==2){
-            if((turn1[2]==sol[0])&&(turn1[2]!=sol[2])&&(turn1[0]!=sol[0])){
+            if((turn[index]==sol[0])&&(turn[index]!=sol[2])&&(turn[index-2]!=sol[0])){
                 white++;
             }
-            if((turn1[2]==sol[1])&&(turn1[2]!=sol[2])&&(turn1[1]!=sol[1])){
+            if((turn[index]==sol[1])&&(turn[index]!=sol[2])&&(turn[index-1]!=sol[1])){
                 white++;
             }
-            if((turn1[2]==sol[3])&&(turn1[2]!=sol[2])&&(turn1[3]!=sol[3])){
+            if((turn[index]==sol[3])&&(turn[index]!=sol[2])&&(turn[index+1]!=sol[3])){
                 white++;
             }
         }
         if(index==3){
-            if((turn1[3]==sol[0])&&(turn1[3]!=sol[3])&&(turn1[0]!=sol[0])){
+            if((turn[index]==sol[0])&&(turn[index]!=sol[3])&&(turn[index-3]!=sol[0])){
                 white++;
             }
-            if((turn1[3]==sol[1])&&(turn1[3]!=sol[3])&&(turn1[1]!=sol[1])){
+            if((turn[index]==sol[1])&&(turn[index]!=sol[3])&&(turn[index-2]!=sol[1])){
                 white++;
             }
-            if((turn1[3]==sol[2])&&(turn1[3]!=sol[3])&&(turn1[2]!=sol[2])){
+            if((turn[index]==sol[2])&&(turn[index]!=sol[3])&&(turn[index-1]!=sol[2])){
                 white++;
             }
         }
