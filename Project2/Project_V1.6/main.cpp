@@ -294,6 +294,8 @@ void gameout(char fbck[FBCKR][FBCKC], char turn[], char sol[]){
 
 void feedbackout(char fbck[FBCKR][FBCKC], bool& win, int black, int white, int a, int b, int c, int d){
     //Feedback Box Assignment
+    cout<<"black after pass:"<<black<<endl;
+    cout<<"white after pass:"<<white<<endl;
     if(black==1&&white==0){
         fbck[c][a]='B'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
     }else if(black==0&&white==1){
@@ -328,27 +330,7 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
     //Declare Control Variables
     int index=0, temp=0;
     //Determine What Turn Index To Use
-    if(turn_count==1){
-        temp=0;
-    }else if(turn_count==2){
-        temp=4;
-    }else if(turn_count==3){
-        temp=8;
-    }else if(turn_count==4){
-        temp=12;
-    }else if(turn_count==5){
-        temp=16;
-    }else if(turn_count==6){
-        temp=20;
-    }else if(turn_count==7){
-        temp=24;
-    }else if(turn_count==8){
-        temp=28;
-    }else if(turn_count==9){
-        temp=32;
-    }else{
-        temp=36;
-    }
+    temp=(turn_count-1)*4;
     cout<<"temp:"<<temp<<endl;
     //Check For Black~White Feedback
     for(int index=temp;index<=(temp+3);index++){
@@ -401,6 +383,8 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
             }
         }
     }
+    cout<<"black before pass:"<<black<<endl;
+    cout<<"white before pass:"<<white<<endl;
 }
 
 void rules(){
