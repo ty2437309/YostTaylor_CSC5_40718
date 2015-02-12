@@ -500,5 +500,15 @@ void writerules(float n1, float n2){
 }
 
 void writestats(int turnwin){
-    
+    //Declare Variables
+    int wintemp=0, losstemp=0;
+    //Add Win~Loss To Temp Memory
+    if(turnwin>0){
+        wintemp++;
+    }else{
+        losstemp++;
+    }
+    ofstream stats;
+    //Output To File
+    stats.open("statistics.dat");
 }
