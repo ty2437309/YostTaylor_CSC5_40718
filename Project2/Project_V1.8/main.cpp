@@ -26,7 +26,7 @@ void gameout(char [FBCKR][FBCKC], char [], char [], bool);
 void feedback(char[], char[], int&, int&, int);
 void feedbackout(char [FBCKR][FBCKC], bool&, int, int, int, int, int, int);
 void rules();
-void writerules();
+void writerules(float, float);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -314,7 +314,7 @@ void gameout(char fbck[FBCKR][FBCKC], char turn[], char sol[], bool win){
     }
 }
 
-void feedbackout(char fbck[FBCKR][FBCKC], bool& win, int black, int white, int a, int b, int c, int d){
+void feedbackout(char fbck[FBCKR][FBCKC], bool& win, int black, int white, int a, int b, int c, int d){ //Change Order Please
     //Feedback Box Assignment
     if(black==1&&white==0){
         fbck[c][a]='B'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
@@ -449,6 +449,7 @@ void rules(){
 void writerules(float n1, float n2){
     //Declare a File Object
     ofstream output;
+    //Output To File
     output.open("MastermindRules.txt");
     output<<"Rules of Mastermind:"<<endl;
     output<<endl;
@@ -472,5 +473,6 @@ void writerules(float n1, float n2){
     output<<"is in the wrong position."<<endl;
     output<<fixed<<setprecision(2)<<showpoint;
     output<<"Universe Check...is PI still PI?? "<<n1/n2<<endl;
+    //Close The File!
     output.close();
 }
