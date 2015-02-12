@@ -3,7 +3,7 @@
  * Author: Taylor Yost
  * Created on February 05, 2015, 19:25
  * Purpose: Project 2 Ver 1.8
- * Changes: Fixed more errors!  Addition of Leaderboard.
+ * Changes: Fixed more errors!  Addition of Statistics.
  */
 //System Libraries
 #include <cstdlib>
@@ -20,18 +20,20 @@ const int NTV=40;   //Number Turn Variables
 const int FBCKR=20; //Feedback Block Rows
 const int FBCKC=2;  //Feedback Block Columns
 //Function Prototypes
-void game();
+void game(int&, int&);
 void gameout(char [FBCKR][FBCKC], char [], char [], bool);
 void feedback(char[], char[], int&, int&, int);
 void feedbackout(char [FBCKR][FBCKC], bool&, int, int, int, int, int, int);
 void rules();
 void writerules(float, float);
+void stats(int&, int&);
 void writestats(int);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
     int option;
     string exit;
+    int wincount=0, losscount=0;
     //Prompt Player
     cout<<" __  __    __    ___  ____  ____  ____     "<<endl;
     cout<<"(  \\/  )  /__\\  / __)(_  _)( ___)(  _ \\ "<<endl;
@@ -40,25 +42,29 @@ int main(int argc, char** argv) {
     cout<<" __  __  ____  _  _  ____  /\\             "<<endl;
     cout<<"(  \\/  )(_  _)( \\( )(  _ \\ )(           "<<endl;
     cout<<" )    (  _)(_  )  (  )(_) )\\/             "<<endl;
-    cout<<"(_/\\/\\_)(____)(_)\\_)(____/ () Ver 2.0   "<<endl;
-    cout<<"Welcome to the game of Mastermind!         "<<endl;
+    cout<<"(_/\\/\\_)(____)(_)\\_)(____/ ()           "<<endl;
+    cout<<"Welcome to the game of Mastermind! Ver 2.0 "<<endl;
     cout<<"Break the Computer's code before turns run out!"<<endl;
     cout<<"Do you feel up to the challenge?"<<endl;
     do{
         cout<<" [1] Play Game!"<<endl;
         cout<<" [2] Game Rules"<<endl;
-        cout<<" [3] Exit Game"<<endl;
+        cout<<" [3] Player Statistics"<<endl;
+        cout<<" [4] Exit Game"<<endl;
         cout<<"Type the number of your choice, then press enter!"<<endl;
         cin>>option;    
         switch(option){
             case 1:{
                 cout<<"Play Game!"<<endl;
-                game();
+                game(wincount, losscount);
             }break;
             case 2:{
                 rules();
             }break;
             case 3:{
+                stats(wincount, losscount);
+            }break;
+            case 4:{
                 //Exit Program Here
             }break;
             default:{
@@ -72,7 +78,7 @@ int main(int argc, char** argv) {
     return(0);
 }
 
-void game(){
+void game(int& wincount, int& losscount){
     //******Declare Variables******\\
     //Code-maker Variables
     char sol[NSOL]={' ', ' ', ' ', ' '};
@@ -294,7 +300,7 @@ void game(){
         cout<<"You Lose!"<<endl;
         cout<<"Maybe logic isn't your strong suit..."<<endl;
     }
-    writestats(turnwin);
+    writestats(turnwin, wincount, losscount);
 }
 
 void gameout(char fbck[FBCKR][FBCKC], char turn[], char sol[], bool win){
@@ -499,16 +505,34 @@ void writerules(float n1, float n2){
     rules.close();
 }
 
-void writestats(int turnwin){
+void stats(int& wincount, int& losscount){
+    //Input Old Data
+    ifstream stats_in;
+    stats_in.open("statistics.dat");
+    stats_in>>wincount;
+    stats_in>>losscount;
+    stats_in.close();
+}
+
+void writestats(int turnwin, int& wincount, int& losscount){
     //Declare Variables
     int wintemp=0, losstemp=0;
+    //Input Old Data
+    ifstream stats_in;
+    stats_in.open("statistics.dat");
+    stats_in>>wincount;
+    stats_in>>losscount;
+    stats_in.close();
     //Add Win~Loss To Temp Memory
     if(turnwin>0){
         wintemp++;
     }else{
         losstemp++;
     }
-    ofstream stats;
     //Output To File
-    stats.open("statistics.dat");
+    ofstream stats_out;
+    stats_out.open("statistics.dat");
+    stats_out<<wincount+wintemp<<endl;
+    stats_out<<losscount+losstemp<<endl;
+    stats_out.close();
 }
