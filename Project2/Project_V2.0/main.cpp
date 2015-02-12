@@ -1,9 +1,9 @@
-/* 
+/*
  * File: main.cpp
  * Author: Taylor Yost
- * Created on February 05, 2015, 19:25
- * Purpose: Project 2 Ver 1.8
- * Changes: Fixed more errors!  Addition of Statistics.
+ * Created on February 12, 2015, 09:42
+ * Purpose: Project 2
+ * Changes: Version 2.0 Scope Complete Build
  */
 //System Libraries
 #include <cstdlib>
