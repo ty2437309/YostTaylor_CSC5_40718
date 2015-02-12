@@ -26,7 +26,7 @@ void feedback(char[], char[], int&, int&, int);
 void feedbackout(char [FBCKR][FBCKC], bool&, int, int, int, int, int, int);
 void rules();
 void writerules(float, float);
-void writestats();
+void writestats(int);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -37,7 +37,7 @@ int main(int argc, char** argv) {
     cout<<"(  \\/  )  /__\\  / __)(_  _)( ___)(  _ \\ "<<endl;
     cout<<" )    (  /(__)\\ \\__ \\  )(   )__)  )   / "<<endl;
     cout<<"(_/\\/\\_)(__)(__)(___/ (__) (____)(_)\\_) "<<endl;
-    cout<<" __  __  ____  _  _  ____  __              "<<endl;
+    cout<<" __  __  ____  _  _  ____  /\\             "<<endl;
     cout<<"(  \\/  )(_  _)( \\( )(  _ \\ )(           "<<endl;
     cout<<" )    (  _)(_  )  (  )(_) )\\/             "<<endl;
     cout<<"(_/\\/\\_)(____)(_)\\_)(____/ () Ver 2.0   "<<endl;
@@ -329,42 +329,6 @@ void gameout(char fbck[FBCKR][FBCKC], char turn[], char sol[], bool win){
     }
 }
 
-void feedbackout(char fbck[FBCKR][FBCKC], bool& win, int black, int white, int a, int b, int c, int d){
-    //Feedback Box Assignment
-    if(black==1&&white==0){
-        fbck[c][a]='B'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
-    }else if(black==0&&white==1){
-        fbck[c][a]='W'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
-    }else if(black==2&&white==0){
-        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]=' '; fbck[d][b]=' ';
-    }else if(black==0&&white==2){
-        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
-    }else if(black==1&&white==1){
-        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
-    }else if(black==3&&white==0){
-        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]=' ';
-    }else if(black==0&&white==3){
-        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]=' ';
-    }else if(black==2&&white==2){
-        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='W'; fbck[d][b]='W';
-    }else if(black==3&&white==1){
-        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='W';
-    }else if(black==1&&white==3){
-        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
-    }else if(black==0&&white==4){
-        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
-    }else if(black==1&&white==2){
-        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]=' ';
-    }else if(black==2&&white==1){
-        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='W'; fbck[d][b]=' ';
-    }else if(black==4&&white==0){
-        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='B';
-        win=true;    
-    }else{
-        fbck[c][a]=' '; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
-    }
-}
-
 void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
     //Declare Control Variables
     int index=0, temp=0;
@@ -429,6 +393,42 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
     }
 }
 
+void feedbackout(char fbck[FBCKR][FBCKC], bool& win, int black, int white, int a, int b, int c, int d){
+    //Feedback Box Assignment
+    if(black==1&&white==0){
+        fbck[c][a]='B'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==0&&white==1){
+        fbck[c][a]='W'; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==2&&white==0){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==0&&white==2){
+        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==1&&white==1){
+        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]=' '; fbck[d][b]=' ';
+    }else if(black==3&&white==0){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]=' ';
+    }else if(black==0&&white==3){
+        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]=' ';
+    }else if(black==2&&white==2){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='W'; fbck[d][b]='W';
+    }else if(black==3&&white==1){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='W';
+    }else if(black==1&&white==3){
+        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
+    }else if(black==0&&white==4){
+        fbck[c][a]='W'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]='W';
+    }else if(black==1&&white==2){
+        fbck[c][a]='B'; fbck[c][b]='W'; fbck[d][a]='W'; fbck[d][b]=' ';
+    }else if(black==2&&white==1){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='W'; fbck[d][b]=' ';
+    }else if(black==4&&white==0){
+        fbck[c][a]='B'; fbck[c][b]='B'; fbck[d][a]='B'; fbck[d][b]='B';
+        win=true;    
+    }else{
+        fbck[c][a]=' '; fbck[c][b]=' '; fbck[d][a]=' '; fbck[d][b]=' ';
+    }
+}
+
 void rules(){
     //Declare Variables
     char write;
@@ -466,31 +466,39 @@ void rules(){
 
 void writerules(float n1, float n2){
     //Declare a File Object
-    ofstream output;
+    ofstream rules;
     //Output To File
-    output.open("MastermindRules.txt");
-    output<<"Rules of Mastermind:"<<endl;
-    output<<endl;
-    output<<"The game of Mastermind is played with two players. One player is"<<endl;
-    output<<"the Code-Maker, while one is the Code-Breaker. The goal of the"<<endl;
-    output<<"Code-Breaker is to guess the code made by the Code-Maker. Should"<<endl;
-    output<<"the Code-Breaker fail to guess correctly within ten turns, the"<<endl;
-    output<<"game is lost and you may play again."<<endl;
-    output<<endl;
-    output<<"Job of Code-Breaker: The Code-Breaker will have to guess both the"<<endl;
-    output<<"correct color and order of the code. Using feedback from the"<<endl;
-    output<<"Code-Maker, the Code-Breaker can use logic to reveal the correct"<<endl;
-    output<<"code. Valid colors are as follows; Red(R), Orange(O), Yellow(Y),"<<endl;
-    output<<"Green(G), Blue(B), and Purple(P). Colors may be repeated, and are"<<endl;
-    output<<"random."<<endl;
-    output<<endl;
-    output<<"Feedback: The Code-Maker gives feedback to the Code-Breaker with"<<endl;
-    output<<"two colors. Black(B) means that the Code-Breaker has guessed a"<<endl;
-    output<<"correct color, and that it is in the right position. White(W)"<<endl;
-    output<<"means that the Code-Breaker has guessed a correct color, but it"<<endl;
-    output<<"is in the wrong position."<<endl;
-    output<<fixed<<setprecision(2)<<showpoint;
-    output<<"Universe Check...is PI still PI?? "<<n1/n2<<endl;
+    rules.open("MastermindRules.html");
+    rules<<"<strong> Rules of Mastermind: </strong> <br>";
+    rules<<endl;
+    rules<<"<p> The game of Mastermind is played with two players. One player is <br>"<<endl;
+    rules<<"the Code-Maker, while one is the Code-Breaker. The goal of the <br>"<<endl;
+    rules<<"Code-Breaker is to guess the code made by the Code-Maker. Should <br>"<<endl;
+    rules<<"the Code-Breaker fail to guess correctly within ten turns, the <br>"<<endl;
+    rules<<"game is lost and you may play again. </p>"<<endl;
+    rules<<endl;
+    rules<<"<strong> Job of Code-Breaker: </strong> <br>";
+    rules<<endl;
+    rules<<"<p> The Code-Breaker will have to guess both the <br>"<<endl;
+    rules<<"correct color and order of the code. Using feedback from the <br>"<<endl;
+    rules<<"Code-Maker, the Code-Breaker can use logic to reveal the correct <br>"<<endl;
+    rules<<"code. Valid colors are as follows; Red(R), Orange(O), Yellow(Y), <br>"<<endl;
+    rules<<"Green(G), Blue(B), and Purple(P). Colors may be repeated, and are <br>"<<endl;
+    rules<<"random. </p>"<<endl;
+    rules<<endl;
+    rules<<"<strong> Feedback: </strong> <br>";
+    rules<<endl;
+    rules<<"<p> The Code-Maker gives feedback to the Code-Breaker with <br>"<<endl;
+    rules<<"two colors. Black(B) means that the Code-Breaker has guessed a <br>"<<endl;
+    rules<<"correct color, and that it is in the right position. White(W) <br>"<<endl;
+    rules<<"means that the Code-Breaker has guessed a correct color, but it <br>"<<endl;
+    rules<<"is in the wrong position. </p>"<<endl;
+    rules<<fixed<<setprecision(2)<<showpoint;
+    rules<<"<p> <em> Universe Check</em>...is PI still PI?? <em>"<<n1/n2<<"</em> </p>"<<endl;
     //Close The File!
-    output.close();
+    rules.close();
+}
+
+void writestats(int turnwin){
+    
 }
