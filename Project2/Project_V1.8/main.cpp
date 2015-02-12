@@ -27,7 +27,7 @@ void feedbackout(char [FBCKR][FBCKC], bool&, int, int, int, int, int, int);
 void rules();
 void writerules(float, float);
 void stats(int&, int&);
-void writestats(int);
+void writestats(int, int&, int&);
 //Execution Begins Here!
 int main(int argc, char** argv) {
     //Declare Variables
@@ -506,12 +506,23 @@ void writerules(float n1, float n2){
 }
 
 void stats(int& wincount, int& losscount){
+    //Declare Variables
+    float pct=0;
     //Input Old Data
+    cout<<"test"<<endl;
     ifstream stats_in;
     stats_in.open("statistics.dat");
     stats_in>>wincount;
     stats_in>>losscount;
     stats_in.close();
+    cout<<"test"<<endl;
+    //Calculate Percentages
+//    pct=wincount/losscount*100;
+    //Output Statistics To User
+    cout<<"Player Statistics:"<<endl;
+    cout<<"Total Wins:   "<<wincount<<endl;
+    cout<<"Total Losses: "<<losscount<<endl;
+    cout<<"Win/Loss Pct: "<<pct<<endl;
 }
 
 void writestats(int turnwin, int& wincount, int& losscount){
