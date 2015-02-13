@@ -333,7 +333,6 @@ void gameout(char fbck[FBCKR][FBCKC], char turn[], char sol[], bool win){
     cout<<"  10  | "<<turn[36]<<"| "<<turn[37]<<"| "<<turn[38]<<"| "<<turn[39]<<"|"<<fbck[18][0]<<" | "<<fbck[18][1]<<"|"<<endl;
     cout<<"      |__|__|__|__|"                                                    <<fbck[19][0]<<" | "<<fbck[19][1]<<"|"<<endl;
     cout<<" Code";
-    cout<<"   "<<sol[0]<<"  "<<sol[1]<<"  "<<sol[2]<<"  "<<sol[3]<<endl;
     if(win==true){
         cout<<"   "<<sol[0]<<"  "<<sol[1]<<"  "<<sol[2]<<"  "<<sol[3]<<endl;
     }else{
