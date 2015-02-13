@@ -354,46 +354,46 @@ void feedback(char turn[], char sol[], int& black, int& white, int turn_count){
             black++;
         }
         if(index==temp){
-            if((turn[index]==sol[1])&&(turn[index]!=sol[0])&&(turn[index+1]!=sol[1])){
+            if((turn[index]==sol[1])&&(!(turn[index]==sol[0])&&!(turn[index+1]==sol[1]))){
                 white++;
             }
-            if((turn[index]==sol[2])&&(turn[index]!=sol[0])&&(turn[index+2]!=sol[2])){
+            if((turn[index]==sol[2])&&(!(turn[index]==sol[0])&&!(turn[index+2]==sol[2]))){
                 white++;
             }
-            if((turn[index]==sol[3])&&(turn[index]!=sol[0])&&(turn[index+3]!=sol[3])){
+            if((turn[index]==sol[3])&&(!(turn[index]==sol[0])&&!(turn[index+3]==sol[3]))){
                 white++;
             } 
         }
         if(index==temp+1){
-            if((turn[index]==sol[0])&&(turn[index]!=sol[1])&&(turn[index-1]!=sol[0])){
+            if((turn[index]==sol[0])&&(!(turn[index]==sol[1])&&!(turn[index-1]==sol[0]))){
                 white++;
             }
-            if((turn[index]==sol[2])&&(turn[index]!=sol[1])&&(turn[index+2]!=sol[2])){
+            if((turn[index]==sol[2])&&(!(turn[index]==sol[1])&&!(turn[index+2]==sol[2]))){
                 white++;
             }
-            if((turn[index]==sol[3])&&(turn[index]!=sol[1])&&(turn[index+3]!=sol[3])){
+            if((turn[index]==sol[3])&&(!(turn[index]==sol[1])&&!(turn[index+3]==sol[3]))){
                 white++;
             }
         }
         if(index==temp+2){
-            if((turn[index]==sol[0])&&(turn[index]!=sol[2])&&(turn[index-2]!=sol[0])){
+            if((turn[index]==sol[0])&&(!(turn[index]==sol[2])&&!(turn[index-2]==sol[0]))){
                 white++;
             }
-            if((turn[index]==sol[1])&&(turn[index]!=sol[2])&&(turn[index-1]!=sol[1])){
+            if((turn[index]==sol[1])&&(!(turn[index]==sol[2])&&!(turn[index-1]==sol[1]))){
                 white++;
             }
-            if((turn[index]==sol[3])&&(turn[index]!=sol[2])&&(turn[index+1]!=sol[3])){
+            if((turn[index]==sol[3])&&(!(turn[index]==sol[2])&&!(turn[index+1]==sol[3]))){
                 white++;
             }
         }
         if(index==temp+3){
-            if((turn[index]==sol[0])&&(turn[index]!=sol[3])&&(turn[index-3]!=sol[0])){
+            if((turn[index]==sol[0])&&(!(turn[index]==sol[3])&&!(turn[index-3]==sol[0]))){
                 white++;
             }
-            if((turn[index]==sol[1])&&(turn[index]!=sol[3])&&(turn[index-2]!=sol[1])){
+            if((turn[index]==sol[1])&&(!(turn[index]==sol[3])&&!(turn[index-2]==sol[1]))){
                 white++;
             }
-            if((turn[index]==sol[2])&&(turn[index]!=sol[3])&&(turn[index-1]!=sol[2])){
+            if((turn[index]==sol[2])&&(!(turn[index]==sol[3])&&!(turn[index-1]==sol[2]))){
                 white++;
             }
         }
